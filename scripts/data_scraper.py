@@ -3,6 +3,7 @@ import urllib.request
 from pathlib import Path
 import os
 from csv_manipulator import load_csv, date_time
+from data_validation import data_validation
 
 
 def get_url():
@@ -40,7 +41,8 @@ def get_url():
         else:
             print("Failed to access: ", x)
             continue
-        #load_csv(x)
+        data_validation(x)
+        # load_csv(x)
 
 
 if __name__ == "__main__":
