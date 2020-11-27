@@ -8,4 +8,9 @@ def data_validation(x):
     data = pd.read_csv(data_location)
     data.drop('Volume', axis=1, inplace=True)
     data.columns = ["Date", "Open", "High", "Low", "Close", "Adj Close"]
+    data = data.interpolate()
     print(data.isnull().sum())
+    try:
+        data.to_csv('Data/'+x+'.csv', sep=',')
+    except FileNotFoundError as e:
+                    print("Not found: ", x, e)

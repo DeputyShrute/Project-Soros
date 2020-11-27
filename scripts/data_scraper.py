@@ -5,6 +5,9 @@ import os
 from csv_manipulator import load_csv, date_time
 from data_validation import data_validation
 
+import numpy as np
+import pandas as pd
+
 
 def get_url():
     currency_pair = ["EURUSD", "EURJPY", "USDCHF", "GBPUSD", "USDJPY", "USDCAD", "AUDUSD", "EURGBP", "EURAUD", "EURCHF", "GBPCHF", "CADJPY", "GBPJPY",
