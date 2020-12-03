@@ -1,2 +1,4 @@
 *.csv
 .vscode/launch.json
+
+*.png
