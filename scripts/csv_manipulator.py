@@ -1,8 +1,6 @@
 import csv
 from datetime import datetime, timedelta
 
-
-
 def load_csv(x):
     csv_data = []
     with open('../Data/'+ x +'.csv', 'r', encoding='utf-8') as scraped:
