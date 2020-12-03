@@ -47,7 +47,7 @@ def get_url():
         else:
             print("Failed to access: ", x)
             continue
-        data_validation(x)
+        data_validation('AUDCAD')
         # load_csv(x)
 
 

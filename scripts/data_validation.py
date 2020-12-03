@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from pandas import Series, DataFrame
-from candlestick import create_candlestick
+from candlestick import create_candlestick, candle_identifier
 
 
 def data_validation(x):
@@ -21,7 +21,7 @@ def data_validation(x):
     print(data.isnull().sum())
     try:
         data.to_csv('Data/'+x+'.csv', sep=',')
-        create_candlestick(x)
+        candle_identifier(x)
     except FileNotFoundError as e:
                     print("Not found: ", x, e)
     
