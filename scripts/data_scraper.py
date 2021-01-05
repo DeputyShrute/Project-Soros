@@ -47,8 +47,8 @@ def get_url():
         else:
             print("Failed to access: ", x)
             continue
-        data_validation('AUDCAD')
-        # load_csv(x)
+        #data_validation(x)
+        #load_csv(x)
 
 
 if __name__ == "__main__":
