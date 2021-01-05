@@ -40,7 +40,7 @@ def get_url():
                 continue
             else:
                 try:
-                    with open('Data/'+x+'.csv', 'wb') as f:
+                    with open('Finance_Data/'+x+'.csv', 'wb') as f:
                         f.write(file_download.content)
                 except FileNotFoundError as e:
                     print("Not found: ", x, e)

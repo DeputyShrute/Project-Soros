@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 
 def load_csv(x):
     csv_data = []
-    with open('Data/'+ x +'.csv', 'r') as scraped:
+    with open('Finance_Data/'+ x +'.csv', 'r') as scraped:
         reader = csv.reader(scraped, delimiter=',')
         time = date_time()
         for row in reader:

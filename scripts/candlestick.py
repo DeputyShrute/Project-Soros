@@ -9,7 +9,7 @@ def create_candlestick(x):
 
 
 # Extracting Data for plotting
-    data = pd.read_csv('Data/'+x+'.csv')
+    data = pd.read_csv('Finance_Data/'+x+'.csv')
     ohlc = data.loc[:, ['Date', 'Open', 'High', 'Low', 'Close']]
     ohlc['Date'] = pd.to_datetime(ohlc['Date'])
     ohlc['Date'] = ohlc['Date'].apply(mpl_dates.date2num)
@@ -33,12 +33,12 @@ def create_candlestick(x):
 
     fig.tight_layout()
 
-    plt.savefig('Data/'+x+'.png')
+    plt.savefig('Finance_Data/'+x+'.png')
 
 
 def candle_identifier(x):
 
-    data = pd.read_csv('Data/'+x+'.csv')
+    data = pd.read_csv('Finance_Data/'+x+'.csv')
     print(type(data))
 
     

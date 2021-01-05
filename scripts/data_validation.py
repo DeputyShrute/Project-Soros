@@ -11,7 +11,7 @@ def data_validation(x):
     If values are missing, the cell is filled with a mean of the value before and after
     Writes new data frame back to the CSV
     '''
-    data_location = 'Data/' + x + '.csv'
+    data_location = 'Finance_Data/' + x + '.csv'
     data = pd.read_csv(data_location)
     data.drop('Volume', axis=1, inplace=True)
     print(data['Open'])
@@ -20,7 +20,7 @@ def data_validation(x):
     data = data.interpolate()
     print(data.isnull().sum())
     try:
-        data.to_csv('Data/'+x+'.csv', sep=',')
+        data.to_csv('Finance_Data/'+x+'.csv', sep=',')
         candle_identifier(x)
     except FileNotFoundError as e:
                     print("Not found: ", x, e)
