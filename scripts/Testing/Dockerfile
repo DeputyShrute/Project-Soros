@@ -1,8 +1,13 @@
-FROM python:3
+FROM tensorflow/tensorflow:latest-gpu-py3
 
-WORKDIR /usr/src/app
-RUN mkdir /usr/src/Data
-COPY . .
+
+WORKDIR /app
+
+COPY . /app
+
 RUN pip install -r requirements.txt
 
-CMD ["python", "./data_scraper.py"]
+RUN pip3 install tensorflow \
+    && pip3 install keras 
+
+CMD ["python", "./linear.py"]
