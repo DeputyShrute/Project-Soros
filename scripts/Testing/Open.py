@@ -1,16 +1,16 @@
-# univariate mlp example
+import csv
 from re import VERBOSE
 import numpy as np
 from numpy import array
-import csv
+import pandas as pd
+import tensorflow as tf
 from sklearn.model_selection import train_test_split
 from keras.models import Sequential
 from keras.layers import Dense
-from keras import losses
-from numpy.core.fromnumeric import size
-
-# split a univariate sequence into samples
-
+from keras.layers import Flatten
+import matplotlib.pyplot as plt
+from keras.layers.convolutional import Conv1D
+from keras.layers.convolutional import MaxPooling1D
 
 def split_sequence(sequence, n_steps):
 	X, y = list(), list()
@@ -32,10 +32,13 @@ def data():
 	raw_seq = []
 	with open('/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/AUDCAD.csv', 'r') as csv_file:
 		csv_reader = csv.reader(csv_file, delimiter=',')
-		for lines in csv_reader:
+		for lines in csv_reader: 
 			if lines[1] != 'null':
 				raw_seq.append(float(lines[1]))
 	raw_seq.pop(0)  # remove column header
+	#Normalise the data
+	#norm = [float(i)/sum(raw_seq) for i in raw_seq]
+	#print(raw_seq)
 	model(raw_seq)
 
 
@@ -52,11 +55,14 @@ def model(raw_seq):
 
 		X_train, X_test, y_train, y_test = split_data(raw_seq, n_steps)
 
-		print(size(X_train))
+		X_train = X_train.reshape((X_train.shape[0], X_train.shape[1], 1))
 
 		# define model
 		model = Sequential()
-		model.add(Dense(100, activation='relu', input_dim=n_steps))
+		model.add(Conv1D(filters=64, kernel_size=2, activation='relu', input_shape=(n_steps, 1)))
+		model.add(MaxPooling1D(pool_size=2))
+		model.add(Flatten())
+		model.add(Dense(50, activation='relu'))
 		model.add(Dense(1))
 		model.compile(optimizer='adam', loss='mse')
 		model.summary()
@@ -64,13 +70,15 @@ def model(raw_seq):
 		# fit model
 		model.fit(X_train, y_train, epochs=1000, verbose=0)
 
-		train_results = model.evaluate(X_train, y_train, verbose=0)
-		print(f'RMSE TRAIN: {round(np.sqrt(train_results), 2)}')
-
 		# demonstrate prediction
-		test = array([0.94551, 0.9393, 0.9498, 0.9473, 0.9489, 0.9486, 0.9564, 0.9604, 0.9565, 0.9524, 0.9526, 0.9489, 0.9501, 0.9515, 0.952, 0.9495, 0.9547, 0.9559, 0.9556, 0.9524, 0.9522, 0.946, 0.9463, 0.9376, 0.9362, 0.9307, 0.9271])
-		test = test.reshape((1, n_steps))
-		yhat = model.predict(test, verbose=0)
+		#test = np.asarray(raw_seq[-n_steps:])
+
+		#norm = [float(i)/sum(test)for i in test]
+		X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
+		yhat = model.predict(X_test, verbose=0)
+
+		plt.plot(yhat, X_train)
+		plt.show()
 
 		print("----------------")
 		print(yhat)
@@ -81,6 +89,8 @@ def log(yhat, iteration):
 	outF = open('output.txt', 'a')
 	for i in yhat:
 		output = "\nIteration: %d\n" %(iteration)
+		column = "Open Price\n"
+		outF.write(column)
 		outF.write(str(output))
 		outF.write(str(i).strip("[]"))
 		outF.write('\n')
