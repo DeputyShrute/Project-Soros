@@ -47,7 +47,7 @@ def get_url():
             print("Failed to access: ", x)
             continue
         data_validation(x)
-    Open = Model('AUDCHF', 27, 'open')
+    Open = Model('AUDCHF', 27, 'open', 100)
     Open.data()
 
 

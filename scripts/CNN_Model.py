@@ -17,7 +17,7 @@ from keras.layers.convolutional import MaxPooling1D
 
 class Model:
 
-    def __init__(self, symbol, timestep, column):
+    def __init__(self, symbol, timestep, column, loop):
         print('Constructor Initialsed')
         self.symbol = symbol
         self.timestep = timestep
@@ -28,6 +28,7 @@ class Model:
             self.column = 3
         if self.column == 'LOW':
             self.column = 4
+        self.loop = loop
 
     def split_sequence(sequence, n_steps):
         X, y = list(), list()
@@ -64,7 +65,8 @@ class Model:
 
     def model(self, raw_seq):
         n_steps = self.timestep
-        for i in range(3):
+        average = []
+        for i in range(self.loop):
 
             X_train, X_test, y_train, y_test = Model.split_data(
                 raw_seq, n_steps)
@@ -85,12 +87,18 @@ class Model:
             model.fit(X_train, y_train, epochs=1000, verbose=0)
 
             # Test model
-            X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
-            yhat = model.predict(X_test, verbose=0)
+            #X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
+            raw_seq = array(raw_seq[-27:])
+            print(raw_seq)
+            raw_seq = raw_seq.reshape((1, n_steps, 1))
+            yhat = model.predict(raw_seq, verbose=0)
             # Print and log output
             print("----------------")
-            #print(yhat)
+            print(yhat)
+            average.append(yhat)
             Model.log(yhat, i)
+        tot_avg = sum(average)
+        print(tot_avg)
 
     def log(yhat, iteration):
         outF = open('output.txt', 'a')
