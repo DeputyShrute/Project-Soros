@@ -23,11 +23,11 @@ class Model:
         self.timestep = timestep
         self.column = column.upper()
         if self.column == 'OPEN':
-            self.column = 1
-        if self.column == 'HIGH':
             self.column = 2
-        if self.column == 'LOW':
+        if self.column == 'HIGH':
             self.column = 3
+        if self.column == 'LOW':
+            self.column = 4
 
     def split_sequence(sequence, n_steps):
         X, y = list(), list()

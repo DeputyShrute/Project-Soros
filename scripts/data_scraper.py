@@ -1,8 +1,8 @@
+import os
 import requests
 from pathlib import Path
-import os
-import sys
-
+from data_validation import data_validation
+from CNN_Model import Model
 
 def get_url():
     '''
@@ -39,7 +39,7 @@ def get_url():
                 continue
             else:
                 try:
-                    with open('/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/'+x+'.csv', 'wb') as f:
+                    with open('../Data/'+x+'.csv', 'wb') as f:
                         f.write(file_download.content)
                 except FileNotFoundError as e:
                     print("Not found: ", x, e)
@@ -47,7 +47,8 @@ def get_url():
             print("Failed to access: ", x)
             continue
         data_validation(x)
-        # load_csv(x)
+    Open = Model('AUDCHF', 27, 'open')
+    Open.data()
 
 
 if __name__ == "__main__":
