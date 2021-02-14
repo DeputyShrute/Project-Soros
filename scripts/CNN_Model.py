@@ -1,19 +1,15 @@
-import csv
-from re import VERBOSE
-import numpy as np
+from sklearn.model_selection import train_test_split
+from keras.layers.convolutional import MaxPooling1D
+from keras.layers.convolutional import Conv1D
+from keras.layers import Flatten
+from keras.layers import Dense
+from keras.models import Sequential
+from matplotlib import pyplot
+import tensorflow as tf
 from numpy import array
-import pandas as pd
+import csv
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-import tensorflow as tf
-from sklearn.model_selection import train_test_split
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import Flatten
-import matplotlib.pyplot as plt
-from keras.layers.convolutional import Conv1D
-from keras.layers.convolutional import MaxPooling1D
-
 
 class Model:
 
@@ -64,18 +60,18 @@ class Model:
         return X_train, X_test, y_train, y_test
 
     def model(self, raw_seq):
-        n_steps = self.timestep
         average = []
         for i in range(self.loop):
 
             X_train, X_test, y_train, y_test = Model.split_data(
-                raw_seq, n_steps)
+                raw_seq, self.timestep)
             X_train = X_train.reshape((X_train.shape[0], X_train.shape[1], 1))
+            X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
 
             # define model
             model = Sequential()
-            model.add(Conv1D(filters=64, kernel_size=2,
-                             activation='relu', input_shape=(n_steps, 1)))
+            model.add(Conv1D(filters=128, kernel_size=2,
+                             activation='relu', input_shape=(self.timestep, 1)))
             model.add(MaxPooling1D(pool_size=2))
             model.add(Flatten())
             model.add(Dense(50, activation='relu'))
@@ -84,20 +80,31 @@ class Model:
             model.summary()
 
             # fit model
-            model.fit(X_train, y_train, epochs=1000, verbose=0)
+            history = model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=1000, verbose=0)
+
+            train_mse = model.evaluate(X_train, y_train, verbose=0)
+            test_mse = model.evaluate(X_test, y_test, verbose=0)
+
+            print('Train: %.7f, Test: %.7f' % (train_mse, test_mse))
+
+            pyplot.title('Loss / Mean Squared Error')
+            pyplot.plot(history.history['loss'], label='train')
+            pyplot.plot(history.history['val_loss'], label='test')
+            pyplot.legend()
+            pyplot.show()
 
             # Test model
             #X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
-            raw_seq = array(raw_seq[-27:])
-            print(raw_seq)
-            raw_seq = raw_seq.reshape((1, n_steps, 1))
-            yhat = model.predict(raw_seq, verbose=0)
-            # Print and log output
-            print("----------------")
-            print(yhat)
-            average.append(yhat)
-            Model.log(yhat, i)
-        tot_avg = sum(average)
+            # new_seq = array(raw_seq[-27:])
+            # new_seq = new_seq.reshape((1, self.timestep, 1))
+            # yhat = model.predict(new_seq, verbose=0)
+            # # Print and log output
+            # print("----------------")
+            # print(yhat)
+            # average.append(yhat)
+            # Model.log(yhat, i)
+
+        tot_avg = (sum(average)/self.loop)
         print(tot_avg)
 
     def log(yhat, iteration):
