@@ -44,6 +44,7 @@ class Model:
     def data(self):
         # define input sequence
         raw_seq = []
+        new_seq = []
         with open('C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Data/' + self.symbol + '.csv', 'r') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             next(csv_reader)
@@ -51,7 +52,22 @@ class Model:
                 if lines[self.column] != 'null':
                     raw_seq.append(float(lines[self.column]))
         raw_seq.pop(0)  # remove column header
-        Model.model(self, raw_seq)
+        j = len(raw_seq)
+        k=2
+        for i in raw_seq: 
+            if k >= j:
+                break
+            else:
+                if i > raw_seq[k-1]:
+                    new_seq.append(2) # UP
+                    k=k+1
+                if i < raw_seq[k-1]:
+                    new_seq.append(0) # DOWN
+                    k=k+1
+                if i == raw_seq[k-1]:
+                    new_seq.append(1) # SIDE
+                    k=k+1
+        Model.model(self, new_seq)
 
     def split_data(raw_seq, n_steps, size):
         # split into samples
@@ -60,25 +76,26 @@ class Model:
             X, y, test_size=size)
         return X_train, X_test, y_train, y_test
 
-    def model(self, raw_seq):
+    def model(self, new_seq):
         average = []
         for i in range(self.loop):
 
             # Splits the data into test and train (data, windows, size of test)
             X_train, X_test, y_train, y_test = Model.split_data(
-                raw_seq, self.timestep, 0.2)
+                new_seq, self.timestep, 0.2)
             # Splits the data into test and val (data, windows, size of val)
             X_train, X_val, y_train, y_val = Model.split_data(
-                raw_seq, self.timestep, 0.2)
+                new_seq, self.timestep, 0.1)
 
             # Reshapes the data for input dimensions
             X_train = X_train.reshape((X_train.shape[0], X_train.shape[1], 1))
             X_val = X_val.reshape((X_val.shape[0], X_val.shape[1], 1))
+            X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
 
             # define model
             model = Sequential()
             #Conveluted layer
-            model.add(Conv1D(filters=128, kernel_size=2,
+            model.add(Conv1D(filters=64, kernel_size=2,
                              activation='relu', input_shape=(self.timestep, 1)))
             model.add(MaxPooling1D(pool_size=2))
             model.add(Flatten())
@@ -89,7 +106,7 @@ class Model:
 
             # fit model
             history = model.fit(
-                X_train, y_train, validation_data=(X_val, y_val), epochs=50, verbose=2, shuffle=True)
+                X_train, y_train, validation_data=(X_val, y_val), epochs=500, verbose=2, shuffle=True)
 
             # Plot accuracy metrics
             pyplot.title('Loss / Mean Squared Error')
@@ -104,15 +121,14 @@ class Model:
             pyplot.legend()
             pyplot.show()
 
-
             # Test model
-            #X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
+            
             # new_seq = array(raw_seq[-27:])
             # new_seq = new_seq.reshape((1, self.timestep, 1))
-            # yhat = model.predict(new_seq, verbose=0)
+            yhat = model.predict(X_test, verbose=2)
             # # Print and log output
-            # print("----------------")
-            # print(yhat)
+            print("----------------")
+            print(yhat)
             # average.append(yhat)
             # Model.log(yhat, i)
 
