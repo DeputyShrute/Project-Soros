@@ -67,11 +67,12 @@ class Model:
             # Splits the data into test and train (data, windows, size of test)
             X_train, X_test, y_train, y_test = Model.split_data(
                 raw_seq, self.timestep, 0.2)
+
             # Splits the data into test and val (data, windows, size of val)
             X_train, X_val, y_train, y_val = Model.split_data(
                 raw_seq, self.timestep, 0.2)
 
-            # Reshapes the data for input dimensions
+            # Reshapes the data for input dimension
             X_train = X_train.reshape((X_train.shape[0], X_train.shape[1], 1))
             X_val = X_val.reshape((X_val.shape[0], X_val.shape[1], 1))
 
@@ -89,7 +90,7 @@ class Model:
 
             # fit model
             history = model.fit(
-                X_train, y_train, validation_data=(X_val, y_val), epochs=50, verbose=2, shuffle=True)
+                X_train, y_train, validation_data=(X_val, y_val), epochs=1000, verbose=2, shuffle=True)
 
             # Plot accuracy metrics
             pyplot.title('Loss / Mean Squared Error')
