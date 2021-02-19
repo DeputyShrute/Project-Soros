@@ -1,4 +1,5 @@
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix
 from keras.layers.convolutional import MaxPooling1D
 from keras.layers.convolutional import Conv1D
 from keras.layers import Flatten
@@ -9,8 +10,8 @@ import tensorflow as tf
 from numpy import array
 import csv
 import os
+import time
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-
 
 class Model:
 
@@ -39,10 +40,11 @@ class Model:
             seq_x, seq_y = raw_seq[i:end_ix], new_seq[end_ix]
             X.append(seq_x)
             y.append(seq_y)
+
         return array(X), array(y)
 
     def data(self):
-        # define input sequence
+        # Read input from CSV
         raw_seq = []
         with open('C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Data/' + self.symbol + '.csv', 'r') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
@@ -50,86 +52,96 @@ class Model:
             for lines in csv_reader:
                 if lines[self.column] != 'null':
                     raw_seq.append(float(lines[self.column]))
+
+        # Generates the labels
         new_seq = []
-        new_seq.append(0)
+        new_seq.append(1)
         j = len(raw_seq)
         for i in range(1, j):
             if raw_seq[i] > raw_seq[i-1]:
-                new_seq.append(1) # UP
+                new_seq.append(1)  # UP
             if raw_seq[i] < raw_seq[i-1]:
-                new_seq.append(0)# DOWN
-            # if raw_seq[i] == raw_seq[i-1]:
-            #     new_seq.append(0) # SIDE
+                new_seq.append(0)  # DOWN
 
-        Model.model(self, raw_seq, new_seq)
+        Model.train_test(self, raw_seq, new_seq)
 
-    def split_data(raw_seq, new_seq ,n_steps, size):
+    def split_data(raw_seq, new_seq, n_steps, size):
         # split into samples
         X, y = Model.split_sequence(raw_seq, new_seq, n_steps)
         X_train, X_test, y_train, y_test = train_test_split(
             X, y, test_size=size)
         return X_train, X_test, y_train, y_test
 
-    def model(self, raw_seq, new_seq):
-        average = []
-        for i in range(self.loop):
+    def train_test(self, raw_seq, new_seq):
+        # Splits the data into test and train (data, windows, size of test)
+        X_train, X_test, y_train, y_test = Model.split_data(
+            raw_seq, new_seq, self.timestep, 0.2)
 
-            # Splits the data into test and train (data, windows, size of test)
-            X_train, X_test, y_train, y_test = Model.split_data(
-                raw_seq, new_seq, self.timestep, 0.2)
+        # Splits the data into test and val (data, windows, size of val)
+        X_train, X_val, y_train, y_val = Model.split_data(
+            raw_seq, new_seq, self.timestep, 0.2)
 
-            # Splits the data into test and val (data, windows, size of val)
-            X_train, X_val, y_train, y_val = Model.split_data(
-                raw_seq, new_seq, self.timestep, 0.2)
+        # Reshapes the data for input dimension
+        X_train = X_train.reshape((X_train.shape[0], X_train.shape[1], 1))
+        X_val = X_val.reshape((X_val.shape[0], X_val.shape[1], 1))
 
-            # Reshapes the data for input dimension
-            X_train = X_train.reshape((X_train.shape[0], X_train.shape[1], 1))
-            X_val = X_val.reshape((X_val.shape[0], X_val.shape[1], 1))
+        Model.train_model(self, X_train, X_val, y_train, y_val, X_test, y_test)
 
-            # define model
-            model = Sequential()
-            #Conveluted layer
-            model.add(Conv1D(filters=128, kernel_size=2,
-                             activation='relu', input_shape=(self.timestep, 1)))
-            model.add(MaxPooling1D(pool_size=2))
-            model.add(Flatten())
-            model.add(Dense(50, activation='relu'))
-            model.add(Dense(1))
-            model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-            model.summary()
+    def train_model(self, X_train, X_val, y_train, y_val, X_test, y_test):
+        # define model
+        model = Sequential()
+        # Conveluted layer
+        model.add(Conv1D(filters=2, kernel_size=self.timestep-1,
+                            activation='relu', input_shape=(self.timestep, 1)))
+        model.add(MaxPooling1D(pool_size=2))
+        model.add(Flatten())
+        model.add(Dense(50, activation='relu'))
+        model.add(Dense(1))
+        model.compile(optimizer='adam', loss='mse', metrics=['accuracy'])
+        model.summary()
 
-            # fit model
-            history = model.fit(
-                X_train, y_train, validation_data=(X_val, y_val), epochs=500, verbose=2, shuffle=True)
+        # fit model
+        history = model.fit(
+            X_train, y_train, validation_data=(X_val, y_val), epochs=500, verbose=2, shuffle=True)
+        
+        Model.accuracy(history)
+        Model.test_model(X_test, model, y_test)
 
-            # Plot accuracy metrics
-            pyplot.title('Loss / Mean Squared Error')
-            pyplot.plot(history.history['loss'], label='Train')
-            pyplot.plot(history.history['val_loss'], label='Val')
-            pyplot.legend()
-            pyplot.show()
+    def test_model(X_test, model, y_test):
+        
+        #new_seq = array(raw_seq[-27:])
+        # print(new_seq)
+        #new_seq = new_seq.reshape((1, self.timestep, 1))
 
-            pyplot.title('Accuarcy')
-            pyplot.plot(history.history['accuracy'], label='Train')
-            pyplot.plot(history.history['val_accuracy'], label='Val')
-            pyplot.legend()
-            pyplot.show()
+        X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
+        yhat = model.predict(X_test, verbose=0)
 
+        # Print and log output
+        print("----------------")
+        yhat_new = []
+        for i in yhat:
+            if i > 0.5:
+                yhat_new.append(1)
+            if i < 0.5:
+                yhat_new.append(1)
+        print(confusion_matrix(yhat_new, y_test))
+        # Model.direction(yhat)
+        Model.log(yhat, i)
 
-            #Test model
-            #X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
-            new_seq = array(raw_seq[-27:])
-            new_seq = new_seq.reshape((1, self.timestep, 1))
-            yhat = model.predict(new_seq, verbose=0)
-            # Print and log output
-            print("----------------")
-            print(yhat)
-            Model.direction(yhat)
-            average.append(yhat)
-            Model.log(yhat, i)
+    def accuracy(history):
+        # Plot accuracy metrics
+        pyplot.title('Loss / Mean Squared Error')
+        pyplot.plot(history.history['loss'], label='Train')
+        pyplot.plot(history.history['val_loss'], label='Val')
+        pyplot.legend()
+        pyplot.show()
 
-        # tot_avg = (sum(average)/self.loop)
-        # print(tot_avg)
+        pyplot.title('Accuarcy')
+        pyplot.plot(history.history['accuracy'], label='Train')
+        pyplot.plot(history.history['val_accuracy'], label='Val')
+        pyplot.legend()
+        pyplot.show()
+
 
     def log(yhat, iteration):
         outF = open('output.txt', 'a')
@@ -150,6 +162,7 @@ class Model:
         if yhat < 0.5:
             print('Down')
 
+
 if __name__ == "__main__":
-    Open = Model('AUDCAD', 27, 'open', 1)
+    Open = Model('AUDCAD', 5, 'open', 1)
     Open.data()
