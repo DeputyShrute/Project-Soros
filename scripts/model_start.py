@@ -8,6 +8,7 @@ from keras.models import Sequential
 from matplotlib import pyplot
 import tensorflow as tf
 from numpy import array
+from models import CNN, MLP, KNN
 import csv
 import os
 import time
@@ -15,7 +16,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 class Model:
 
-    def __init__(self, symbol, timestep, column, loop):
+    def __init__(self, symbol, timestep, column, model_type):
         print('Constructor Initialised')
         self.symbol = symbol
         self.timestep = timestep
@@ -26,7 +27,10 @@ class Model:
             self.column = 3
         if self.column == 'LOW':
             self.column = 4
-        self.loop = loop
+        self.model_type = model_type
+    
+    def __str__(self):
+        return self.model_type
 
     def split_sequence(raw_seq, new_seq, n_steps):
         X, y = list(), list()
@@ -81,54 +85,9 @@ class Model:
         X_train, X_val, y_train, y_val = Model.split_data(
             raw_seq, new_seq, self.timestep, 0.2)
 
-        # Reshapes the data for input dimension
-        X_train = X_train.reshape((X_train.shape[0], X_train.shape[1], 1))
-        X_val = X_val.reshape((X_val.shape[0], X_val.shape[1], 1))
+        Model.check_model(self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq)
 
-        Model.train_model(self, X_train, X_val, y_train, y_val, X_test, y_test)
-
-    def train_model(self, X_train, X_val, y_train, y_val, X_test, y_test):
-        # define model
-        model = Sequential()
-        # Conveluted layer
-        model.add(Conv1D(filters=2, kernel_size=self.timestep-1,
-                            activation='relu', input_shape=(self.timestep, 1)))
-        model.add(MaxPooling1D(pool_size=2))
-        model.add(Flatten())
-        model.add(Dense(50, activation='relu'))
-        model.add(Dense(1))
-        model.compile(optimizer='adam', loss='mse', metrics=['accuracy'])
-        model.summary()
-
-        # fit model
-        history = model.fit(
-            X_train, y_train, validation_data=(X_val, y_val), epochs=500, verbose=2, shuffle=True)
-        
-        Model.accuracy(history)
-        Model.test_model(X_test, model, y_test)
-
-    def test_model(X_test, model, y_test):
-        
-        #new_seq = array(raw_seq[-27:])
-        # print(new_seq)
-        #new_seq = new_seq.reshape((1, self.timestep, 1))
-
-        X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
-        yhat = model.predict(X_test, verbose=0)
-
-        # Print and log output
-        print("----------------")
-        yhat_new = []
-        for i in yhat:
-            if i > 0.5:
-                yhat_new.append(1)
-            if i < 0.5:
-                yhat_new.append(1)
-        print(confusion_matrix(yhat_new, y_test))
-        # Model.direction(yhat)
-        Model.log(yhat, i)
-
-    def accuracy(history):
+    def plotting(history):
         # Plot accuracy metrics
         pyplot.title('Loss / Mean Squared Error')
         pyplot.plot(history.history['loss'], label='Train')
@@ -136,14 +95,35 @@ class Model:
         pyplot.legend()
         pyplot.show()
 
-        pyplot.title('Accuarcy')
+        pyplot.title('Accuracy')
         pyplot.plot(history.history['accuracy'], label='Train')
         pyplot.plot(history.history['val_accuracy'], label='Val')
         pyplot.legend()
         pyplot.show()
 
+    def accuracy(yhat, y_test):
 
-    def log(yhat, iteration):
+        # Print and log output
+        print("----------------")
+        yhat_new = []
+        acc = []
+        for i in yhat:
+            if i > 0.5:
+                yhat_new.append(1)
+            if i < 0.5:
+                yhat_new.append(0)
+        print(confusion_matrix(yhat_new, y_test))
+        
+        for i in range(len(yhat)):
+            if yhat_new[i] == y_test[i]:
+                acc.append(1)
+            else:
+                acc.append(0)
+        print((sum(acc)/len(acc))*100)
+
+
+
+    def log(yhat, iteration=0):
         outF = open('output.txt', 'a')
         for i in yhat:
             output = "\nIteration: %d\n" % (iteration)
@@ -162,7 +142,26 @@ class Model:
         if yhat < 0.5:
             print('Down')
 
+    def check_model(self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq):  
+
+        if self.model_type == 'CNN':
+            history, model = CNN.CNN_train_model(self, X_train, X_val, y_train, y_val)
+            Model.plotting(history)
+            yhat = CNN.CNN_test_model(X_test, model)
+            Model.accuracy(yhat, y_test)
+
+        if self.model_type == 'MLP':
+            history, model = MLP.MLP_train_model(self, X_train, X_val, y_train, y_val)
+            Model.plotting(history)
+            yhat = MLP.MLP_test_model(X_test, model)
+            Model.accuracy(yhat, y_test)
+        
+        if self.model_type == 'KNN':
+            yhat = KNN.KNN_train_model(self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq)
+            Model.accuracy(yhat, y_test)
+             
+
 
 if __name__ == "__main__":
-    Open = Model('AUDCAD', 5, 'open', 1)
+    Open = Model('AUDCAD', 100, 'open', 'KNN')
     Open.data()

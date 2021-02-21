@@ -2,7 +2,7 @@ import os
 import requests
 from pathlib import Path
 from data_validation import data_validation
-from CNN_Model import Model
+from model_start import Model
 
 def get_url():
     '''
@@ -47,7 +47,7 @@ def get_url():
             print("Failed to access: ", x)
             continue
         data_validation(x)
-    Open = Model('AUDCHF', 27, 'open', 1)
+    Open = Model('AUDCHF', 27, 'open', 1, 'KNN')
     Open.data()
 
 
