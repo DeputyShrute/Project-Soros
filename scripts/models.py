@@ -73,7 +73,7 @@ class MLP:
 class KNN:
 
     def KNN_train_model(self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq):
-        Range_k = range(1,5)
+        Range_k = range(1,20)
         scores = {}
         scores_list = []
         for k in Range_k:
@@ -91,6 +91,7 @@ class KNN:
         print(result1)
 
         plt.plot(Range_k, scores_list)
+        plt.title('Model Accuarcy / K Value')
         plt.xlabel("Value of K")
         plt.ylabel("Accuracy")
         plt.show()

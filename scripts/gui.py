@@ -1,7 +1,8 @@
 import tkinter
+from typing import Text
+import subprocess as sub
 from data_scraper import get_data
 from model_start import Model
-
 
 def call():
         a = startLabelEntry.get()
@@ -24,7 +25,6 @@ startcolumn =tkinter.Label(root,text="Enter Column: ")
 startcolumnEntry=tkinter.Entry(root)
 startmodel =tkinter.Label(root,text="Enter Model: ")
 startmodelEntry=tkinter.Entry(root)
-
 
 startLabel.pack()
 startLabelEntry.pack()
