@@ -14,29 +14,43 @@ def call():
         Open = Model(a,b,c,d)
         Open.data()
 
+currency_pair = ["EURUSD", "EURJPY", "USDCHF", "GBPUSD", "USDJPY", "USDCAD", "AUDUSD", "EURGBP", "EURAUD", "EURCHF", "GBPCHF", "CADJPY", "GBPJPY",
+                        "AUDNZD", "AUDCAD", "AUDCHF", "AUDJPY", "CHFJPY", "EURNZD", "EURCAD", "CADCHF", "NZDJPY", "NZDUSD", "GBPAUD", "GBPNZD", "NZDCAD", "NZDCHF"]
+currency_pair = sorted(currency_pair)
+columns = ['Open', 'Close', 'High', 'Low']
+
+model = ['KNN', 'CNN', 'MLP']
 
 root=tkinter.Tk()
 root.geometry('400x400')
+
 startLabel =tkinter.Label(root,text="Enter Pair: ")
-startLabelEntry=tkinter.Entry(root)
+startLabelEntry = tkinter.StringVar()
+startLabelEntry.set('EURUSD')
+startLabel.pack()
+startLabelEntrydrop=tkinter.OptionMenu(root, startLabelEntry, *currency_pair)
+startLabelEntrydrop.pack()
+
 starttime =tkinter.Label(root,text="Enter Timestep: ")
 starttimeEntry=tkinter.Entry(root)
-startcolumn =tkinter.Label(root,text="Enter Column: ")
-startcolumnEntry=tkinter.Entry(root)
-startmodel =tkinter.Label(root,text="Enter Model: ")
-startmodelEntry=tkinter.Entry(root)
-
-startLabel.pack()
-startLabelEntry.pack()
 starttime.pack()
 starttimeEntry.pack()
+
+startcolumn =tkinter.Label(root,text="Enter Column: ")
+startcolumnEntry=tkinter.StringVar()
+startcolumnEntry.set('Open')
 startcolumn.pack()
-startcolumnEntry.pack()
+startcolumnEntrydrop=tkinter.OptionMenu(root, startcolumnEntry, *columns)
+startcolumnEntrydrop.pack()
+
+startmodel =tkinter.Label(root,text="Enter Model: ")
+startmodelEntry=tkinter.StringVar()
+startmodelEntry.set('KNN')
 startmodel.pack()
-startmodelEntry.pack()
+startmodelEntrydrop=tkinter.OptionMenu(root, startmodelEntry, *model)
+startmodelEntrydrop.pack()
 
 plotButton= tkinter.Button(root,text="RUN", command=call)
-
 plotButton.pack()
 
 root.mainloop()

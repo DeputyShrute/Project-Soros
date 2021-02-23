@@ -18,7 +18,7 @@ class Model:
 
     def __init__(self, symbol, timestep, column, model_type):
         print('Constructor Initialised')
-        self.symbol = symbol
+        self.symbol = symbol.upper()
         self.timestep = timestep
         self.column = column.upper()
         if self.column == 'OPEN':
@@ -27,7 +27,9 @@ class Model:
             self.column = 3
         if self.column == 'LOW':
             self.column = 4
-        self.model_type = model_type
+        if self.column == 'CLOSE':
+            self.column = 5 
+        self.model_type = model_type.upper()
     
     def __str__(self):
         return self.model_type

@@ -59,7 +59,7 @@ class MLP:
 
         # fit model
         history = model.fit(X_train, y_train, validation_data=(
-            X_val, y_val), epochs=1000, verbose=2)
+            X_val, y_val), epochs=100, verbose=2)
 
         return history, model
 
@@ -73,22 +73,22 @@ class MLP:
 class KNN:
 
     def KNN_train_model(self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq):
-        Range_k = range(1,20)
+        Range_k = range(1, 10)
         scores = {}
         scores_list = []
         for k in Range_k:
             classifier = KNeighborsClassifier(n_neighbors=k)
             classifier.fit(X_train, y_train)
             y_pred = classifier.predict(X_test)
-            #print(y_pred)
+            # print(y_pred)
             scores[k] = metrics.accuracy_score(y_test, y_pred)
             scores_list.append(metrics.accuracy_score(y_test, y_pred))
-        result = metrics.confusion_matrix(y_test, y_pred)
-        print("Confusion Matrix:")
-        print(result)
-        result1 = metrics.classification_report(y_test, y_pred)
-        print("Classification Report:",)
-        print(result1)
+            result = metrics.confusion_matrix(y_test, y_pred)
+            print("Confusion Matrix:")
+            print(result)
+            result1 = metrics.classification_report(y_test, y_pred)
+            print("Classification Report:",)
+            print(result1)
 
         plt.plot(Range_k, scores_list)
         plt.title('Model Accuarcy / K Value')
