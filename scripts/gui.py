@@ -1,13 +1,20 @@
 import tkinter
+from tkinter import messagebox
 from typing import Text
 import subprocess as sub
 from data_scraper import get_data
 from model_start import Model
 
+
 def call():
         a = startLabelEntry.get()
         b = starttimeEntry.get()
-        b = int(b)
+        try:
+                b = int(b)
+        except:
+                show_method  = getattr(messagebox, 'show{}'.format('warning'))
+                show_method('Warning', 'Value needs to be an Integer')
+
         c = startcolumnEntry.get()
         d = startmodelEntry.get()
 
