@@ -1,3 +1,4 @@
+#from scripts.models import LSTM
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 from keras.layers.convolutional import MaxPooling1D
@@ -8,15 +9,16 @@ from keras.models import Sequential
 from matplotlib import pyplot
 import tensorflow as tf
 from numpy import array
-from models import CNN, MLP, KNN
+from models import CNN, MLP, KNN, LSTMs
 import csv
 import os
 import time
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
+
 class Model:
 
-    def __init__(self, symbol, timestep, column, model_type):
+    def __init__(self, symbol, timestep, column, model_type, verbose=0):
         print('Constructor Initialised')
         self.symbol = symbol.upper()
         self.timestep = timestep
@@ -28,9 +30,10 @@ class Model:
         if self.column == 'LOW':
             self.column = 4
         if self.column == 'CLOSE':
-            self.column = 5 
+            self.column = 5
         self.model_type = model_type.upper()
-    
+        self.verbose = verbose
+
     def __str__(self):
         return self.model_type
 
@@ -87,7 +90,8 @@ class Model:
         X_train, X_val, y_train, y_val = Model.split_data(
             raw_seq, new_seq, self.timestep, 0.2)
 
-        Model.check_model(self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq)
+        Model.check_model(self, X_train, X_val, y_train,
+                          y_val, X_test, y_test, raw_seq)
 
     def plotting(history):
         # Plot accuracy metrics
@@ -103,6 +107,8 @@ class Model:
         pyplot.legend()
         pyplot.show()
 
+        return
+
     def accuracy(yhat, y_test):
 
         # Print and log output
@@ -115,15 +121,13 @@ class Model:
             if i < 0.5:
                 yhat_new.append(0)
         print(confusion_matrix(yhat_new, y_test))
-        
+
         for i in range(len(yhat)):
             if yhat_new[i] == y_test[i]:
                 acc.append(1)
             else:
                 acc.append(0)
         print((sum(acc)/len(acc))*100)
-
-
 
     def log(yhat, iteration=0):
         outF = open('output.txt', 'a')
@@ -144,26 +148,35 @@ class Model:
         if yhat < 0.5:
             print('Down')
 
-    def check_model(self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq):  
+    def check_model(self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq):
 
         if self.model_type == 'CNN':
-            history, model = CNN.CNN_train_model(self, X_train, X_val, y_train, y_val)
+            history, model = CNN.CNN_train_model(
+                self, X_train, X_val, y_train, y_val, self.verbose, X_test, y_test)
             Model.plotting(history)
-            yhat = CNN.CNN_test_model(X_test, model)
+            yhat = CNN.CNN_test_model(X_test, model, self.verbose, y_test)
             Model.accuracy(yhat, y_test)
 
         if self.model_type == 'MLP':
-            history, model = MLP.MLP_train_model(self, X_train, X_val, y_train, y_val)
+            history, model = MLP.MLP_train_model(
+                self, X_train, X_val, y_train, y_val, self.verbose)
             Model.plotting(history)
-            yhat = MLP.MLP_test_model(X_test, model)
+            yhat = MLP.MLP_test_model(X_test, model, self.verbose, y_test)
             Model.accuracy(yhat, y_test)
-        
+
         if self.model_type == 'KNN':
-            yhat = KNN.KNN_train_model(self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq)
+            yhat = KNN.KNN_train_model(
+                self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq)
             Model.accuracy(yhat, y_test)
-             
+
+        if self.model_type == 'LSTM':
+            history, model = LSTMs.LSTM_train_model(
+                self, X_train, X_val, y_train, y_val, self.verbose, X_test, y_test)
+            Model.plotting(history)
+            yhat = LSTMs.LSTM_test_model(X_test, model, self.verbose, y_test)
+            Model.accuracy(yhat, y_test)
 
 
 if __name__ == "__main__":
-    Open = Model('AUDCAD', 100, 'open', 'KNN')
+    Open = Model('EURUSD', 250, 'open', 'LSTM')
     Open.data()

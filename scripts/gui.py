@@ -17,8 +17,14 @@ def call():
 
         c = startcolumnEntry.get()
         d = startmodelEntry.get()
+        e = verboseLevelEntry.get()
+        try:
+                e = int(e)
+        except:
+                show_method  = getattr(messagebox, 'show{}'.format('warning'))
+                show_method('Warning', 'Value needs to be an Integer')
 
-        Open = Model(a,b,c,d)
+        Open = Model(a,b,c,d,e)
         Open.data()
 
 currency_pair = ["EURUSD", "EURJPY", "USDCHF", "GBPUSD", "USDJPY", "USDCAD", "AUDUSD", "EURGBP", "EURAUD", "EURCHF", "GBPCHF", "CADJPY", "GBPJPY",
@@ -56,6 +62,11 @@ startmodelEntry.set('KNN')
 startmodel.pack()
 startmodelEntrydrop=tkinter.OptionMenu(root, startmodelEntry, *model)
 startmodelEntrydrop.pack()
+
+verboseLevel =tkinter.Label(root,text="Enter Verbose: ")
+verboseLevelEntry=tkinter.Entry(root)
+verboseLevel.pack()
+verboseLevelEntry.pack()
 
 plotButton= tkinter.Button(root,text="RUN", command=call)
 plotButton.pack()
