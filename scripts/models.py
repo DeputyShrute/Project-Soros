@@ -140,15 +140,17 @@ class KNN:
 class LSTMs:
 
     def LSTM_train_model(self, X_train, X_val, y_train, y_val, verbose, X_test, y_test):
-        
+
         X_train = X_train.reshape((X_train.shape[0], X_train.shape[1], 1))
         X_val = X_val.reshape((X_val.shape[0], X_val.shape[1], 1))
 
         model = Sequential()
-        model.add(LSTM(50, activation='sigmoid',return_sequences=True, input_shape=(self.timestep, 1)))
+        model.add(LSTM(50, activation='sigmoid',
+                       return_sequences=True, input_shape=(self.timestep, 1)))
         model.add(LSTM(50, activation='sigmoid'))
         model.add(Dense(1))
-        model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+        model.compile(optimizer='adam',
+                      loss='binary_crossentropy', metrics=['accuracy'])
         model.summary()
 
         history = model.fit(
