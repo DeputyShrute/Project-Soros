@@ -87,8 +87,8 @@ class Model:
             raw_seq, new_seq, self.timestep, 0.2)
 
         # Splits the data into test and val (data, windows, size of val)
-        X_train, X_val, y_train, y_val = Model.split_data(
-            raw_seq, new_seq, self.timestep, 0.2)
+        X_train, X_val, y_train, y_val = train_test_split(
+            X_train, y_train, test_size=0.2)
 
         Model.check_model(self, X_train, X_val, y_train,
                           y_val, X_test, y_test, raw_seq)
@@ -178,5 +178,5 @@ class Model:
 
 
 if __name__ == "__main__":
-    Open = Model('EURUSD', 250, 'open', 'LSTM')
+    Open = Model('EURUSD', 250, 'open', 'CNN')
     Open.data()
