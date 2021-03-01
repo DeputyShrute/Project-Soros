@@ -46,23 +46,8 @@ class CNN:
 
         X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
         yhat = model.predict(X_test, verbose=verbose)
-
-        yhat_new = []
-        acc = []
-        for i in yhat:
-            if i > 0.5:
-                yhat_new.append(1)
-            if i < 0.5:
-                yhat_new.append(0)
-
-        result = metrics.confusion_matrix(y_test, yhat_new)
-        print("Confusion Matrix:")
-        print(result)
-        result1 = metrics.classification_report(y_test, yhat_new)
-        print("Classification Report:",)
-        print(result1)
-        print(accuracy_score(y_test, yhat_new))
-
+        
+        #print(yhat)
         return yhat
 
 
@@ -89,22 +74,6 @@ class MLP:
         score = mean_absolute_error(y_test, yhat)
         print('MAE: %.3f' % score)
 
-        yhat_new = []
-        acc = []
-        for i in yhat:
-            if i > 0.5:
-                yhat_new.append(1)
-            if i < 0.5:
-                yhat_new.append(0)
-
-        result = metrics.confusion_matrix(y_test, yhat_new)
-        print("Confusion Matrix:")
-        print(result)
-        result1 = metrics.classification_report(y_test, yhat_new)
-        print("Classification Report:",)
-        print(result1)
-        print(accuracy_score(y_test, yhat_new))
-
         return yhat
 
 
@@ -123,18 +92,6 @@ class KNN:
         scores_list.append(metrics.accuracy_score(y_test, y_pred))
         result = metrics.confusion_matrix(y_test, y_pred)
 
-        print("Confusion Matrix:")
-        print(result)
-        result1 = metrics.classification_report(y_test, y_pred)
-        print("Classification Report:",)
-        print(result1)
-        print(accuracy_score(y_test, y_pred))
-
-        plt.plot(Range_k, scores_list)
-        plt.title('Model Accuarcy / K Value')
-        plt.xlabel("Value of K")
-        plt.ylabel("Accuracy")
-        plt.show()
 
 
 class LSTMs:
@@ -145,12 +102,12 @@ class LSTMs:
         X_val = X_val.reshape((X_val.shape[0], X_val.shape[1], 1))
 
         model = Sequential()
-        model.add(LSTM(50, activation='sigmoid',
+        model.add(LSTM(50, activation='relu',
                        return_sequences=True, input_shape=(self.timestep, 1)))
-        model.add(LSTM(50, activation='sigmoid'))
+        model.add(LSTM(50, activation='relu'))
         model.add(Dense(1))
         model.compile(optimizer='adam',
-                      loss='binary_crossentropy', metrics=['accuracy'])
+                      loss='mse', metrics=['accuracy'])
         model.summary()
 
         history = model.fit(
@@ -163,20 +120,6 @@ class LSTMs:
         X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
         yhat = model.predict(X_test, verbose=verbose)
 
-        yhat_new = []
-        acc = []
-        for i in yhat:
-            if i > 0.5:
-                yhat_new.append(1)
-            if i < 0.5:
-                yhat_new.append(0)
-
-        result = metrics.confusion_matrix(y_test, yhat_new)
-        print("Confusion Matrix:")
-        print(result)
-        result1 = metrics.classification_report(y_test, yhat_new)
-        print("Classification Report:",)
-        print(result1)
-        print(accuracy_score(y_test, yhat_new))
+        print(yhat)
 
         return yhat

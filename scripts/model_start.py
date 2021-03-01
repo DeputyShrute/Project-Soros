@@ -1,6 +1,7 @@
 #from scripts.models import LSTM
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
+from sklearn import preprocessing
 from keras.layers.convolutional import MaxPooling1D
 from keras.layers.convolutional import Conv1D
 from keras.layers import Flatten
@@ -50,6 +51,8 @@ class Model:
             X.append(seq_x)
             y.append(seq_y)
 
+        #raw_seq = [float(i)/max(raw_seq) for i in raw_seq]
+
         return array(X), array(y)
 
     def data(self):
@@ -65,20 +68,24 @@ class Model:
         Model.train_test(self, raw_seq)
 
     def split_data(raw_seq, n_steps, size):
+
         # split into samples
         X, y = Model.split_sequence(raw_seq, n_steps)
+
         X_train, X_test, y_train, y_test = train_test_split(
             X, y, test_size=size)
         return X_train, X_test, y_train, y_test
 
-    def train_test(self, raw_seq, new_seq):
+    def train_test(self, raw_seq, ):
         # Splits the data into test and train (data, windows, size of test)
         X_train, X_test, y_train, y_test = Model.split_data(
-            raw_seq, new_seq, self.timestep, 0.2)
+            raw_seq, self.timestep, 0.2)
+        
+        print(X_test[-20:])
 
         # Splits the data into test and val (data, windows, size of val)
-        X_train, X_val, y_train, y_val = Model.split_data(
-            X_train, X_test, self.timestep, 0.2)
+        X_train, X_val, y_train, y_val = train_test_split(
+            X_train, y_train, test_size=0.2)
 
         Model.check_model(self, X_train, X_val, y_train,
                           y_val, X_test, y_test, raw_seq)
@@ -99,38 +106,11 @@ class Model:
 
         return
 
-    def accuracy(yhat, y_test):
+    def accuracy(yhat, y_test, X_test):
+        i = 0
+        for i in X_test[1:]:
+            print(i)
 
-        # Print and log output
-        print("----------------")
-        yhat_new = []
-        acc = []
-        for i in yhat:
-            if i > 0.5:
-                yhat_new.append(1)
-            if i < 0.5:
-                yhat_new.append(0)
-        print(confusion_matrix(yhat_new, y_test))
-
-        for i in range(len(yhat)):
-            if yhat_new[i] == y_test[i]:
-                acc.append(1)
-            else:
-                acc.append(0)
-        print((sum(acc)/len(acc))*100)
-
-    def log(yhat, iteration=0):
-        outF = open('output.txt', 'a')
-        for i in yhat:
-            output = "\nIteration: %d\n" % (iteration)
-            column = "Open Price\n"
-            outF.write(column)
-            outF.write(str(output))
-            outF.write(str(i).strip("[]"))
-            outF.write('\n')
-            outF.write('------------------------')
-            outF.write('\n')
-        outF.close()
 
     def direction(yhat):
         if yhat >= 0.5:
@@ -145,28 +125,28 @@ class Model:
                 self, X_train, X_val, y_train, y_val, self.verbose, X_test, y_test)
             Model.plotting(history)
             yhat = CNN.CNN_test_model(X_test, model, self.verbose, y_test)
-            Model.accuracy(yhat, y_test)
+            Model.accuracy(yhat, y_test, X_test)
 
         if self.model_type == 'MLP':
             history, model = MLP.MLP_train_model(
                 self, X_train, X_val, y_train, y_val, self.verbose)
             Model.plotting(history)
             yhat = MLP.MLP_test_model(X_test, model, self.verbose, y_test)
-            Model.accuracy(yhat, y_test)
+            Model.accuracy(yhat, y_test, X_test)
 
         if self.model_type == 'KNN':
             yhat = KNN.KNN_train_model(
                 self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq)
-            Model.accuracy(yhat, y_test)
+            Model.accuracy(yhat, y_test, X_test)
 
         if self.model_type == 'LSTM':
             history, model = LSTMs.LSTM_train_model(
                 self, X_train, X_val, y_train, y_val, self.verbose, X_test, y_test)
             Model.plotting(history)
             yhat = LSTMs.LSTM_test_model(X_test, model, self.verbose, y_test)
-            Model.accuracy(yhat, y_test)
+            Model.accuracy(yhat, y_test, X_test)
 
 
 if __name__ == "__main__":
-    Open = Model('EURUSD', 250, 'open', 'LSTM')
+    Open = Model('EURUSD', 20, 'open', 'CNN', 0)
     Open.data()
