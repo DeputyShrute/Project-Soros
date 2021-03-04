@@ -1,7 +1,5 @@
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_absolute_error
-from sklearn.metrics import accuracy_score, classification_report
-from sklearn import metrics
 from keras.layers.convolutional import MaxPooling1D
 from keras.layers.convolutional import Conv1D
 from keras.layers import Flatten
@@ -9,6 +7,7 @@ from keras.layers import Dense
 from keras.models import Sequential
 from keras.layers import LSTM
 import matplotlib.pyplot as plt
+import statistics
 from tensorflow.python.keras.callbacks import History
 
 
@@ -27,7 +26,7 @@ class CNN:
                          activation='relu', input_shape=(self.timestep, 1)))
         model.add(MaxPooling1D(pool_size=2))
         model.add(Flatten())
-        model.add(Dense(100, activation='relu'))
+        model.add(Dense(50, activation='relu'))
         model.add(Dense(1))
         model.compile(optimizer='adam', loss='mse', metrics=['accuracy'])
         model.summary()
@@ -46,8 +45,8 @@ class CNN:
 
         X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
         yhat = model.predict(X_test, verbose=verbose)
-        
-        #print(yhat)
+
+        # print(yhat)
         return yhat
 
 
@@ -56,7 +55,7 @@ class MLP:
     def MLP_train_model(self, X_train, X_val, y_train, y_val, verbose):
 
         model = Sequential()
-        model.add(Dense(1000, activation='relu', input_dim=(self.timestep)))
+        model.add(Dense(200, activation='relu', input_dim=(self.timestep)))
         #model.add(Dense(2, activation='relu'))
         model.add(Dense(1))
         model.compile(optimizer='adam', loss='mse', metrics=['accuracy'])
@@ -64,7 +63,7 @@ class MLP:
 
         # fit model
         history = model.fit(X_train, y_train, validation_data=(
-            X_val, y_val), epochs=5000, verbose=verbose)
+            X_val, y_val), epochs=1000, verbose=verbose)
 
         return history, model
 
@@ -80,18 +79,35 @@ class MLP:
 class KNN:
 
     def KNN_train_model(self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq):
-        Range_k = 1
-        scores = {}
-        scores_list = []
-        classifier = KNeighborsClassifier(n_neighbors=1)
-        classifier.fit(X_train, y_train)
-        y_pred = classifier.predict(X_test)
-        # print(y_pred)
+        X_test = [[1.211534,1.216619,1.216856,1.214329,1.216323,1.210478,1.212136,1.212283,1.206768,1.203905,1.204181,1.196745,1.204935,1.205255,1.211695,1.211945,1.213003,1.212106,1.213239,1.2088540]]
+        for m in range (1,148):
+            classifier = KNeighborsRegressor(n_neighbors=m)
+            classifier.fit(X_train, y_train)
+            y_pred = classifier.predict(X_test)
+            print(y_pred)
+            #print(y_test)
+            accuracy = []
+            for i in range(len(y_pred)):
+                acheived = float(y_pred[i])
+                #print('Acheived: ',acheived)
+                actual = float(y_test[i])
+                #print('Actual: ', actual)
+                val = (acheived/actual)*100
+                accuracy.append(val)
+            # print(accuracy)
+            new_acc = []
+            for j in range(len(accuracy)):
+                if accuracy[j] < 100:
+                    val = float(accuracy[j])
+                    new_acc.append(100-val)
 
-        scores = metrics.accuracy_score(y_test, y_pred)
-        scores_list.append(metrics.accuracy_score(y_test, y_pred))
-        result = metrics.confusion_matrix(y_test, y_pred)
+                if accuracy[j] > 100:
+                    val = float(accuracy[j])
+                    new_acc.append(val - 100)
 
+            total = (statistics.mean(new_acc)*100)
+
+            print('K:',m, total)
 
 
 class LSTMs:

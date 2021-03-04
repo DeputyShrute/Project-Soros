@@ -1,16 +1,10 @@
-#from scripts.models import LSTM
+# from scripts.models import LSTM
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import confusion_matrix
-from sklearn import preprocessing
-from keras.layers.convolutional import MaxPooling1D
-from keras.layers.convolutional import Conv1D
-from keras.layers import Flatten
-from keras.layers import Dense
-from keras.models import Sequential
-from matplotlib import pyplot
-import tensorflow as tf
+import matplotlib.pyplot as plt
+import sklearn.metrics as sm
 from numpy import array
 from models import CNN, MLP, KNN, LSTMs
+import statistics
 import csv
 import os
 import time
@@ -51,7 +45,7 @@ class Model:
             X.append(seq_x)
             y.append(seq_y)
 
-        #raw_seq = [float(i)/max(raw_seq) for i in raw_seq]
+        # raw_seq = [float(i)/max(raw_seq) for i in raw_seq]
 
         return array(X), array(y)
 
@@ -80,8 +74,6 @@ class Model:
         # Splits the data into test and train (data, windows, size of test)
         X_train, X_test, y_train, y_test = Model.split_data(
             raw_seq, self.timestep, 0.2)
-        
-        print(X_test[-20:])
 
         # Splits the data into test and val (data, windows, size of val)
         X_train, X_val, y_train, y_val = train_test_split(
@@ -92,25 +84,26 @@ class Model:
 
     def plotting(history):
         # Plot accuracy metrics
-        pyplot.title('Loss / Mean Squared Error')
-        pyplot.plot(history.history['loss'], label='Train')
-        pyplot.plot(history.history['val_loss'], label='Val')
-        pyplot.legend()
-        pyplot.show()
+        plt.title('Loss / Mean Squared Error')
+        plt.plot(history.history['loss'], label='Train')
+        plt.plot(history.history['val_loss'], label='Val')
+        plt.legend()
+        plt.show()
 
-        pyplot.title('Accuracy')
-        pyplot.plot(history.history['accuracy'], label='Train')
-        pyplot.plot(history.history['val_accuracy'], label='Val')
-        pyplot.legend()
-        pyplot.show()
+        # plt.title('Accuracy')
+        # plt.plot(history.history['accuracy'], label='Train')
+        # plt.plot(history.history['val_accuracy'], label='Val')
+        # plt.legend()
+        # plt.show()
 
         return
 
     def accuracy(yhat, y_test, X_test):
-        i = 0
-        for i in X_test[1:]:
-            print(i)
-
+        print("Mean absolute error =", round(sm.mean_absolute_error(y_test, yhat), 2)) 
+        print("Mean squared error =", round(sm.mean_squared_error(y_test, yhat), 2)) 
+        print("Median absolute error =", round(sm.median_absolute_error(y_test, yhat), 2)) 
+        print("Explain variance score =", round(sm.explained_variance_score(y_test, yhat), 2)) 
+        print("R2 score =", round(sm.r2_score(y_test, yhat), 2))
 
     def direction(yhat):
         if yhat >= 0.5:
@@ -148,5 +141,5 @@ class Model:
 
 
 if __name__ == "__main__":
-    Open = Model('EURUSD', 20, 'open', 'CNN', 0)
+    Open = Model('EURUSD', 20, 'open', 'MLP', 0)
     Open.data()
