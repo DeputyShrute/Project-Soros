@@ -1,0 +1,38 @@
+- model: start
+  description: Starting the data process
+  operations:
+    train:
+      description: Training script
+      main: model_start
+      flags-import: all
+      output-scalars:
+        Mean_absolute_error: 'Mean absolute error: (\value)'
+        Mean_squared_error: 'Mean squared error: (\value)'
+        Explain_variance_score: 'Explain variance score: (\value)'
+        R2: 'R2 Score: (\value)'
+
+- model: Main models
+  description: main models file
+  operations:
+    train:
+      description: Train the models
+      main: models
+      flags:
+        filters:
+          description: Number of filters
+          default: 64
+        kernel_size:
+          description: Number of Kernels
+          default: 2
+        activation:
+          description: activation type
+          default: relu
+          choices: [sigmoid, softmax]
+        pool_size:
+          description: pool pool
+          default: 2
+        epochs:
+          description: number of epochs
+          default: 1000
+          choices: [1, 10, 100, 250, 500]
+
