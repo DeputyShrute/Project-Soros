@@ -181,7 +181,7 @@ class CNN:
 
     def CNN_train_model(self, X_train, X_val, y_train, y_val, verbose):
         features = X_train.shape[2]
-        neuron_Val = 1
+        neuron_Val = 50
         # define model
         model = Sequential()
         # Conveluted layer
