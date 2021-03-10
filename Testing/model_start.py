@@ -19,17 +19,19 @@ from numpy import array
 import csv
 import os
 import time
+os.environ["CUDA_VISIBLE_DEVICES"]="-1"
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 
 class Model:
 
-    def __init__(self, symbol, timestep, model_type, verbose=0):
+    def __init__(self, symbol, timestep, model_type,layers,verbose=0 ):
         print('Constructor Initialised')
         self.symbol = symbol.upper()
         self.timestep = timestep
         self.model_type = model_type.upper()
         self.verbose = verbose
+        self.layers = layers
 
     def __str__(self):
         return self.model_type
@@ -74,8 +76,8 @@ class Model:
         low_col = array(low_col)
         clos_col = array(clos_col)
 
-        #raw_seq = array([open_col[i]+high_col[i]+low_col[i]+clos_col[i]
-                         #for i in range(len(open_col))])
+        # raw_seq = array([open_col[i]+high_col[i]+low_col[i]+clos_col[i]
+        # for i in range(len(open_col))])
 
         Model.data_prep(self, open_col, high_col, low_col, clos_col, raw_seq)
 
@@ -116,7 +118,7 @@ class Model:
         plt.plot(history.history['loss'], label='Train')
         plt.plot(history.history['val_loss'], label='Val')
         plt.legend()
-        #plt.show()
+        # plt.show()
 
         # plt.title('Accuracy')
         # plt.plot(history.history['accuracy'], label='Train')
@@ -128,17 +130,15 @@ class Model:
 
     def accuracy(yhat, y_test, X_test):
         columns = ['Open', 'High', 'Low', 'Close']
-        for i in range(0,4):
-            print(columns[i])
-            print("Mean absolute error =", round(
-                sm.mean_absolute_error(y_test[i], yhat[i]), 4))
-            print("Mean squared error =", round(
-                sm.mean_squared_error(y_test[i], yhat[i]), 4))
-            # print("Median absolute error =", round(
-            #     sm.median_absolute_error(y_test[i], yhat[i]), 20))
-            print("Explain variance score =", round(
-                sm.explained_variance_score(y_test[i], yhat[i]), 4))
-            print("R2 score =", round(sm.r2_score(y_test[i], yhat[i]), 4))
+        X = (round(sm.mean_absolute_error(y_test, yhat), 20))
+        y = (round(sm.mean_squared_error(y_test, yhat), 20))
+        q = (round(sm.r2_score(y_test, yhat), 20))
+
+        with open('C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Testing/data.csv', 'a+', newline='') as csvfile:
+            csvwriter = csv.writer(csvfile)
+            #csvwriter.writerow(['Column', 'Mean absolute error', 'Mean squared error', 'Explain variance score', 'R2 score', kval])
+            #for i in range(0, 4):
+            csvwriter.writerow([X, y, q])
 
     def direction(yhat):
         if yhat >= 0.5:
@@ -156,26 +156,25 @@ class Model:
             Model.accuracy(yhat, y_test, X_test)
 
         if self.model_type == 'MLP':
-            X_train, X_val, y_train, n_input, n_output = MLP.data_format(X_train, X_val, y_train)
-            history, model = MLP.MLP_train_model(
-                self, X_train, X_val, y_train, y_val, self.verbose, n_input, n_output)
-            Model.plotting(history)
-            yhat = MLP.MLP_test_model(X_test, model, self.verbose, y_test)
-            Model.accuracy(yhat, y_test, X_test)
+           MLP.data_format(self, X_train, X_val, y_train, y_val, self.verbose, X_test, y_test)
+            #history, model = MLP.MLP_train_model(
+            #    self, X_train, X_val, y_train, y_val, self.verbose, n_input, n_output)
+            #Model.plotting(history)
+            #yhat = MLP.MLP_test_model(X_test, model, self.verbose, y_test)
+            #Model.accuracy(yhat, y_test, X_test)
 
         if self.model_type == 'KNN':
-            X_train, X_val, y_train, X_test= KNN.data_format(X_train, X_val, y_train, X_test)
-            yhat = KNN.KNN_train_model(
-                self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq)
-            Model.accuracy(yhat, y_test, X_test)
+            KNN.data_format(self, X_train, y_train, X_test, y_test)
+            #Model.accuracy(yhat, y_test, X_test)
 
         if self.model_type == 'LSTM':
-            
+
             history, model = LSTMs.LSTM_train_model(
                 self, X_train, X_val, y_train, y_val, self.verbose)
             Model.plotting(history)
             yhat = LSTMs.LSTM_test_model(X_test, model, self.verbose)
             Model.accuracy(yhat, y_test, X_test)
+
 
 class CNN:
 
@@ -191,8 +190,9 @@ class CNN:
         model.add(Flatten())
         model.add(Dense(neuron_Val, activation='relu'))
         model.add(Dense(4))
-        model.compile(optimizer='adam', loss='mse', metrics=['mean_squared_error'])
-        #model.summary()
+        model.compile(optimizer='adam', loss='mse',
+                      metrics=['mean_squared_error'])
+        # model.summary()
 
         # fit model
         history = model.fit(
@@ -207,69 +207,127 @@ class CNN:
 
 
 class MLP:
-    def data_format(X_train, X_val, y_train):
+    def data_format(self, X_train, X_val, y_train, y_val, verbose, X_test, y_test):
         n_input = X_train.shape[1] * X_train.shape[2]
         X_train = X_train.reshape((X_train.shape[0], n_input))
         X_val = X_val.reshape((X_val.shape[0], n_input))
         n_output = y_train.shape[1]
 
-        return X_train, X_val, y_train, n_input, n_output
+        n_input_1 = X_test.shape[1] * X_test.shape[2]
+        X_test = X_test.reshape((X_test.shape[0], n_input_1))
+
+        r2 = 0
+        mae = 0
+        mse = 0
+
+        #return X_train, X_val, y_train, n_input, n_output
+
+    #def MLP_train_model(self, X_train, X_val, y_train, y_val, verbose, n_input, n_output):
+        for i in range(1,5):
+            print('loop:',i)
+            model = Sequential()
+            model.add(Dense(self.layers, activation='relu', input_dim=n_input))
+            #model.add(Dense(2, activation='relu'))
+            model.add(Dense(n_output))
+            model.compile(optimizer='adam', loss='mse',
+                        metrics=['mean_squared_error'])
+            #model.summary()
+
+            # fit model
+            history = model.fit(X_train, y_train, validation_data=(
+                X_val, y_val), epochs=1000, verbose=verbose)
+
+            #return history, model
+
+        #def MLP_test_model(X_test, model, verbose, y_test):
 
 
-    def MLP_train_model(self, X_train, X_val, y_train, y_val, verbose, n_input, n_output ):
 
-        model = Sequential()
-        model.add(Dense(200, activation='relu', input_dim=(n_input)))
-        #model.add(Dense(2, activation='relu'))
-        model.add(Dense(n_output))
-        model.compile(optimizer='adam', loss='mse', metrics=['mean_squared_error'])
-        model.summary()
+            yhat = model.predict(X_test, verbose=verbose)
 
-        # fit model
-        history = model.fit(X_train, y_train, validation_data=(
-            X_val, y_val), epochs=1000, verbose=verbose)
+            X = (round(sm.mean_absolute_error(y_test, yhat), 20))
+            y = (round(sm.mean_squared_error(y_test, yhat), 20))
+            q = (round(sm.r2_score(y_test, yhat), 20))
 
-        return history, model
+            if r2 == 0:
+                r2 = q
+            elif r2 > q:
+                r2 = q
 
-    def MLP_test_model(X_test, model, verbose, y_test):
+            if mae == 0:
+                mae = X
+            elif mae > X:
+                mae = X
 
-        n_input = X_test.shape[1] * X_test.shape[2]
-        X_test = X_test.reshape((X_test.shape[0], n_input))
-        yhat = model.predict(X_test, verbose=verbose)
+            if mse == 0:
+                mse = y
+            elif mse > y:
+                mse = y
+        
 
-        return yhat
+        with open('C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Testing/data.csv', 'a+', newline='') as csvfile:
+            csvwriter = csv.writer(csvfile)
+            #csvwriter.writerow(['Column', 'Mean absolute error', 'Mean squared error', 'Explain variance score', 'R2 score', kval])
+            #for i in range(0, 4):
+            csvwriter.writerow([mae, mse, r2])
+
+        #return yhat
 
 
 class KNN:
 
-    def data_format(X_train, X_val, y_train, X_test):
+    def data_format(self, X_train, y_train, X_test, y_test):
         n_input = X_train.shape[1] * X_train.shape[2]
         X_train = X_train.reshape((X_train.shape[0], n_input))
-        X_val = X_val.reshape((X_val.shape[0], n_input))
         X_test = X_test.reshape((X_test.shape[0], n_input))
         n_output = y_train.shape[1]
 
-        return X_train, X_val, y_train, X_test
+        r2 = 0
+        mae = 0
+        mse = 0
+        
+        #return X_train, X_val, y_train, X_test
 
-
-    def KNN_train_model(self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq):
-        for m in range(1, 148):
-            classifier = KNeighborsRegressor(n_neighbors=m)
+    #def KNN_train_model(self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq):
+        #kval = 1000
+        for i in range(1,5):
+            print('loop:', i)
+            classifier = KNeighborsRegressor(n_neighbors = self.layers)
             classifier.fit(X_train, y_train)
             y_pred = classifier.predict(X_test)
 
-            columns = ['Open', 'High', 'Low', 'Close']
-            for i in range(0,4):
-                print(columns[i])
-                print("Mean absolute error =", round(
-                    sm.mean_absolute_error(y_test[i], y_pred[i]), 20))
-                print("Mean squared error =", round(
-                    sm.mean_squared_error(y_test[i], y_pred[i]), 20))
-                print("Median absolute error =", round(
-                    sm.median_absolute_error(y_test[i], y_pred[i]), 20))
-                print("Explain variance score =", round(
-                    sm.explained_variance_score(y_test[i], y_pred[i]), 20))
-                print("R2 score =", round(sm.r2_score(y_test[i], y_pred[i]), 20))
+            X = (round(sm.mean_absolute_error(y_test, y_pred), 20))
+            y = (round(sm.mean_squared_error(y_test, y_pred), 20))
+            q = (round(sm.r2_score(y_test, y_pred), 20))
+
+            print(y_pred)
+
+            print(q)
+
+            if r2 == 0:
+                r2 = q
+            elif r2 > q:
+                r2 = q
+
+            if mae == 0:
+                mae = X
+            elif mae > X:
+                mae = X
+
+            if mse == 0:
+                mse = y
+            elif mse > y:
+                mse = y
+        
+
+        with open('C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Testing/data.csv', 'a+', newline='') as csvfile:
+            csvwriter = csv.writer(csvfile)
+            #csvwriter.writerow(['Column', 'Mean absolute error', 'Mean squared error', 'Explain variance score', 'R2 score', kval])
+            #for i in range(0, 4):
+            csvwriter.writerow([mae, mse, r2])
+
+        
+        #return y_pred
 
 
 class LSTMs:
@@ -302,6 +360,29 @@ class LSTMs:
 
 
 if __name__ == "__main__":
-    timeframe = 10
-    Open = Model('EURUSD', timeframe,'CNN', 0)
-    Open.data()
+    timeframe = [1,20,50,100,250,500,1000]
+    for i in timeframe:
+        window = i
+        print('Window:', i)
+        Open = Model('EURUSD', window, 'KNN', 1)
+        Open.data()
+    for i in timeframe:
+        print('Window:', i)
+        Open = Model('EURUSD', window, 'KNN', 10)
+        Open.data()
+    for i in timeframe:
+        print('Window:', i)
+        Open = Model('EURUSD', window, 'KNN', 100)
+        Open.data()
+    for i in timeframe:
+        print('Window:', i)
+        Open = Model('EURUSD', window, 'KNN', 250)
+        Open.data()
+    for i in timeframe:
+        print('Window:', i)
+        Open = Model('EURUSD', window, 'KNN', 500)
+        Open.data()
+    for i in timeframe:
+        print('Window:', i)
+        Open = Model('EURUSD', window, 'KNN', 1000)
+        Open.data()
