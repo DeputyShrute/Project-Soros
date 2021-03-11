@@ -11,15 +11,15 @@ def data_validation(x):
     If values are missing, the cell is filled with a mean of the value before and after
     Writes new data frame back to the CSV
     '''
-    data_location = '../Data/' + x + '.csv'
+    data_location = 'C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Data/' + x + '.csv'
     data = pd.read_csv(data_location)
-    data.drop('Volume', axis=1, inplace=True)
-    data.columns = ["Date", "Open", "High", "Low", "Close", "Adj Close"]
+    data.drop("Adj Close", axis=1, inplace=True)
+    data.columns = ["Date", "Open", "High", "Low", "Close", 'Volume']
     print(data.isnull().sum())
     data = data.interpolate()
     print(data.isnull().sum())
     try:
-        data.to_csv('../Data/'+x+'.csv', sep=',')
+        data.to_csv('C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Data/'+x+'.csv', sep=',')
         #candle_identifier(x)
     except FileNotFoundError as e:
                     print("Not found: ", x, e)

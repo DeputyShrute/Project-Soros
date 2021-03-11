@@ -45,7 +45,7 @@ class get_data:
                     continue
                 else:
                     try:
-                        with open('../Data/'+x+'.csv', 'wb') as f:
+                        with open('C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Data/'+x+'.csv', 'wb') as f:
                             f.write(file_download.content)
                     except FileNotFoundError as e:
                         print("Not found: ", x, e)
@@ -58,4 +58,4 @@ class get_data:
 
 
 if __name__ == "__main__":
-    get_data.get_url()
+    get_data.get_url('EURUSD')
