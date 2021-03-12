@@ -45,7 +45,7 @@ class Model:
         open_col, high_col, low_col, clos_col, raw_seq = [], [], [], [], array([
         ])
 
-        with open('C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Data/' + self.symbol + '.csv', 'r') as csv_file:
+        with open('C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Finance_Data/' + self.symbol + '.csv', 'r') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             next(csv_reader)
             for lines in csv_reader:
@@ -120,14 +120,13 @@ class Model:
         for i in range(0,4):
             print(columns[i])
             print("Mean absolute error =", round(
-                sm.mean_absolute_error(y_test[i], yhat[i]), 4))
+                sm.mean_absolute_error(y_test[:,i], yhat[:,i]), 4))
             print("Mean squared error =", round(
-                sm.mean_squared_error(y_test[i], yhat[i]), 4))
-            # print("Median absolute error =", round(
-            #     sm.median_absolute_error(y_test[i], yhat[i]), 20))
+                sm.mean_squared_error(y_test[:,i], yhat[:,i]), 4))
             print("Explain variance score =", round(
-                sm.explained_variance_score(y_test[i], yhat[i]), 4))
-            print("R2 score =", round(sm.r2_score(y_test[i], yhat[i]), 4))
+                sm.explained_variance_score(y_test[:,i], yhat[:,i]), 4))
+            print("R2 score =", round(sm.r2_score(y_test[:,i], yhat[:,i]), 4))
+        print("R2 score =", round(sm.r2_score(y_test, yhat), 4))
 
     def direction(yhat):
         if yhat >= 0.5:
@@ -138,16 +137,17 @@ class Model:
     def check_model(self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq):
 
         if self.model_type == 'CNN':
+            X_train, X_val, y_train, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4 = CNN.data_format(X_train, X_val, y_train)
             history, model = CNN.CNN_train_model(
-                self, X_train, X_val, y_train, y_val, self.verbose)
+                self, X_train, X_val, y_train, y_val, self.verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4)
             Model.plotting(history)
             yhat = CNN.CNN_test_model(X_test, model, self.verbose, y_test)
             Model.accuracy(yhat, y_test, X_test)
 
         if self.model_type == 'MLP':
-            X_train, X_val, y_train, n_input, n_output = MLP.data_format(X_train, X_val, y_train)
+            X_train, X_val, y_train, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4 = MLP.data_format(X_train, X_val, y_train)
             history, model = MLP.MLP_train_model(
-                self, X_train, X_val, y_train, y_val, self.verbose, n_input, n_output)
+                self, X_train, X_val, y_train, y_val, self.verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4)
             Model.plotting(history)
             yhat = MLP.MLP_test_model(X_test, model, self.verbose, y_test)
             Model.accuracy(yhat, y_test, X_test)
@@ -168,6 +168,5 @@ class Model:
 
 
 if __name__ == "__main__":
-    runs = 10
-    Open = Model('EURUSD', 1000, 'CNN', 2)
+    Open = Model('EURUSD', 1000, 'CNN')
     Open.data()

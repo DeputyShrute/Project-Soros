@@ -3,6 +3,7 @@ import requests
 from pathlib import Path
 from data_validation import data_validation
 from model_start import Model
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 class get_data:
 
     def __init__(self, pair):
@@ -45,7 +46,7 @@ class get_data:
                     continue
                 else:
                     try:
-                        with open('../Data/'+x+'.csv', 'wb') as f:
+                        with open('../Finance_Data/'+x+'.csv', 'wb') as f:
                             f.write(file_download.content)
                     except FileNotFoundError as e:
                         print("Not found: ", x, e)
@@ -53,9 +54,9 @@ class get_data:
                 print("Failed to access: ", x)
                 continue
             data_validation(x)
-        Open = Model('EURUSD', 27, 'open', 'KNN')
+        Open = Model('EURUSD', 1, 'open', 'KNN')
         Open.data()
 
 
 if __name__ == "__main__":
-    get_data.get_url()
+    get_data.get_url('EURUSD')
