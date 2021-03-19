@@ -5,34 +5,37 @@
       description: Train the models
       main: model_start
       flags:
-        timeframe:
-          description: timeframe size
-          default: 20
-          choices: [20,50,100,250,500,1000]
+        # timeframe:
+          # description: timeframe size
+          # default: 20
+          # choices: [20,50,100,250,500,1000]
         filters:
           description: Number of filters
           default: 2
-          choices: [2,10,50,100]
-        kernel_size:
-          description: Number of Kernels
-          default: 2
-          choices: [2,10,50,100]
-        activation:
-          description: activation type
-          default: relu
-          choices: [relu, sigmoid, softmax]
-        neuron_Val:
-          description: number of neurons in hidden layer
-          default: 50
-          choices: [50,100,250,1000]
-        pool_size:
-          description: pool
-          default: 2
-          choices: [2,10,50,100]
-        epochs:
-          description: number of epochs
-          default: 1000
-          choices: [100,250,500,1000]
+          choices: [1,50,100,250,500,1000]
+        # kernel_size:
+        #   description: Number of Kernels
+        #   default: 2
+        #   choices: [2,10,50,100]
+        # activation:
+        #   description: activation type
+        #   default: relu
+        #   choices: [relu, sigmoid, softmax]
+        # neuron_Val:
+        #   description: number of neurons in hidden layer
+        #   default: 50
+        #   choices: [1,50,100,250,500,1000]
+        # pool_size:
+        #   description: pool
+        #   default: 2
+        #   choices: [2,10,50,100]
+        # epochs:
+        #   description: number of epochs
+        #   default: 1000
+        #   choices: [100,250,500,1000]
+        # k:
+        #   description: k
+        #   default: 1000
       output-scalars:
         - Mean_absolute_error: 'Mean absolute error = (\value)'
         - Mean_squared_error: 'Mean squared error = (\value)'
