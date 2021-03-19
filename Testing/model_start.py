@@ -64,7 +64,7 @@ class Models:
         open_col, high_col, low_col, clos_col, raw_seq = [], [], [], [], array([
         ])
         # Read input from CSV
-        with open('C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Finance_Data/' + self.symbol + '.csv', 'r') as csv_file:
+        with open('../Finance_Data/' + self.symbol + '.csv', 'r') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             next(csv_reader)
             # Assignes each column within CSV to appropriate Array
@@ -249,7 +249,7 @@ class CNN:
             mae = round(sm.mean_absolute_error(y_test[:,i], yhat[:,i]), 20)
             mse = round(sm.mean_squared_error(y_test[:,i], yhat[:,i]), 20)
             r2 =round(sm.r2_score(y_test[:,i], yhat[:,i]), 20)
-            with open('C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Testing/' + files[i], 'a+', newline='') as csvfile:
+            with open("../Testing/" + files[i], "a+", newline='') as csvfile:
                 csvwriter = csv.writer(csvfile)
                 #csvwriter.writerow(['Column', 'Mean absolute error', 'Mean squared error', 'Explain variance score', 'R2 score', kval])
                 #for i in range(0, 4):
@@ -391,10 +391,6 @@ class LSTMs:
 
 if __name__ == "__main__":
     filters = [1,50,100,250,500,1000]
-    for i in filters:
-        Open = Models('EURUSD', 250, 'CNN', i)
-        print('250 ', i)
-        Open.data()
     for i in filters:
         Open = Models('EURUSD', 500, 'CNN', i)
         print('500 ', i)

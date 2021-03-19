@@ -77,10 +77,10 @@ class MLP:
         X_train = X_train.reshape((X_train.shape[0], n_input))
         X_val = X_val.reshape((X_val.shape[0], n_input))
         # Defines each output
-        ytrain1 = y_train[:, 0].reshape((y_train.shape[0], 1))
-        ytrain2 = y_train[:, 1].reshape((y_train.shape[0], 1))
-        ytrain3 = y_train[:, 2].reshape((y_train.shape[0], 1))
-        ytrain4 = y_train[:, 3].reshape((y_train.shape[0], 1))
+        ytrain1 = y_train[:, 0].reshape((y_train.shape[0], 4))
+        ytrain2 = y_train[:, 1].reshape((y_train.shape[0], 4))
+        ytrain3 = y_train[:, 2].reshape((y_train.shape[0], 4))
+        ytrain4 = y_train[:, 3].reshape((y_train.shape[0], 4))
 
         n_output = y_train.shape[1]
 
