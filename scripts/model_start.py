@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import sklearn.metrics as sm
 from numpy import array
 from models import CNN, MLP, KNN, LSTMs
+from candlestick import candlesticks
 import csv
 import os
 import time
@@ -45,7 +46,10 @@ class Model:
         open_col, high_col, low_col, clos_col, raw_seq = [], [], [], [], array([
         ])
 
-        with open('C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Data/' + self.symbol + '.csv', 'r') as csv_file:
+        #candlesticks.create_candlestick(self.symbol)
+       # candlesticks.candle_identifier(self.symbol)
+        directory = "../Finance_Data/"
+        with open(directory + self.symbol + '.csv', 'r') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             next(csv_reader)
             for lines in csv_reader:
@@ -168,6 +172,5 @@ class Model:
 
 
 if __name__ == "__main__":
-    runs = 10
     Open = Model('EURUSD', 1000, 'CNN', 2)
     Open.data()

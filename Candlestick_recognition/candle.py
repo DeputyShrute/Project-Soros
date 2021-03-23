@@ -12,7 +12,7 @@ def dataCandle(pair):
     candle_names = talib.get_function_groups()['Pattern Recognition']
     # Reads in the data from a CSV
     df = pd.read_csv(
-        "C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Data/" + pair + ".csv")
+        "C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Finance_Data/" + pair + ".csv")
 
     # extract OHLC
     op = df['Open']
@@ -30,7 +30,7 @@ def dataCandle(pair):
     df['candlestick_pattern'] = np.nan
     df['candlestick_match_count'] = np.nan
 
-    df.to_csv(r"C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Data/Candlestick_patterns/" + pair +"_full.csv")
+    df.to_csv(r"C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Finance_Data/Candlestick_patterns/" + pair +"_full.csv")
 
     print(df)
 
@@ -85,7 +85,7 @@ def dataCandle(pair):
 
 
     print(df.head(20))
-    df.to_csv(r"C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Data/Candlestick_patterns/" + pair +"_class.csv")
+    df.to_csv(r"C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Finance_Data/Candlestick_patterns/" + pair +"_class.csv")
 
 
 dataCandle('EURUSD')
