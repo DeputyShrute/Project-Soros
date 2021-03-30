@@ -25,6 +25,7 @@ from models import CNN, MLP, KNN, LSTMs
 import csv
 import os
 import time
+import json
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 
@@ -191,7 +192,7 @@ class Models:
             history, model = LSTMs.LSTM_train_model(
                 self, X_train, X_val, y_train, y_val, self.verbose)
             Models.plotting(history)
-            yhat = LSTMs.LSTM_test_model(X_test, model, self.verbose)
+            yhat = LSTMs.LSTM_test_model(X_test, model, self.verbose, y_test)
             Models.accuracy(yhat, y_test, X_test)
 
 class CNN:
@@ -276,9 +277,14 @@ class MLP:
         return X_train, X_val, y_train, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4
 
     def MLP_train_model(self, X_train, X_val, y_train, y_val, verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4):
-        #neuron_Val =1
+        
+        with open('../config/MLP.json', 'r') as params:
+            json_param = params.read()
+        
+        obj = json.loads(json_param)
+        
         visible = Input(shape=(n_input,))
-        dense = Dense(neuron_Val, activation='relu')(visible)
+        dense = Dense(obj['neuron_val'], activation=str(obj['activate']))(visible)
 
         open_out = Dense(1)(dense)
         high_out = Dense(1)(dense)
@@ -292,7 +298,7 @@ class MLP:
 
         # fit model
         history = model.fit(X_train, [ytrain1, ytrain2, ytrain3, ytrain4], validation_data=(
-            X_val, y_val), epochs=1000, verbose=verbose)
+            X_val, y_val), epochs=obj['epochs'], verbose=verbose)
 
         return history, model
 
@@ -310,17 +316,17 @@ class MLP:
         print('Actual:\n', y_test)
         print('Predicted:\n', yhat)
 
-        columns = ['Open', 'High', 'Low', 'Close']
-        files = ['open.csv', 'high.csv', 'low.csv', 'close.csv']
-        for i in range(0,4):
-            mae = round(sm.mean_absolute_error(y_test[:,i], yhat[:,i]), 20)
-            mse = round(sm.mean_squared_error(y_test[:,i], yhat[:,i]), 20)
-            r2 =round(sm.r2_score(y_test[:,i], yhat[:,i]), 20)
-            with open('C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Testing/' + files[i], 'a+', newline='') as csvfile:
-                csvwriter = csv.writer(csvfile)
-                #csvwriter.writerow(['Column', 'Mean absolute error', 'Mean squared error', 'Explain variance score', 'R2 score', kval])
-                #for i in range(0, 4):
-                csvwriter.writerow([mae, mse, r2])
+        # columns = ['Open', 'High', 'Low', 'Close']
+        # files = ['open.csv', 'high.csv', 'low.csv', 'close.csv']
+        # for i in range(0,4):
+        #     mae = round(sm.mean_absolute_error(y_test[:,i], yhat[:,i]), 20)
+        #     mse = round(sm.mean_squared_error(y_test[:,i], yhat[:,i]), 20)
+        #     r2 =round(sm.r2_score(y_test[:,i], yhat[:,i]), 20)
+        #     with open('C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Testing/' + files[i], 'a+', newline='') as csvfile:
+        #         csvwriter = csv.writer(csvfile)
+        #         #csvwriter.writerow(['Column', 'Mean absolute error', 'Mean squared error', 'Explain variance score', 'R2 score', kval])
+        #         #for i in range(0, 4):
+        #         csvwriter.writerow([mae, mse, r2])
 
         return yhat
 
@@ -376,29 +382,35 @@ class LSTMs:
                       loss='mse', metrics=['mean_squared_error'])
         model.summary()
 
-        history = models.fit(
+        history = model.fit(
             X_train, y_train, validation_data=(X_val, y_val), epochs=200, verbose=2)
 
         return history, model
 
-    def LSTM_test_model(X_test, model, verbose):
+    def LSTM_test_model(X_test, model, verbose, y_test):
 
-        yhat = models.predict(X_test, verbose=verbose)
+        yhat = model.predict(X_test, verbose=verbose)
 
-        print(yhat)
+        print('Test:', X_test)
+        print('Actual:', y_test)
+        print('Predicted:', yhat)
 
         return yhat
 
 if __name__ == "__main__":
-    filters = [1,50,100,250,500,1000]
-    for i in filters:
-        Open = Models('EURUSD', 500, 'CNN', i)
-        print('500 ', i)
-        Open.data()
-    for i in filters:
-        Open = Models('EURUSD', 1000, 'CNN', i)
-        print('1000 ', i)
-        Open.data()
+
+    Open = Models('EURUSD', 250, 'MLP', 1, 2)
+    Open.data()
+
+    # filters = [1,50,100,250,500,1000]
+    # for i in filters:
+    #     Open = Models('EURUSD', 500, 'CNN', i)
+    #     print('500 ', i)
+    #     Open.data()
+    # for i in filters:
+    #     Open = Models('EURUSD', 1000, 'CNN', i)
+    #     print('1000 ', i)
+    #     Open.data()
 
 
 

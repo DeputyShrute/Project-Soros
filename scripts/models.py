@@ -13,6 +13,7 @@ from keras.models import Model
 import matplotlib.pyplot as plt
 import numpy as np
 import csv
+import json
 import sklearn.metrics as sm
 from tensorflow.python.keras.callbacks import History
 
@@ -32,12 +33,12 @@ class CNN:
 
         return X_train, X_val, y_train, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4
 
-    def CNN_train_model(self, X_train, X_val, y_train, y_val, verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4):
+    def CNN_train_model(self, X_train, X_val, y_train, y_val, verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4, filter):
         #features = X_train.shape[2]
         # define model
 
         visible = Input(shape=(self.timestep, 4))
-        cnn = Conv1D(filters=64, kernel_size=2, activation='relu')(visible)
+        cnn = Conv1D(filters=filter, kernel_size=2, activation='relu')(visible)
         cnn = MaxPooling1D(pool_size=2)(cnn)
         cnn = Flatten()(cnn)
         cnn = Dense(250, activation='relu')(cnn)
@@ -66,6 +67,18 @@ class CNN:
         print('Actual:', y_test)
         print('Predicted:', yhat)
 
+        columns = ['Open', 'High', 'Low', 'Close']
+        files = ['open.csv', 'high.csv', 'low.csv', 'close.csv']
+        for i in range(0,4):
+            mae = round(sm.mean_absolute_error(y_test[:,i], yhat[:,i]), 20)
+            mse = round(sm.mean_squared_error(y_test[:,i], yhat[:,i]), 20)
+            r2 =round(sm.r2_score(y_test[:,i], yhat[:,i]), 20)
+            with open("../Testing/" + files[i], "a+", newline='') as csvfile:
+                csvwriter = csv.writer(csvfile)
+                #csvwriter.writerow(['Column', 'Mean absolute error', 'Mean squared error', 'Explain variance score', 'R2 score', kval])
+                #for i in range(0, 4):
+                csvwriter.writerow([mae, mse, r2])
+
         return yhat
 
 
@@ -77,19 +90,24 @@ class MLP:
         X_train = X_train.reshape((X_train.shape[0], n_input))
         X_val = X_val.reshape((X_val.shape[0], n_input))
         # Defines each output
-        ytrain1 = y_train[:, 0].reshape((y_train.shape[0], 4))
-        ytrain2 = y_train[:, 1].reshape((y_train.shape[0], 4))
-        ytrain3 = y_train[:, 2].reshape((y_train.shape[0], 4))
-        ytrain4 = y_train[:, 3].reshape((y_train.shape[0], 4))
+        ytrain1 = y_train[:, 0].reshape((y_train.shape[0], 1))
+        ytrain2 = y_train[:, 1].reshape((y_train.shape[0], 1))
+        ytrain3 = y_train[:, 2].reshape((y_train.shape[0], 1))
+        ytrain4 = y_train[:, 3].reshape((y_train.shape[0], 1))
 
         n_output = y_train.shape[1]
 
         return X_train, X_val, y_train, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4
 
     def MLP_train_model(self, X_train, X_val, y_train, y_val, verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4):
-
+        
+        with open('../config/MLP.json', 'r') as params:
+            json_param = params.read()
+        
+        obj = json.loads(json_param)
+        
         visible = Input(shape=(n_input,))
-        dense = Dense(1000, activation='relu')(visible)
+        dense = Dense(obj['neuron_val'], activation=str(obj['activate']))(visible)
 
         open_out = Dense(1)(dense)
         high_out = Dense(1)(dense)
@@ -103,7 +121,7 @@ class MLP:
 
         # fit model
         history = model.fit(X_train, [ytrain1, ytrain2, ytrain3, ytrain4], validation_data=(
-            X_val, y_val), epochs=1000, verbose=verbose)
+            X_val, y_val), epochs=obj['epochs'], verbose=verbose)
 
         return history, model
 
@@ -121,6 +139,18 @@ class MLP:
         print('Actual:\n', y_test)
         print('Predicted:\n', yhat)
 
+        # columns = ['Open', 'High', 'Low', 'Close']
+        # files = ['open.csv', 'high.csv', 'low.csv', 'close.csv']
+        # for i in range(0,4):
+        #     mae = round(sm.mean_absolute_error(y_test[:,i], yhat[:,i]), 20)
+        #     mse = round(sm.mean_squared_error(y_test[:,i], yhat[:,i]), 20)
+        #     r2 =round(sm.r2_score(y_test[:,i], yhat[:,i]), 20)
+        #     with open('C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Testing/' + files[i], 'a+', newline='') as csvfile:
+        #         csvwriter = csv.writer(csvfile)
+        #         #csvwriter.writerow(['Column', 'Mean absolute error', 'Mean squared error', 'Explain variance score', 'R2 score', kval])
+        #         #for i in range(0, 4):
+        #         csvwriter.writerow([mae, mse, r2])
+
         return yhat
 
 
@@ -136,7 +166,7 @@ class KNN:
         return X_train, X_val, y_train, X_test
 
     def KNN_train_model(self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq):
-        
+        k=1000
         classifier = KNeighborsRegressor(n_neighbors=k)
         classifier.fit(X_train, y_train)
         y_pred = classifier.predict(X_test)
@@ -160,7 +190,6 @@ class KNN:
                 csvwriter.writerow([mae, mse, r2])
 
 
-
 class LSTMs:
 
     def LSTM_train_model(self, X_train, X_val, y_train, y_val, verbose):
@@ -181,10 +210,12 @@ class LSTMs:
 
         return history, model
 
-    def LSTM_test_model(X_test, model, verbose):
+    def LSTM_test_model(X_test, model, verbose, y_test):
 
         yhat = model.predict(X_test, verbose=verbose)
 
-        print(yhat)
+        print('Test:', X_test)
+        print('Actual:', y_test)
+        print('Predicted:', yhat)
 
         return yhat
