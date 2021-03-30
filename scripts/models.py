@@ -67,17 +67,22 @@ class CNN:
         print('Actual:', y_test)
         print('Predicted:', yhat)
 
-        columns = ['Open', 'High', 'Low', 'Close']
-        files = ['open.csv', 'high.csv', 'low.csv', 'close.csv']
-        for i in range(0,4):
-            mae = round(sm.mean_absolute_error(y_test[:,i], yhat[:,i]), 20)
-            mse = round(sm.mean_squared_error(y_test[:,i], yhat[:,i]), 20)
-            r2 =round(sm.r2_score(y_test[:,i], yhat[:,i]), 20)
-            with open("../Testing/" + files[i], "a+", newline='') as csvfile:
-                csvwriter = csv.writer(csvfile)
-                #csvwriter.writerow(['Column', 'Mean absolute error', 'Mean squared error', 'Explain variance score', 'R2 score', kval])
-                #for i in range(0, 4):
-                csvwriter.writerow([mae, mse, r2])
+        # columns = ['Open', 'High', 'Low', 'Close']
+        # files = ['open.csv', 'high.csv', 'low.csv', 'close.csv']
+        # for i in range(0,4):
+        #     mae = round(sm.mean_absolute_error(y_test[:,i], yhat[:,i]), 20)
+        #     mse = round(sm.mean_squared_error(y_test[:,i], yhat[:,i]), 20)
+        #     r2 =round(sm.r2_score(y_test[:,i], yhat[:,i]), 20)
+        #     print(columns[i])
+        #     print('MAE: ' + str(mae))
+        #     print('MSE: ' + str(mse))
+        #     print('R2: ' + str(r2))
+
+            # with open("../Testing/" + files[i], "a+", newline='') as csvfile:
+            #     csvwriter = csv.writer(csvfile)
+            #     #csvwriter.writerow(['Column', 'Mean absolute error', 'Mean squared error', 'Explain variance score', 'R2 score', kval])
+            #     #for i in range(0, 4):
+            #     csvwriter.writerow([mae, mse, r2])
 
         return yhat
 
@@ -101,7 +106,7 @@ class MLP:
 
     def MLP_train_model(self, X_train, X_val, y_train, y_val, verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4):
         
-        with open('../config/MLP.json', 'r') as params:
+        with open('config/MLP.json', 'r') as params:
             json_param = params.read()
         
         obj = json.loads(json_param)
@@ -118,6 +123,7 @@ class MLP:
                       open_out, high_out, low_out, close_out])
         model.compile(optimizer='adam', loss='mse',
                       metrics=['mean_squared_error'])
+        model.summary()
 
         # fit model
         history = model.fit(X_train, [ytrain1, ytrain2, ytrain3, ytrain4], validation_data=(
@@ -139,12 +145,12 @@ class MLP:
         print('Actual:\n', y_test)
         print('Predicted:\n', yhat)
 
-        # columns = ['Open', 'High', 'Low', 'Close']
-        # files = ['open.csv', 'high.csv', 'low.csv', 'close.csv']
-        # for i in range(0,4):
-        #     mae = round(sm.mean_absolute_error(y_test[:,i], yhat[:,i]), 20)
-        #     mse = round(sm.mean_squared_error(y_test[:,i], yhat[:,i]), 20)
-        #     r2 =round(sm.r2_score(y_test[:,i], yhat[:,i]), 20)
+        columns = ['Open', 'High', 'Low', 'Close']
+        files = ['open.csv', 'high.csv', 'low.csv', 'close.csv']
+        for i in range(0,4):
+            mae = round(sm.mean_absolute_error(y_test[:,i], yhat[:,i]), 20)
+            mse = round(sm.mean_squared_error(y_test[:,i], yhat[:,i]), 20)
+            r2 =round(sm.r2_score(y_test[:,i], yhat[:,i]), 20)
         #     with open('C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Testing/' + files[i], 'a+', newline='') as csvfile:
         #         csvwriter = csv.writer(csvfile)
         #         #csvwriter.writerow(['Column', 'Mean absolute error', 'Mean squared error', 'Explain variance score', 'R2 score', kval])

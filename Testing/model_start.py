@@ -65,7 +65,7 @@ class Models:
         open_col, high_col, low_col, clos_col, raw_seq = [], [], [], [], array([
         ])
         # Read input from CSV
-        with open('../Finance_Data/' + self.symbol + '.csv', 'r') as csv_file:
+        with open('Finance_Data/' + self.symbol + '.csv', 'r') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             next(csv_reader)
             # Assignes each column within CSV to appropriate Array
@@ -278,7 +278,7 @@ class MLP:
 
     def MLP_train_model(self, X_train, X_val, y_train, y_val, verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4):
         
-        with open('../config/MLP.json', 'r') as params:
+        with open('config/MLP.json', 'r') as params:
             json_param = params.read()
         
         obj = json.loads(json_param)
@@ -399,7 +399,7 @@ class LSTMs:
 
 if __name__ == "__main__":
 
-    Open = Models('EURUSD', 250, 'MLP', 1, 2)
+    Open = Models('AUDCAD', 1000, 'KNN', 1, 2)
     Open.data()
 
     # filters = [1,50,100,250,500,1000]

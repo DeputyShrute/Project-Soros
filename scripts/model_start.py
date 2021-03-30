@@ -47,19 +47,22 @@ class Models:
         open_col, high_col, low_col, clos_col, raw_seq = [], [], [], [], array([
         ])
         # Read input from CSV
-        with open('../Finance_Data/' + self.symbol + '.csv', 'r') as csv_file:
+        with open('scripts/Finance_Data/' + self.symbol + '.csv', 'r') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             next(csv_reader)
             # Assignes each column within CSV to appropriate Array
             for lines in csv_reader:
-                if lines[2] != 'null':
-                    open_col.append(float(lines[2]))
-                if lines[3] != 'null':
-                    high_col.append(float(lines[3]))
-                if lines[4] != 'null':
-                    low_col.append(float(lines[4]))
-                if lines[5] != 'null':
-                    clos_col.append(float(lines[5]))
+                if 'null' in lines:
+                    continue
+                else:
+                    if lines[1] != 'null':
+                        open_col.append(float(lines[1]))
+                    if lines[2] != 'null':
+                        high_col.append(float(lines[2]))
+                    if lines[3] != 'null':
+                        low_col.append(float(lines[3]))
+                    if lines[4] != 'null':
+                        clos_col.append(float(lines[4]))
 
         # Converts list to a Numpy array
         open_col = array(open_col)
@@ -146,10 +149,10 @@ class Models:
                 X_train, X_val, y_train)
             history, model = CNN.CNN_train_model(
                 self, X_train, X_val, y_train, y_val, self.verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4, self.filters)
-            # Models.plotting(history)
+            Models.plotting(history)
             yhat = CNN.CNN_test_model(
                 self, X_test, model, self.verbose, y_test)
-            #Models.accuracy(yhat, y_test, X_test)
+            Models.accuracy(yhat, y_test, X_test)
 
         if self.model_type == 'MLP':
 
@@ -157,9 +160,9 @@ class Models:
                 X_train, X_val, y_train)
             history, model = MLP.MLP_train_model(
                 self, X_train, X_val, y_train, y_val, self.verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4)
-            # Models.plotting(history)
+            Models.plotting(history)
             yhat = MLP.MLP_test_model(X_test, model, self.verbose, y_test)
-            #Models.accuracy(yhat, y_test, X_test)
+            Models.accuracy(yhat, y_test, X_test)
 
         if self.model_type == 'KNN':
 
@@ -167,7 +170,7 @@ class Models:
                 X_train, X_val, y_train, X_test)
             yhat = KNN.KNN_train_model(
                 self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq)
-            #Model.accuracy(yhat, y_test, X_test)
+            Models.accuracy(yhat, y_test, X_test)
 
         if self.model_type == 'LSTM':
 
@@ -179,5 +182,5 @@ class Models:
 
 
 if __name__ == "__main__":
-    Open = Models('EURUSD', 1, 'MLP', 2)
+    Open = Models('EURUSD', 250, 'MLP', 32, 0)
     Open.data()
