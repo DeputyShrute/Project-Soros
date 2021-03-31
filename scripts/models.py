@@ -135,11 +135,19 @@ class MLP:
         print(type(X_test))
         yhat = model.predict(X_test, verbose=verbose)
 
-        print(np.shape(X_test))
-
         yhat = np.concatenate((yhat), axis=1)
         print('Test:\n', X_test)
-        print('Actual:\n', y_test)
+
+        close = X_test[:,-1]
+        low = X_test[:,-2]
+        high = X_test[:,-3]
+        open = X_test[:,-4]
+
+        final_cols = np.column_stack((open, high, low, close))
+
+        print('Current:\n Open   High    Low    Close\n', final_cols)
+
+        print('Next:\n', y_test)
         print('Predicted:\n', yhat)
 
         columns = ['Open', 'High', 'Low', 'Close']
@@ -180,17 +188,17 @@ class KNN:
         print('Y_pred:\n', y_pred)
 
 
-        columns = ['Open', 'High', 'Low', 'Close']
-        files = ['open.csv', 'high.csv', 'low.csv', 'close.csv']
-        for i in range(0,4):
-            mae = round(sm.mean_absolute_error(y_test[:,i], y_pred[:,i]), 20)
-            mse = round(sm.mean_squared_error(y_test[:,i], y_pred[:,i]), 20)
-            r2 =round(sm.r2_score(y_test[:,i], y_pred[:,i]), 20)
-            with open('C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Testing/' + files[i], 'a+', newline='') as csvfile:
-                csvwriter = csv.writer(csvfile)
-                #csvwriter.writerow(['Column', 'Mean absolute error', 'Mean squared error', 'Explain variance score', 'R2 score', kval])
-                #for i in range(0, 4):
-                csvwriter.writerow([mae, mse, r2])
+        # columns = ['Open', 'High', 'Low', 'Close']
+        # files = ['open.csv', 'high.csv', 'low.csv', 'close.csv']
+        # for i in range(0,4):
+        #     mae = round(sm.mean_absolute_error(y_test[:,i], y_pred[:,i]), 20)
+        #     mse = round(sm.mean_squared_error(y_test[:,i], y_pred[:,i]), 20)
+        #     r2 =round(sm.r2_score(y_test[:,i], y_pred[:,i]), 20)
+        #     with open('C:/Users/Ryan Easter/OneDrive - University of Lincoln/University/Year 4 (Final)/Project/Artefact/Project-Soros/Testing/' + files[i], 'a+', newline='') as csvfile:
+        #         csvwriter = csv.writer(csvfile)
+        #         #csvwriter.writerow(['Column', 'Mean absolute error', 'Mean squared error', 'Explain variance score', 'R2 score', kval])
+        #         #for i in range(0, 4):
+        #         csvwriter.writerow([mae, mse, r2])
 
 
 class LSTMs:

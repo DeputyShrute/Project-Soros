@@ -2,7 +2,7 @@ import os
 import requests
 from pathlib import Path
 from data_validation import data_validation
-from model_start import Model
+from model_start import Models
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 class get_data:
 
@@ -54,7 +54,7 @@ class get_data:
                 print("Failed to access: ", x)
                 continue
             data_validation(x)
-        Open = Model('EURUSD', 1, 'open', 'KNN')
+        Open = Models('EURUSD', 1, 'open', 'KNN')
         Open.data()
 
 

@@ -181,5 +181,5 @@ class Models:
 
 
 if __name__ == "__main__":
-    Open = Models('EURUSD', 250, 'CNN', 2)
+    Open = Models('EURUSD', 500, 'MLP', 0)
     Open.data()
