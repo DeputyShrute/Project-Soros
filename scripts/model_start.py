@@ -34,7 +34,7 @@ class Models:
             end_ix = i + n_steps
             out_end = end_ix + output
             # check if we are beyond the sequence
-            if end_ix > len(raw_seq)-1:
+            if end_ix > len(raw_seq):
                 break
             # gather input and output parts of the pattern
             seq_x, seq_y = raw_seq[i:end_ix, :], raw_seq[end_ix:out_end, :]
@@ -77,6 +77,8 @@ class Models:
 
         # split into samples
         X, y = Models.split_sequence(raw_seq, n_steps, self.output)
+
+        print(X.shape, y.shape)
 
         X_train, X_test, y_train, y_test = train_test_split(
             X, y, test_size=size)
