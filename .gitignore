@@ -1,5 +1,5 @@
 *.csv
 .vscode/launch.json
 output.txt
-
+__pycache__/
 *.png
