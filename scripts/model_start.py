@@ -13,29 +13,31 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 class Models:
 
-    def __init__(self, symbol, timestep, model_type, verbose=0):
+    def __init__(self, symbol, timestep, model_type, output, verbose=0):
         # Creates paramters when class initialised
         print('Constructor Initialised')
         self.symbol = symbol.upper()
         self.timestep = timestep
         self.model_type = model_type.upper()
         self.verbose = verbose
+        self.output = output
 
     def __str__(self):
         # Used to compare self as a string
         return self.model_type
 
-    def split_sequence(raw_seq, n_steps):
+    def split_sequence(raw_seq, n_steps, output):
         # Splits the data up into the windows specified by n
         X, y = list(), list()
         for i in range(len(raw_seq)):
             # find the end of this pattern
             end_ix = i + n_steps
+            out_end = end_ix + output
             # check if we are beyond the sequence
             if end_ix > len(raw_seq)-1:
                 break
             # gather input and output parts of the pattern
-            seq_x, seq_y = raw_seq[i:end_ix, :], raw_seq[end_ix, :]
+            seq_x, seq_y = raw_seq[i:end_ix, :], raw_seq[end_ix:out_end, :]
             X.append(seq_x)
             y.append(seq_y)
 
@@ -71,10 +73,10 @@ class Models:
         # Call data prep
         Models.data_prep(self, open_col, high_col, low_col, clos_col, raw_seq)
 
-    def split_data(raw_seq, n_steps, size):
+    def split_data(self, raw_seq, n_steps, size):
 
         # split into samples
-        X, y = Models.split_sequence(raw_seq, n_steps)
+        X, y = Models.split_sequence(raw_seq, n_steps, self.output)
 
         X_train, X_test, y_train, y_test = train_test_split(
             X, y, test_size=size)
@@ -93,7 +95,7 @@ class Models:
 
         # Splits the data into test and train (data, windows, size of test)
         X_train, X_test, y_train, y_test = Models.split_data(
-            raw_seq, self.timestep, 0.2)
+            self, raw_seq, self.timestep, 0.2)
 
         # Splits the data into test and val (data, windows, size of val)
         X_train, X_val, y_train, y_val = train_test_split(
@@ -181,5 +183,5 @@ class Models:
 
 
 if __name__ == "__main__":
-    Open = Models('EURUSD', 250, 'CNN', 2)
+    Open = Models('EURUSD', 250, 'MLP', 5, 2)
     Open.data()
