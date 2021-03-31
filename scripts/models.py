@@ -33,15 +33,20 @@ class CNN:
 
         return X_train, X_val, y_train, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4
 
-    def CNN_train_model(self, X_train, X_val, y_train, y_val, verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4, filter):
+    def CNN_train_model(self, X_train, X_val, y_train, y_val, verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4):
         #features = X_train.shape[2]
         # define model
 
+        with open('config/CNN.json', 'r') as params:
+            json_param = params.read()
+        
+        obj = json.loads(json_param)
+
         visible = Input(shape=(self.timestep, 4))
-        cnn = Conv1D(filters=filter, kernel_size=2, activation='relu')(visible)
-        cnn = MaxPooling1D(pool_size=2)(cnn)
+        cnn = Conv1D(filters=obj['filters'], kernel_size=obj['kernel_size'], activation=obj['activation_conv1d'])(visible)
+        cnn = MaxPooling1D(pool_size=obj['pool_size'])(cnn)
         cnn = Flatten()(cnn)
-        cnn = Dense(250, activation='relu')(cnn)
+        cnn = Dense(obj['Dense_layer_1'], activation=obj['activation_dense'])(cnn)
 
         open_out = Dense(1)(cnn)
         high_out = Dense(1)(cnn)
@@ -54,7 +59,7 @@ class CNN:
                       metrics=['mean_squared_error'])
 
         history = model.fit(X_train, [ytrain1, ytrain2, ytrain3, ytrain4], validation_data=(
-            X_val, y_val), epochs=500, verbose=self.verbose)
+            X_val, y_val), epochs=obj['epochs'], verbose=self.verbose)
 
         return history, model
 
@@ -70,14 +75,6 @@ class CNN:
         # columns = ['Open', 'High', 'Low', 'Close']
         # files = ['open.csv', 'high.csv', 'low.csv', 'close.csv']
         # for i in range(0,4):
-        #     mae = round(sm.mean_absolute_error(y_test[:,i], yhat[:,i]), 20)
-        #     mse = round(sm.mean_squared_error(y_test[:,i], yhat[:,i]), 20)
-        #     r2 =round(sm.r2_score(y_test[:,i], yhat[:,i]), 20)
-        #     print(columns[i])
-        #     print('MAE: ' + str(mae))
-        #     print('MSE: ' + str(mse))
-        #     print('R2: ' + str(r2))
-
             # with open("../Testing/" + files[i], "a+", newline='') as csvfile:
             #     csvwriter = csv.writer(csvfile)
             #     #csvwriter.writerow(['Column', 'Mean absolute error', 'Mean squared error', 'Explain variance score', 'R2 score', kval])

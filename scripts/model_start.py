@@ -13,14 +13,13 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 class Models:
 
-    def __init__(self, symbol, timestep, model_type, filters, verbose=0):
+    def __init__(self, symbol, timestep, model_type, verbose=0):
         # Creates paramters when class initialised
         print('Constructor Initialised')
         self.symbol = symbol.upper()
         self.timestep = timestep
         self.model_type = model_type.upper()
         self.verbose = verbose
-        self.filters = filters
 
     def __str__(self):
         # Used to compare self as a string
@@ -109,7 +108,7 @@ class Models:
         plt.plot(history.history['loss'], label='Train')
         plt.plot(history.history['val_loss'], label='Val')
         plt.legend()
-        plt.show()
+        plt.show(block=True)
 
         return
 
@@ -148,7 +147,7 @@ class Models:
             X_train, X_val, y_train, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4 = CNN.data_format(
                 X_train, X_val, y_train)
             history, model = CNN.CNN_train_model(
-                self, X_train, X_val, y_train, y_val, self.verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4, self.filters)
+                self, X_train, X_val, y_train, y_val, self.verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4)
             Models.plotting(history)
             yhat = CNN.CNN_test_model(
                 self, X_test, model, self.verbose, y_test)
@@ -182,5 +181,5 @@ class Models:
 
 
 if __name__ == "__main__":
-    Open = Models('EURUSD', 250, 'MLP', 32, 0)
+    Open = Models('EURUSD', 250, 'CNN', 2)
     Open.data()
