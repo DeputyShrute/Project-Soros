@@ -1,10 +1,10 @@
-# from scripts.models import LSTM
+ #!/usr/bin/env python -W ignore::DeprecationWarning
 from numpy.core.shape_base import hstack
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import sklearn.metrics as sm
 from numpy import array
-from models import CNN, MLP, KNN, LSTMs
+from scripts.models import CNN, MLP, KNN, LSTMs
 import csv
 import os
 import time
@@ -54,14 +54,15 @@ class Models:
                 if 'null' in lines:
                     continue
                 else:
+                    #Index is +1 due to CSV indexing
                     if lines[1] != 'null':
-                        open_col.append(float(lines[1]))
+                        open_col.append(float(lines[2]))
                     if lines[2] != 'null':
-                        high_col.append(float(lines[2]))
+                        high_col.append(float(lines[3]))
                     if lines[3] != 'null':
-                        low_col.append(float(lines[3]))
+                        low_col.append(float(lines[4]))
                     if lines[4] != 'null':
-                        clos_col.append(float(lines[4]))
+                        clos_col.append(float(lines[5]))
 
         # Converts list to a Numpy array
         open_col = array(open_col)

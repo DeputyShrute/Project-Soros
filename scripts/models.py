@@ -1,3 +1,4 @@
+ #!/usr/bin/env python -W ignore::DeprecationWarning
 from numpy.core.fromnumeric import shape
 from numpy.core.shape_base import hstack
 from sklearn.neighbors import KNeighborsRegressor

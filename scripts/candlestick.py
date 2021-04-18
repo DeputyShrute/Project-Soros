@@ -1,8 +1,14 @@
+ #!/usr/bin/env python -W ignore::DeprecationWarning
 import matplotlib.pyplot as plt
 from mpl_finance import candlestick_ohlc
 import pandas as pd
 import matplotlib.dates as mpl_dates
 
+
+def warn(*args, **kwargs):
+    pass
+import warnings
+warnings.warn = warn
 
 def create_candlestick(x):
     plt.style.use('ggplot')
