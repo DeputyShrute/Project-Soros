@@ -16,7 +16,7 @@ class make_chart:
     def load(select, currency_pairs):
         X = currency_pairs[select]
         # Loads the CSV data
-        file_loc = '/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Raw_Data' + X
+        file_loc = '/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Raw_Data/' + X
         data = pd.read_csv(
             file_loc, index_col=0, parse_dates=True)
         # Prints the head
@@ -24,6 +24,7 @@ class make_chart:
         csv_rows = data.shape[0]
         data.index.name = 'Date'
         make_chart.create(data, csv_rows, X)
+        return X
 
     def create(data, csv_rows, X):
         n = csv_rows - 30
@@ -36,4 +37,4 @@ class make_chart:
             file.close
         except FileNotFoundError:
             print('exception')
-            return
+            return X

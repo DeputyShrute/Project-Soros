@@ -1,5 +1,6 @@
  #!/usr/bin/env python -W ignore::DeprecationWarning
 import os
+from PIL import Image
 import glob
 from simple_term_menu import TerminalMenu
 from scripts.create_data import make_chart
@@ -42,7 +43,7 @@ class menu:
     def select_pair():
         select_pair_title = "Select Pair\n"
 
-        os.chdir('scripts/Finance_Data/Raw_Data')
+        os.chdir('scripts/Finance_Data/Raw_Data/')
         currency_pairs = glob.glob('*.csv')
         currency_pairs.sort()
         currency_pairs.append('Exit')
@@ -57,10 +58,12 @@ class menu:
         while not select_pair_exit:
             select = currency_menu.show()
             if select < (len(currency_pairs) - 1):
-                print(select)
-                make_chart.load(select, currency_pairs)
+                X = make_chart.load(select, currency_pairs)
                 os.chdir("/home/ryan/Documents/Python/Project-Soros/darknet")
-                os.system("./darknet detector test ../data/obj.data cfg/yolo-obj.cfg backup/yolo-obj_final.weights")
+                os.system("./darknet detector test data/obj.data cfg/yolo-obj.cfg backup/yolo-obj_final.weights -dont_show -ext_output < data/test.txt > data/result.txt")
+                predictions = Image.open('predictions.jpg')
+                predictions.show()
+                os.wait()
                 
             else:
                 menu.main_menu()
