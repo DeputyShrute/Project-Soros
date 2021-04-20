@@ -1,4 +1,4 @@
- #!/usr/bin/env python -W ignore::DeprecationWarning
+#!/usr/bin/env python -W ignore::DeprecationWarning
 import os
 from PIL import Image
 import glob
@@ -32,12 +32,18 @@ class menu:
             elif select == 1:
                 menu.select_pair()
             # Candlestick Analysis
-
+            elif select == 2:
+                menu.select_pair()
             # Price Prediction
 
             # Exit
             elif select == 4:
                 print("Exiting program")
+                dir = 'scripts/Finance_Data/Chart_Snapshot'
+                for pic in os.listdir(dir):
+                    os.remove(os.path.join(dir, pic))
+                os.system('cls')
+                os.system('clear')
                 exit()
 
     def select_pair():
@@ -58,13 +64,14 @@ class menu:
         while not select_pair_exit:
             select = currency_menu.show()
             if select < (len(currency_pairs) - 1):
-                X = make_chart.load(select, currency_pairs)
+                make_chart.load(select, currency_pairs)
                 os.chdir("/home/ryan/Documents/Python/Project-Soros/darknet")
-                os.system("./darknet detector test data/obj.data cfg/yolo-obj.cfg backup/yolo-obj_final.weights -dont_show -ext_output < data/test.txt > data/result.txt")
+                os.system(
+                    "./darknet detector test data/obj.data cfg/yolo-obj.cfg backup/yolo-obj_final.weights -dont_show -ext_output < data/test.txt > data/result.txt")
                 predictions = Image.open('predictions.jpg')
                 predictions.show()
                 os.wait()
-                
+
             else:
                 menu.main_menu()
 

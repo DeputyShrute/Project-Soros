@@ -24,7 +24,6 @@ class make_chart:
         csv_rows = data.shape[0]
         data.index.name = 'Date'
         make_chart.create(data, csv_rows, X)
-        return X
 
     def create(data, csv_rows, X):
         n = csv_rows - 30
@@ -37,4 +36,4 @@ class make_chart:
             file.close
         except FileNotFoundError:
             print('exception')
-            return X
+            return
