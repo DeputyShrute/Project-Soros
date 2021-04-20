@@ -42,7 +42,7 @@ class menu:
     def select_pair():
         select_pair_title = "Select Pair\n"
 
-        os.chdir('scripts/Finance_Data')
+        os.chdir('scripts/Finance_Data/Raw_Data')
         currency_pairs = glob.glob('*.csv')
         currency_pairs.sort()
         currency_pairs.append('Exit')

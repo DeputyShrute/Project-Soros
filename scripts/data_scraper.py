@@ -48,7 +48,7 @@ class get_data:
                     continue
                 else:
                     try:
-                        with open('scripts/Finance_Data/'+x+'.csv', 'wb') as f:
+                        with open('scripts/Finance_Data/Raw_Data'+x+'.csv', 'wb') as f:
                             f.write(file_download.content)
                     except FileNotFoundError as e:
                         print("Not found: ", x, e)

@@ -46,7 +46,7 @@ class Models:
         open_col, high_col, low_col, clos_col, raw_seq = [], [], [], [], array([
         ])
         # Read input from CSV
-        with open('scripts/Finance_Data/' + self.symbol + '.csv', 'r') as csv_file:
+        with open('scripts/Finance_Data/Raw_Data' + self.symbol + '.csv', 'r') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             next(csv_reader)
             # Assignes each column within CSV to appropriate Array
