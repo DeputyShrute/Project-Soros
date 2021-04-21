@@ -12,12 +12,18 @@ from keras.layers import LSTM
 from keras.layers import Input
 from keras.models import Model
 from keras.models import save_model, load_model
+import tensorflow as tf
+config = tf.compat.v1.ConfigProto()
+config.gpu_options.allow_growth = True
+session = tf.compat.v1.Session(config=config)
 import matplotlib.pyplot as plt
 import numpy as np
 import csv
 import json
 import sklearn.metrics as sm
 from tensorflow.python.keras.callbacks import History
+from tensorflow.python.keras.saving.model_config import model_from_json
+from tensorflow.python.saved_model.function_deserialization import load_function_def_library
 
 
 class CNN:
@@ -64,24 +70,28 @@ class CNN:
         history = model.fit(X_train, [ytrain1, ytrain2, ytrain3, ytrain4], validation_data=(
             X_val, y_val), epochs=obj['epochs'], verbose=self.verbose)
         
-        filepath = '/saved_models/CNN'
-        save_model(model, filepath)
+        # Saved the model as JSON and .h5
+        model_json = model.to_json()
+        with open('saved_models/CNN.json', 'w') as json_file:
+            json_file.write(model_json)
+        model.save_weights('saved_models/CNN.h5')
 
-        return history, model, filepath
+        return history, model
 
-    def CNN_test_model(self, X_test, model, verbose, y_test, filepath):
+    def CNN_test_model(self, X_test, model, verbose, y_test):
         #X_test = X_test.reshape((1, self.timestep, 4 ))
         
-        loaded_model = load_model(
-            filepath,
-            custom_objects=None,
-            compile=True
-        )
+        # Loads saved model so retraining isn't needed
+        json_file = open('saved_models/CNN.json', 'r')
+        loaded_model_json = json_file.read()
+        json_file.close()
+        model = model_from_json(loaded_model_json)
+        model.load_weights('saved_models/CNN.h5')
 
-        model = load_model('CNN')
-
+        # Predicts on trained model
         yhat = model.predict(X_test, verbose=verbose)
 
+        # Prints the results
         yhat = np.concatenate((yhat), axis=1)
         print('Test:', X_test)
         print('Actual:', y_test)
@@ -140,10 +150,23 @@ class MLP:
         # fit model
         history = model.fit(X_train, [ytrain1, ytrain2, ytrain3, ytrain4], validation_data=(
             X_val, y_val), epochs=obj['epochs'], verbose=verbose)
+        
+        # Saved the model as JSON and .h5
+        model_json = model.to_json()
+        with open('saved_models/MLP.json', 'w') as json_file:
+            json_file.write(model_json)
+        model.save_weights('saved_models/MLP.h5')
 
         return history, model
 
     def MLP_test_model(X_test, model, verbose, y_test):
+
+        # Loads saved model so retraining isn't needed
+        json_file = open('saved_models/MLP.json', 'r')
+        loaded_model_json = json_file.read()
+        json_file.close()
+        model = model_from_json(loaded_model_json)
+        model.load_weights('saved_models/MLP.h5')
 
         n_input = X_test.shape[1] * X_test.shape[2]
         X_test = X_test.reshape((X_test.shape[0], n_input))
@@ -156,9 +179,9 @@ class MLP:
         close = X_test[:,-1]
         low = X_test[:,-2]
         high = X_test[:,-3]
-        open = X_test[:,-4]
+        opens = X_test[:,-4]
 
-        final_cols = np.column_stack((open, high, low, close))
+        final_cols = np.column_stack((opens, high, low, close))
 
         print('Current:\n Open   High    Low    Close\n', final_cols)
 

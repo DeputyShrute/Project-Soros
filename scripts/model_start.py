@@ -58,13 +58,13 @@ class Models:
                 else:
                     #Index is +1 due to CSV indexing
                     if lines[1] != 'null':
-                        open_col.append(float(lines[2]))
+                        open_col.append(float(lines[1]))
                     if lines[2] != 'null':
-                        high_col.append(float(lines[3]))
+                        high_col.append(float(lines[2]))
                     if lines[3] != 'null':
-                        low_col.append(float(lines[4]))
+                        low_col.append(float(lines[3]))
                     if lines[4] != 'null':
-                        clos_col.append(float(lines[5]))
+                        clos_col.append(float(lines[4]))
 
         # Converts list to a Numpy array
         open_col = array(open_col)
@@ -149,11 +149,11 @@ class Models:
 
             X_train, X_val, y_train, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4 = CNN.data_format(
                 X_train, X_val, y_train)
-            history, model, filepath = CNN.CNN_train_model(
+            history, model = CNN.CNN_train_model(
                 self, X_train, X_val, y_train, y_val, self.verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4)
             Models.plotting(history)
             yhat = CNN.CNN_test_model(
-                self, X_test, model, self.verbose, y_test, filepath)
+                self, X_test, model, self.verbose, y_test)
             Models.accuracy(yhat, y_test, X_test)
 
         if self.model_type == 'MLP':
@@ -185,5 +185,5 @@ class Models:
 
 if __name__ == "__main__":
     clear_session()
-    Open = Models('GBPUSD', 500, 'CNN', 2)
+    Open = Models('EURUSD', 500, 'MLP', 2)
     Open.data()
