@@ -11,6 +11,7 @@ from keras.models import Sequential
 from keras.layers import LSTM
 from keras.layers import Input
 from keras.models import Model
+from keras.models import save_model, load_model
 import matplotlib.pyplot as plt
 import numpy as np
 import csv
@@ -38,7 +39,7 @@ class CNN:
         #features = X_train.shape[2]
         # define model
 
-        with open('config/CNN.json', 'r') as params:
+        with open('model_config/CNN.json', 'r') as params:
             json_param = params.read()
         
         obj = json.loads(json_param)
@@ -56,16 +57,29 @@ class CNN:
 
         model = Model(inputs=visible, outputs=[
                       open_out, high_out, low_out, close_out])
+
         model.compile(optimizer='adam', loss='mse',
                       metrics=['mean_squared_error'])
 
         history = model.fit(X_train, [ytrain1, ytrain2, ytrain3, ytrain4], validation_data=(
             X_val, y_val), epochs=obj['epochs'], verbose=self.verbose)
+        
+        filepath = '/saved_models/CNN'
+        save_model(model, filepath)
 
-        return history, model
+        return history, model, filepath
 
-    def CNN_test_model(self, X_test, model, verbose, y_test):
+    def CNN_test_model(self, X_test, model, verbose, y_test, filepath):
         #X_test = X_test.reshape((1, self.timestep, 4 ))
+        
+        loaded_model = load_model(
+            filepath,
+            custom_objects=None,
+            compile=True
+        )
+
+        model = load_model('CNN')
+
         yhat = model.predict(X_test, verbose=verbose)
 
         yhat = np.concatenate((yhat), axis=1)
@@ -104,7 +118,7 @@ class MLP:
 
     def MLP_train_model(self, X_train, X_val, y_train, y_val, verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4):
         
-        with open('config/MLP.json', 'r') as params:
+        with open('model_config/MLP.json', 'r') as params:
             json_param = params.read()
         
         obj = json.loads(json_param)

@@ -4,7 +4,8 @@ from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import sklearn.metrics as sm
 from numpy import array
-from scripts.models import CNN, MLP, KNN, LSTMs
+from keras.backend import clear_session
+from models import CNN, MLP, KNN, LSTMs
 import csv
 import os
 import time
@@ -20,6 +21,7 @@ class Models:
         self.timestep = timestep
         self.model_type = model_type.upper()
         self.verbose = verbose
+        
 
     def __str__(self):
         # Used to compare self as a string
@@ -147,11 +149,11 @@ class Models:
 
             X_train, X_val, y_train, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4 = CNN.data_format(
                 X_train, X_val, y_train)
-            history, model = CNN.CNN_train_model(
+            history, model, filepath = CNN.CNN_train_model(
                 self, X_train, X_val, y_train, y_val, self.verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4)
             Models.plotting(history)
             yhat = CNN.CNN_test_model(
-                self, X_test, model, self.verbose, y_test)
+                self, X_test, model, self.verbose, y_test, filepath)
             Models.accuracy(yhat, y_test, X_test)
 
         if self.model_type == 'MLP':
@@ -182,5 +184,6 @@ class Models:
 
 
 if __name__ == "__main__":
-    Open = Models('EURUSD', 500, 'MLP', 0)
+    clear_session()
+    Open = Models('GBPUSD', 500, 'CNN', 2)
     Open.data()

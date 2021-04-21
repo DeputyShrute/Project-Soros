@@ -39,12 +39,17 @@ class menu:
             # Exit
             elif select == 4:
                 print("Exiting program")
-                dir = 'scripts/Finance_Data/Chart_Snapshot'
-                for pic in os.listdir(dir):
-                    os.remove(os.path.join(dir, pic))
-                os.system('cls')
-                os.system('clear')
-                exit()
+                try:
+                    dir = 'scripts/Finance_Data/Chart_Snapshot'
+                    for pic in os.listdir(dir):
+                        os.remove(os.path.join(dir, pic))
+                    os.system('cls')
+                    os.system('clear')
+                    exit()
+                finally:
+                    os.system('cls')
+                    os.system('clear')
+                    exit()
 
     def select_pair():
         select_pair_title = "Select Pair\n"
@@ -65,12 +70,7 @@ class menu:
             select = currency_menu.show()
             if select < (len(currency_pairs) - 1):
                 make_chart.load(select, currency_pairs)
-                os.chdir("/home/ryan/Documents/Python/Project-Soros/darknet")
-                os.system(
-                    "./darknet detector test data/obj.data cfg/yolo-obj.cfg backup/yolo-obj_final.weights -dont_show -ext_output < data/test.txt > data/result.txt")
-                predictions = Image.open('predictions.jpg')
-                predictions.show()
-                os.wait()
+
 
             else:
                 menu.main_menu()
