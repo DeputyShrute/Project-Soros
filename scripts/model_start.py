@@ -111,7 +111,8 @@ class Models:
         plt.plot(history.history['loss'], label='Train')
         plt.plot(history.history['val_loss'], label='Val')
         plt.legend()
-        plt.show(block=True)
+        print('Modsel')
+        plt.show()
 
         return
 
@@ -149,21 +150,21 @@ class Models:
 
             X_train, X_val, y_train, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4 = CNN.data_format(
                 X_train, X_val, y_train)
-            history, model = CNN.CNN_train_model(
+            history = CNN.CNN_train_model(
                 self, X_train, X_val, y_train, y_val, self.verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4)
             Models.plotting(history)
             yhat = CNN.CNN_test_model(
-                self, X_test, model, self.verbose, y_test)
+                self, X_test, self.verbose, y_test)
             Models.accuracy(yhat, y_test, X_test)
 
         if self.model_type == 'MLP':
 
             X_train, X_val, y_train, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4 = MLP.data_format(
                 X_train, X_val, y_train)
-            history, model = MLP.MLP_train_model(
+            history = MLP.MLP_train_model(
                 self, X_train, X_val, y_train, y_val, self.verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4)
             Models.plotting(history)
-            yhat = MLP.MLP_test_model(X_test, model, self.verbose, y_test)
+            yhat = MLP.MLP_test_model(X_test, self.verbose, y_test)
             Models.accuracy(yhat, y_test, X_test)
 
         if self.model_type == 'KNN':
@@ -185,5 +186,5 @@ class Models:
 
 if __name__ == "__main__":
     clear_session()
-    Open = Models('EURUSD', 500, 'MLP', 2)
+    Open = Models('EURUSD', 500, 'CNN', 2)
     Open.data()

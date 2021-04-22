@@ -76,9 +76,9 @@ class CNN:
             json_file.write(model_json)
         model.save_weights('saved_models/CNN.h5')
 
-        return history, model
+        return history
 
-    def CNN_test_model(self, X_test, model, verbose, y_test):
+    def CNN_test_model(self, X_test, verbose, y_test):
         #X_test = X_test.reshape((1, self.timestep, 4 ))
         
         # Loads saved model so retraining isn't needed
@@ -88,14 +88,17 @@ class CNN:
         model = model_from_json(loaded_model_json)
         model.load_weights('saved_models/CNN.h5')
 
+        print(X_test)
+        print(X_test.shape)
+
         # Predicts on trained model
         yhat = model.predict(X_test, verbose=verbose)
 
         # Prints the results
         yhat = np.concatenate((yhat), axis=1)
         print('Test:', X_test)
-        print('Actual:', y_test)
-        print('Predicted:', yhat)
+        print('Next Actual:\n', y_test)
+        print('Next Predicted:\n', yhat)
 
         # columns = ['Open', 'High', 'Low', 'Close']
         # files = ['open.csv', 'high.csv', 'low.csv', 'close.csv']
@@ -159,7 +162,7 @@ class MLP:
 
         return history, model
 
-    def MLP_test_model(X_test, model, verbose, y_test):
+    def MLP_test_model(X_test, verbose, y_test):
 
         # Loads saved model so retraining isn't needed
         json_file = open('saved_models/MLP.json', 'r')
@@ -256,10 +259,23 @@ class LSTMs:
 
         history = model.fit(
             X_train, y_train, validation_data=(X_val, y_val), epochs=200, verbose=2)
+        
+        # Saved the model as JSON and .h5
+        model_json = model.to_json()
+        with open('saved_models/LSTM.json', 'w') as json_file:
+            json_file.write(model_json)
+        model.save_weights('saved_models/MLP.h5')
 
         return history, model
 
     def LSTM_test_model(X_test, model, verbose, y_test):
+
+        # Loads saved model so retraining isn't needed
+        json_file = open('saved_models/MLP.json', 'r')
+        loaded_model_json = json_file.read()
+        json_file.close()
+        model = model_from_json(loaded_model_json)
+        model.load_weights('saved_models/MLP.h5')
 
         yhat = model.predict(X_test, verbose=verbose)
 

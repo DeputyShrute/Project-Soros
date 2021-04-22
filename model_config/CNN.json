@@ -5,5 +5,5 @@
     "activation_dense": "relu",
     "pool_size": 2,
     "Dense_layer_1": 250, 
-    "epochs": 100
+    "epochs": 10
 }

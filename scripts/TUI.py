@@ -70,8 +70,6 @@ class menu:
             select = currency_menu.show()
             if select < (len(currency_pairs) - 1):
                 make_chart.load(select, currency_pairs)
-
-
             else:
                 menu.main_menu()
 
