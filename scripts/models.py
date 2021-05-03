@@ -1,8 +1,10 @@
  #!/usr/bin/env python -W ignore::DeprecationWarning
+from re import VERBOSE
 from numpy.core.fromnumeric import shape
 from numpy.core.shape_base import hstack
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_absolute_error
+from sklearn.linear_model import LinearRegression
 from keras.layers.convolutional import MaxPooling1D
 from keras.layers.convolutional import Conv1D
 from keras.layers import Flatten
@@ -25,6 +27,29 @@ from tensorflow.python.keras.callbacks import History
 from tensorflow.python.keras.saving.model_config import model_from_json
 from tensorflow.python.saved_model.function_deserialization import load_function_def_library
 
+class BaseLine:
+    def data_format(X_train, y_train):
+        n_input = X_train.shape[1] * X_train.shape[2]
+        X_train = X_train.reshape((X_train.shape[0], n_input))
+        n_output = y_train.shape[1]
+        return n_input, X_train, n_output       
+    def baseline_train(self, X_train, y_train, n_input, n_output):
+        model = Sequential()
+        model.add(Dense(100, activation='relu', input_dim=n_input))
+        model.add(Dense(n_output))
+        model.compile(optimizer='adam', loss='mse')
+        model.summary()
+
+        model.fit(X_train, y_train, epochs=100, verbose=2)
+
+        return model
+
+    def baseline_test(X_test, n_input, model):
+        n_input = X_test.shape[1] * X_test.shape[2]
+        X_test = X_test.reshape((X_test.shape[0], n_input))
+        yhat = model.predict(X_test, verbose=0)
+
+        return yhat
 
 class CNN:
     def data_format(X_train, X_val, y_train):

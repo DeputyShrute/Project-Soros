@@ -1,14 +1,16 @@
- #!/usr/bin/env python -W ignore::DeprecationWarning
+#!/usr/bin/env python -W ignore::DeprecationWarning
+import logging
 from numpy.core.shape_base import hstack
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import sklearn.metrics as sm
 from numpy import array
 from keras.backend import clear_session
-from models import CNN, MLP, KNN, LSTMs
+from models import CNN, MLP, KNN, LSTMs, BaseLine
 import csv
 import os
 import time
+import json
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 
@@ -21,7 +23,13 @@ class Models:
         self.timestep = timestep
         self.model_type = model_type.upper()
         self.verbose = verbose
-        
+        self.logger = logging.getLogger('myLogger')
+        self.logger.setLevel(logging.INFO)
+        self.handler = logging.FileHandler('runs.log')
+        self.formatter = logging.Formatter(
+            '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        self.handler.setFormatter(self.formatter)
+        self.logger.addHandler(self.handler)
 
     def __str__(self):
         # Used to compare self as a string
@@ -56,7 +64,7 @@ class Models:
                 if 'null' in lines:
                     continue
                 else:
-                    #Index is +1 due to CSV indexing
+                    # Index is +1 due to CSV indexing
                     if lines[1] != 'null':
                         open_col.append(float(lines[1]))
                     if lines[2] != 'null':
@@ -116,19 +124,57 @@ class Models:
 
         return
 
-    def accuracy(yhat, y_test, X_test):
+    def accuracy(self, yhat, y_test, X_test, model_type):
+        print("=====================")
+        print("Accuracy Results")
+        print("=====================\n")
+        print(str(model_type))
         columns = ['Open', 'High', 'Low', 'Close']
         for i in range(0, 4):
             print(columns[i])
             print("Mean absolute error =", round(
                 sm.mean_absolute_error(y_test[:, i], yhat[:, i]), 4))
             print("Mean squared error =", round(
-                sm.mean_squared_error(y_test[:, i], yhat[:, i]), 4))
+                sm.mean_squared_error(y_test[:, i], yhat[:, i], squared=True), 4))
             print("Explain variance score =", round(
                 sm.explained_variance_score(y_test[:, i], yhat[:, i]), 4))
+            print("RMSE =", round(
+                sm.mean_squared_error(y_test[:, i], yhat[:, i], squared=False), 4))
             print("R2 score =", round(
                 sm.r2_score(y_test[:, i], yhat[:, i]), 4))
+        print("\nOverall Accuracy")
+        print("Mean absolute error =", round(
+                sm.mean_absolute_error(y_test, yhat), 4))
+        print("Mean squared error =", round(
+                sm.mean_squared_error(y_test, yhat, squared=True), 4))
+        print("Explain variance score =", round(
+                sm.explained_variance_score(y_test, yhat), 4))
+        print("RMSE =", round(
+                sm.mean_squared_error(y_test, yhat, squared=False), 4))
+        print("R2 score =", round(
+                sm.r2_score(y_test, yhat), 4))
         print("R2 score =", round(sm.r2_score(y_test, yhat), 4))
+
+        # with open('model_config/' + model_type + '.json', 'r') as params:
+        #     json_param = params.read()
+        # obj = json.loads(json_param)
+
+
+        self.logger.info(model_type)
+        for i in range(0, 4):
+            self.logger.info(columns[i])
+            self.logger.info("Mean absolute error =%s", round(
+                sm.mean_absolute_error(y_test[:, i], yhat[:, i]), 4))
+            self.logger.info("Mean squared error =%s", round(
+                sm.mean_squared_error(y_test[:, i], yhat[:, i], squared=True), 4))
+            self.logger.info("Explain variance score =%s", round(
+                sm.explained_variance_score(y_test[:, i], yhat[:, i]), 4))
+            self.logger.info("RMSE =%s", round(
+                sm.mean_squared_error(y_test[:, i], yhat[:, i], squared=False), 4))
+            self.logger.info("R2 score =%s", round(
+                sm.r2_score(y_test[:, i], yhat[:, i]), 4))
+        self.logger.info("R2 score =%s", round(sm.r2_score(y_test, yhat), 4))
+        self.logger.info("End\n")
 
     def direction(yhat):
         if yhat >= 0.5:
@@ -155,7 +201,7 @@ class Models:
             Models.plotting(history)
             yhat = CNN.CNN_test_model(
                 self, X_test, self.verbose, y_test)
-            Models.accuracy(yhat, y_test, X_test)
+            Models.accuracy(self, yhat, y_test, self.model_type)
 
         if self.model_type == 'MLP':
 
@@ -163,9 +209,9 @@ class Models:
                 X_train, X_val, y_train)
             history = MLP.MLP_train_model(
                 self, X_train, X_val, y_train, y_val, self.verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4)
-            Models.plotting(history)
+            #Models.plotting(history)
             yhat = MLP.MLP_test_model(X_test, self.verbose, y_test)
-            Models.accuracy(yhat, y_test, X_test)
+            Models.accuracy(self, yhat, y_test, X_test)
 
         if self.model_type == 'KNN':
 
@@ -173,7 +219,7 @@ class Models:
                 X_train, X_val, y_train, X_test)
             yhat = KNN.KNN_train_model(
                 self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq)
-            Models.accuracy(yhat, y_test, X_test)
+            Models.accuracy(self, yhat, y_test, X_test)
 
         if self.model_type == 'LSTM':
 
@@ -181,10 +227,16 @@ class Models:
                 self, X_train, X_val, y_train, y_val, self.verbose)
             Models.plotting(history)
             yhat = LSTMs.LSTM_test_model(X_test, model, self.verbose, y_test)
-            Models.accuracy(yhat, y_test, X_test)
+            Models.accuracy(self, yhat, y_test, X_test)
+        
+        if self.model_type == 'BASELINE':
+            n_input, X_train, n_output=BaseLine.data_format(X_train, y_train) 
+            model = BaseLine.baseline_train(self, X_train, y_train, n_input, n_output)
+            yhat = BaseLine.baseline_test(X_test, n_input, model)
+            Models.accuracy(self, yhat, y_test, X_test, self.model_type)
 
 
 if __name__ == "__main__":
     clear_session()
-    Open = Models('EURUSD', 500, 'CNN', 2)
+    Open = Models('EURUSD', 500, 'baseline', 2)
     Open.data()
