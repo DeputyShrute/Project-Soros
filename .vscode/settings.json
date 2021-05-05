@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/usr/bin/python3",
+    "python.pythonPath": "C:\\Users\\Ryan Easter\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
     "workbench.colorCustomizations": {
         "titleBar.activeBackground" : "#f2c216",
         "titleBar.inactiveBackground": "#ac8b12",

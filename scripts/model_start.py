@@ -201,7 +201,7 @@ class Models:
             Models.plotting(history)
             yhat = CNN.CNN_test_model(
                 self, X_test, self.verbose, y_test)
-            Models.accuracy(self, yhat, y_test, self.model_type)
+            Models.accuracy(self, yhat, y_test, self.model_type, self.model_type)
 
         if self.model_type == 'MLP':
 
@@ -211,7 +211,7 @@ class Models:
                 self, X_train, X_val, y_train, y_val, self.verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4)
             #Models.plotting(history)
             yhat = MLP.MLP_test_model(X_test, self.verbose, y_test)
-            Models.accuracy(self, yhat, y_test, X_test)
+            Models.accuracy(self, yhat, y_test, X_test, self.model_type)
 
         if self.model_type == 'KNN':
 
@@ -219,7 +219,7 @@ class Models:
                 X_train, X_val, y_train, X_test)
             yhat = KNN.KNN_train_model(
                 self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq)
-            Models.accuracy(self, yhat, y_test, X_test)
+            Models.accuracy(self, yhat, y_test, X_test, self.model_type)
 
         if self.model_type == 'LSTM':
 
@@ -227,7 +227,7 @@ class Models:
                 self, X_train, X_val, y_train, y_val, self.verbose)
             Models.plotting(history)
             yhat = LSTMs.LSTM_test_model(X_test, model, self.verbose, y_test)
-            Models.accuracy(self, yhat, y_test, X_test)
+            Models.accuracy(self, yhat, y_test, X_test, self.model_type)
         
         if self.model_type == 'BASELINE':
             n_input, X_train, n_output=BaseLine.data_format(X_train, y_train) 
@@ -238,5 +238,5 @@ class Models:
 
 if __name__ == "__main__":
     clear_session()
-    Open = Models('EURUSD', 500, 'baseline', 2)
+    Open = Models('EURUSD', 500, 'MLP', 2)
     Open.data()
