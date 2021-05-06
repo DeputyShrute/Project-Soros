@@ -1,5 +1,6 @@
 #!/usr/bin/env python -W ignore::DeprecationWarning
 import logging
+from sklearn.preprocessing import StandardScaler
 from numpy.core.shape_base import hstack
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
@@ -89,6 +90,7 @@ class Models:
 
         X_train, X_test, y_train, y_test = train_test_split(
             X, y, test_size=size)
+
         return X_train, X_test, y_train, y_test
 
     def data_prep(self, open_col, high_col, low_col, clos_col, raw_seq):
@@ -101,6 +103,10 @@ class Models:
 
         # Stacks arrays side by side in one array
         raw_seq = hstack((open_col, high_col, low_col, clos_col))
+
+        # scaler = StandardScaler()
+        # scaler.fit(raw_seq)#
+        # scaler.transform(raw_seq)
 
         # Splits the data into test and train (data, windows, size of test)
         X_train, X_test, y_train, y_test = Models.split_data(
@@ -124,7 +130,7 @@ class Models:
 
         return
 
-    def accuracy(self, yhat, y_test, X_test, model_type):
+    def accuracy(self, yhat, y_test, final_cols, model_type):
         print("=====================")
         print("Accuracy Results")
         print("=====================\n")
@@ -144,21 +150,30 @@ class Models:
                 sm.r2_score(y_test[:, i], yhat[:, i]), 4))
         print("\nOverall Accuracy")
         print("Mean absolute error =", round(
-                sm.mean_absolute_error(y_test, yhat), 4))
+            sm.mean_absolute_error(y_test, yhat), 4))
         print("Mean squared error =", round(
-                sm.mean_squared_error(y_test, yhat, squared=True), 4))
+            sm.mean_squared_error(y_test, yhat, squared=True), 4))
         print("Explain variance score =", round(
-                sm.explained_variance_score(y_test, yhat), 4))
+            sm.explained_variance_score(y_test, yhat), 4))
         print("RMSE =", round(
-                sm.mean_squared_error(y_test, yhat, squared=False), 4))
+            sm.mean_squared_error(y_test, yhat, squared=False), 4))
         print("R2 score =", round(
-                sm.r2_score(y_test, yhat), 4))
+            sm.r2_score(y_test, yhat), 4))
         print("R2 score =", round(sm.r2_score(y_test, yhat), 4))
 
+        if model_type == 'MLP':
+            MLP.MLP_analyse(y_test, yhat, final_cols)
+        if model_type == 'BASELINE':
+            MLP.MLP_analyse(y_test, yhat, final_cols)
+        if model_type == 'KNN':
+            MLP.MLP_analyse(y_test, yhat, final_cols)
+        if model_type == 'CNN':
+            LSTMs.LSTM_analyse(self, y_test, yhat, final_cols)
+        if model_type == 'LSTM':
+            LSTMs.LSTM_analyse(self, y_test, yhat, final_cols)
         # with open('model_config/' + model_type + '.json', 'r') as params:
         #     json_param = params.read()
         # obj = json.loads(json_param)
-
 
         self.logger.info(model_type)
         for i in range(0, 4):
@@ -201,7 +216,7 @@ class Models:
             Models.plotting(history)
             yhat = CNN.CNN_test_model(
                 self, X_test, self.verbose, y_test)
-            Models.accuracy(self, yhat, y_test, self.model_type, self.model_type)
+            Models.accuracy(self, yhat, y_test, X_test, self.model_type)
 
         if self.model_type == 'MLP':
 
@@ -209,17 +224,17 @@ class Models:
                 X_train, X_val, y_train)
             history = MLP.MLP_train_model(
                 self, X_train, X_val, y_train, y_val, self.verbose, n_input, n_output, ytrain1, ytrain2, ytrain3, ytrain4)
-            #Models.plotting(history)
-            yhat = MLP.MLP_test_model(X_test, self.verbose, y_test)
-            Models.accuracy(self, yhat, y_test, X_test, self.model_type)
+            # Models.plotting(history)
+            yhat, final_cols = MLP.MLP_test_model(X_test, self.verbose, y_test)
+            Models.accuracy(self, yhat, y_test, final_cols, self.model_type)
 
         if self.model_type == 'KNN':
 
             X_train, X_val, y_train, X_test = KNN.data_format(
                 X_train, X_val, y_train, X_test)
-            yhat = KNN.KNN_train_model(
+            yhat, final_cols = KNN.KNN_train_model(
                 self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq)
-            Models.accuracy(self, yhat, y_test, X_test, self.model_type)
+            Models.accuracy(self, yhat, y_test, final_cols, self.model_type)
 
         if self.model_type == 'LSTM':
 
@@ -228,15 +243,16 @@ class Models:
             Models.plotting(history)
             yhat = LSTMs.LSTM_test_model(X_test, model, self.verbose, y_test)
             Models.accuracy(self, yhat, y_test, X_test, self.model_type)
-        
+
         if self.model_type == 'BASELINE':
-            n_input, X_train, n_output=BaseLine.data_format(X_train, y_train) 
-            model = BaseLine.baseline_train(self, X_train, y_train, n_input, n_output)
-            yhat = BaseLine.baseline_test(X_test, n_input, model)
-            Models.accuracy(self, yhat, y_test, X_test, self.model_type)
+            n_input, X_train, n_output = BaseLine.data_format(X_train, y_train)
+            model = BaseLine.baseline_train(
+                self, X_train, y_train, n_input, n_output)
+            yhat, final_cols = BaseLine.baseline_test(X_test, n_input, model)
+            Models.accuracy(self, yhat, y_test, final_cols, self.model_type)
 
 
 if __name__ == "__main__":
     clear_session()
-    Open = Models('EURUSD', 500, 'MLP', 2)
+    Open = Models('EURUSD', 500, 'BASELIne', 2)
     Open.data()
