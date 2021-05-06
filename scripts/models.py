@@ -38,11 +38,12 @@ class BaseLine:
     def baseline_train(self, X_train, y_train, n_input, n_output):
         model = Sequential()
         model.add(Dense(100, activation='relu', input_dim=n_input))
+        #model.add(Dense(1000, activation='relu', input_dim=n_input))
         model.add(Dense(n_output))
         model.compile(optimizer='adam', loss='mse')
         model.summary()
 
-        model.fit(X_train, y_train, epochs=100, verbose=2)
+        model.fit(X_train, y_train, epochs=1000, verbose=2)
 
         return model
 
@@ -274,28 +275,44 @@ class MLP:
             if y_test[i][0] < final_cols[i][0]:
                 if yhat[i][0] < final_cols[i][0]:
                     correct_dir.append(1)
+                    # print("========")
+                    # print("Current: ",final_cols[i][0])
+                    # print("Next: ",y_test[i][0])
+                    # print("Predicted: ", round(yhat[i][0],5))
                 else:
                     correct_dir.append(0)
             elif y_test[i][0] > final_cols[i][0]:
                 if yhat[i][0] > final_cols[i][0]:
                     correct_dir.append(1)
+                    # print("========")
+                    # print("Current: ",final_cols[i][0])
+                    # print("Next: ",y_test[i][0])
+                    # print("Predicted: ", round(yhat[i][0],5))
                 else:
                     correct_dir.append(0)
             elif y_test[i][3] < final_cols[i][3]:
                 if yhat[i][3] < final_cols[i][3]:
                     correct_dir.append(1)
+                    # print("========")
+                    # print("Current: ",final_cols[i][3])
+                    # print("Next: ",y_test[i][3])
+                    # print("Predicted: ", round(yhat[i][3],5))
                 else:
                     correct_dir.append(0)
             elif y_test[i][3] > final_cols[i][3]:
                 if yhat[i][3] > final_cols[i][3]:
                     correct_dir.append(1)
+                    # print("========")
+                    # print("Current: ",final_cols[i][3])
+                    # print("Next: ",y_test[i][3])
+                    # print("Predicted: ", round(yhat[i][3],5))
                 else:
                     correct_dir.append(0)
 
         correct = sum(correct_dir)
         total = correct / (size(correct_dir))
-        print(size(correct_dir))
-        print("All columns correct: ", correct)
+        print("Number of total values", size(correct_dir))
+        print("All values correct: ", correct)
         print("Total percentage of correct:", total)
 
 
@@ -311,7 +328,7 @@ class KNN:
         return X_train, X_val, y_train, X_test
 
     def KNN_train_model(self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq):
-        k = 3
+        k = 1000
         classifier = KNeighborsRegressor(n_neighbors=k)
         classifier.fit(X_train, y_train)
         y_pred = classifier.predict(X_test)

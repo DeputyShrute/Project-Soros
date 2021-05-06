@@ -1707,3 +1707,2019 @@
 2021-05-06 18:14:26,904 - myLogger - INFO - R2 score =0.9411
 2021-05-06 18:14:26,904 - myLogger - INFO - End
 
+2021-05-06 18:15:10,104 - myLogger - INFO - KNN
+2021-05-06 18:15:10,105 - myLogger - INFO - Open
+2021-05-06 18:15:10,106 - myLogger - INFO - Mean absolute error =0.0048
+2021-05-06 18:15:10,107 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:15:10,107 - myLogger - INFO - Explain variance score =0.9969
+2021-05-06 18:15:10,107 - myLogger - INFO - RMSE =0.0067
+2021-05-06 18:15:10,107 - myLogger - INFO - R2 score =0.9969
+2021-05-06 18:15:10,107 - myLogger - INFO - High
+2021-05-06 18:15:10,109 - myLogger - INFO - Mean absolute error =0.0046
+2021-05-06 18:15:10,109 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:15:10,109 - myLogger - INFO - Explain variance score =0.9972
+2021-05-06 18:15:10,109 - myLogger - INFO - RMSE =0.0064
+2021-05-06 18:15:10,110 - myLogger - INFO - R2 score =0.9972
+2021-05-06 18:15:10,110 - myLogger - INFO - Low
+2021-05-06 18:15:10,110 - myLogger - INFO - Mean absolute error =0.0046
+2021-05-06 18:15:10,110 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:15:10,110 - myLogger - INFO - Explain variance score =0.9973
+2021-05-06 18:15:10,111 - myLogger - INFO - RMSE =0.0062
+2021-05-06 18:15:10,111 - myLogger - INFO - R2 score =0.9972
+2021-05-06 18:15:10,111 - myLogger - INFO - Close
+2021-05-06 18:15:10,111 - myLogger - INFO - Mean absolute error =0.0048
+2021-05-06 18:15:10,111 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:15:10,111 - myLogger - INFO - Explain variance score =0.997
+2021-05-06 18:15:10,112 - myLogger - INFO - RMSE =0.0066
+2021-05-06 18:15:10,112 - myLogger - INFO - R2 score =0.997
+2021-05-06 18:15:10,112 - myLogger - INFO - R2 score =0.9971
+2021-05-06 18:15:10,112 - myLogger - INFO - End
+
+2021-05-06 18:16:02,062 - myLogger - INFO - KNN
+2021-05-06 18:16:02,063 - myLogger - INFO - Open
+2021-05-06 18:16:02,063 - myLogger - INFO - Mean absolute error =0.0049
+2021-05-06 18:16:02,064 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:16:02,064 - myLogger - INFO - Explain variance score =0.9967
+2021-05-06 18:16:02,065 - myLogger - INFO - RMSE =0.0068
+2021-05-06 18:16:02,066 - myLogger - INFO - R2 score =0.9967
+2021-05-06 18:16:02,066 - myLogger - INFO - High
+2021-05-06 18:16:02,067 - myLogger - INFO - Mean absolute error =0.0049
+2021-05-06 18:16:02,067 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:16:02,068 - myLogger - INFO - Explain variance score =0.9968
+2021-05-06 18:16:02,069 - myLogger - INFO - RMSE =0.0068
+2021-05-06 18:16:02,069 - myLogger - INFO - R2 score =0.9967
+2021-05-06 18:16:02,070 - myLogger - INFO - Low
+2021-05-06 18:16:02,070 - myLogger - INFO - Mean absolute error =0.0047
+2021-05-06 18:16:02,071 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:16:02,072 - myLogger - INFO - Explain variance score =0.9967
+2021-05-06 18:16:02,072 - myLogger - INFO - RMSE =0.0067
+2021-05-06 18:16:02,073 - myLogger - INFO - R2 score =0.9967
+2021-05-06 18:16:02,074 - myLogger - INFO - Close
+2021-05-06 18:16:02,074 - myLogger - INFO - Mean absolute error =0.0049
+2021-05-06 18:16:02,075 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:16:02,075 - myLogger - INFO - Explain variance score =0.9966
+2021-05-06 18:16:02,076 - myLogger - INFO - RMSE =0.007
+2021-05-06 18:16:02,077 - myLogger - INFO - R2 score =0.9966
+2021-05-06 18:16:02,078 - myLogger - INFO - R2 score =0.9967
+2021-05-06 18:16:02,078 - myLogger - INFO - End
+
+2021-05-06 18:16:24,716 - myLogger - INFO - BASELINE
+2021-05-06 18:16:24,716 - myLogger - INFO - Open
+2021-05-06 18:16:24,716 - myLogger - INFO - Mean absolute error =0.015
+2021-05-06 18:16:24,716 - myLogger - INFO - Mean squared error =0.0004
+2021-05-06 18:16:24,717 - myLogger - INFO - Explain variance score =0.9836
+2021-05-06 18:16:24,717 - myLogger - INFO - RMSE =0.0194
+2021-05-06 18:16:24,717 - myLogger - INFO - R2 score =0.9746
+2021-05-06 18:16:24,717 - myLogger - INFO - High
+2021-05-06 18:16:24,717 - myLogger - INFO - Mean absolute error =0.0117
+2021-05-06 18:16:24,717 - myLogger - INFO - Mean squared error =0.0002
+2021-05-06 18:16:24,718 - myLogger - INFO - Explain variance score =0.9841
+2021-05-06 18:16:24,718 - myLogger - INFO - RMSE =0.0157
+2021-05-06 18:16:24,718 - myLogger - INFO - R2 score =0.9836
+2021-05-06 18:16:24,718 - myLogger - INFO - Low
+2021-05-06 18:16:24,718 - myLogger - INFO - Mean absolute error =0.0211
+2021-05-06 18:16:24,718 - myLogger - INFO - Mean squared error =0.0006
+2021-05-06 18:16:24,719 - myLogger - INFO - Explain variance score =0.9822
+2021-05-06 18:16:24,719 - myLogger - INFO - RMSE =0.0254
+2021-05-06 18:16:24,719 - myLogger - INFO - R2 score =0.9557
+2021-05-06 18:16:24,719 - myLogger - INFO - Close
+2021-05-06 18:16:24,719 - myLogger - INFO - Mean absolute error =0.0116
+2021-05-06 18:16:24,719 - myLogger - INFO - Mean squared error =0.0002
+2021-05-06 18:16:24,720 - myLogger - INFO - Explain variance score =0.9844
+2021-05-06 18:16:24,720 - myLogger - INFO - RMSE =0.0154
+2021-05-06 18:16:24,720 - myLogger - INFO - R2 score =0.984
+2021-05-06 18:16:24,720 - myLogger - INFO - R2 score =0.9745
+2021-05-06 18:16:24,720 - myLogger - INFO - End
+
+2021-05-06 18:17:06,724 - myLogger - INFO - BASELINE
+2021-05-06 18:17:06,724 - myLogger - INFO - Open
+2021-05-06 18:17:06,724 - myLogger - INFO - Mean absolute error =0.0173
+2021-05-06 18:17:06,724 - myLogger - INFO - Mean squared error =0.0005
+2021-05-06 18:17:06,725 - myLogger - INFO - Explain variance score =0.9812
+2021-05-06 18:17:06,725 - myLogger - INFO - RMSE =0.0224
+2021-05-06 18:17:06,725 - myLogger - INFO - R2 score =0.9669
+2021-05-06 18:17:06,725 - myLogger - INFO - High
+2021-05-06 18:17:06,725 - myLogger - INFO - Mean absolute error =0.017
+2021-05-06 18:17:06,726 - myLogger - INFO - Mean squared error =0.0005
+2021-05-06 18:17:06,726 - myLogger - INFO - Explain variance score =0.9797
+2021-05-06 18:17:06,726 - myLogger - INFO - RMSE =0.0227
+2021-05-06 18:17:06,726 - myLogger - INFO - R2 score =0.9663
+2021-05-06 18:17:06,726 - myLogger - INFO - Low
+2021-05-06 18:17:06,727 - myLogger - INFO - Mean absolute error =0.0231
+2021-05-06 18:17:06,727 - myLogger - INFO - Mean squared error =0.0008
+2021-05-06 18:17:06,727 - myLogger - INFO - Explain variance score =0.9792
+2021-05-06 18:17:06,727 - myLogger - INFO - RMSE =0.0278
+2021-05-06 18:17:06,727 - myLogger - INFO - R2 score =0.948
+2021-05-06 18:17:06,727 - myLogger - INFO - Close
+2021-05-06 18:17:06,728 - myLogger - INFO - Mean absolute error =0.0169
+2021-05-06 18:17:06,728 - myLogger - INFO - Mean squared error =0.0005
+2021-05-06 18:17:06,728 - myLogger - INFO - Explain variance score =0.9773
+2021-05-06 18:17:06,728 - myLogger - INFO - RMSE =0.0224
+2021-05-06 18:17:06,728 - myLogger - INFO - R2 score =0.9666
+2021-05-06 18:17:06,729 - myLogger - INFO - R2 score =0.9619
+2021-05-06 18:17:06,729 - myLogger - INFO - End
+
+2021-05-06 18:19:16,785 - myLogger - INFO - BASELINE
+2021-05-06 18:19:16,785 - myLogger - INFO - Open
+2021-05-06 18:19:16,785 - myLogger - INFO - Mean absolute error =0.0138
+2021-05-06 18:19:16,785 - myLogger - INFO - Mean squared error =0.0003
+2021-05-06 18:19:16,786 - myLogger - INFO - Explain variance score =0.9941
+2021-05-06 18:19:16,786 - myLogger - INFO - RMSE =0.016
+2021-05-06 18:19:16,786 - myLogger - INFO - R2 score =0.982
+2021-05-06 18:19:16,786 - myLogger - INFO - High
+2021-05-06 18:19:16,786 - myLogger - INFO - Mean absolute error =0.0152
+2021-05-06 18:19:16,786 - myLogger - INFO - Mean squared error =0.0003
+2021-05-06 18:19:16,786 - myLogger - INFO - Explain variance score =0.9921
+2021-05-06 18:19:16,787 - myLogger - INFO - RMSE =0.0176
+2021-05-06 18:19:16,787 - myLogger - INFO - R2 score =0.9787
+2021-05-06 18:19:16,787 - myLogger - INFO - Low
+2021-05-06 18:19:16,787 - myLogger - INFO - Mean absolute error =0.0122
+2021-05-06 18:19:16,787 - myLogger - INFO - Mean squared error =0.0002
+2021-05-06 18:19:16,787 - myLogger - INFO - Explain variance score =0.9924
+2021-05-06 18:19:16,788 - myLogger - INFO - RMSE =0.0152
+2021-05-06 18:19:16,788 - myLogger - INFO - R2 score =0.9835
+2021-05-06 18:19:16,788 - myLogger - INFO - Close
+2021-05-06 18:19:16,788 - myLogger - INFO - Mean absolute error =0.0146
+2021-05-06 18:19:16,788 - myLogger - INFO - Mean squared error =0.0003
+2021-05-06 18:19:16,789 - myLogger - INFO - Explain variance score =0.9905
+2021-05-06 18:19:16,789 - myLogger - INFO - RMSE =0.0176
+2021-05-06 18:19:16,789 - myLogger - INFO - R2 score =0.9784
+2021-05-06 18:19:16,789 - myLogger - INFO - R2 score =0.9807
+2021-05-06 18:19:16,789 - myLogger - INFO - End
+
+2021-05-06 18:21:10,539 - myLogger - INFO - BASELINE
+2021-05-06 18:21:10,539 - myLogger - INFO - Open
+2021-05-06 18:21:10,540 - myLogger - INFO - Mean absolute error =0.0071
+2021-05-06 18:21:10,540 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:21:10,540 - myLogger - INFO - Explain variance score =0.9944
+2021-05-06 18:21:10,540 - myLogger - INFO - RMSE =0.0094
+2021-05-06 18:21:10,540 - myLogger - INFO - R2 score =0.9936
+2021-05-06 18:21:10,540 - myLogger - INFO - High
+2021-05-06 18:21:10,541 - myLogger - INFO - Mean absolute error =0.0074
+2021-05-06 18:21:10,541 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:21:10,541 - myLogger - INFO - Explain variance score =0.9938
+2021-05-06 18:21:10,541 - myLogger - INFO - RMSE =0.0096
+2021-05-06 18:21:10,541 - myLogger - INFO - R2 score =0.9934
+2021-05-06 18:21:10,542 - myLogger - INFO - Low
+2021-05-06 18:21:10,542 - myLogger - INFO - Mean absolute error =0.0076
+2021-05-06 18:21:10,542 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:21:10,542 - myLogger - INFO - Explain variance score =0.9926
+2021-05-06 18:21:10,542 - myLogger - INFO - RMSE =0.0102
+2021-05-06 18:21:10,543 - myLogger - INFO - R2 score =0.9923
+2021-05-06 18:21:10,543 - myLogger - INFO - Close
+2021-05-06 18:21:10,543 - myLogger - INFO - Mean absolute error =0.0079
+2021-05-06 18:21:10,543 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:21:10,543 - myLogger - INFO - Explain variance score =0.9919
+2021-05-06 18:21:10,543 - myLogger - INFO - RMSE =0.0106
+2021-05-06 18:21:10,544 - myLogger - INFO - R2 score =0.9919
+2021-05-06 18:21:10,544 - myLogger - INFO - R2 score =0.9928
+2021-05-06 18:21:10,544 - myLogger - INFO - End
+
+2021-05-06 18:22:01,135 - myLogger - INFO - KNN
+2021-05-06 18:22:01,136 - myLogger - INFO - Open
+2021-05-06 18:22:01,136 - myLogger - INFO - Mean absolute error =0.0044
+2021-05-06 18:22:01,137 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:22:01,137 - myLogger - INFO - Explain variance score =0.997
+2021-05-06 18:22:01,138 - myLogger - INFO - RMSE =0.006
+2021-05-06 18:22:01,138 - myLogger - INFO - R2 score =0.997
+2021-05-06 18:22:01,139 - myLogger - INFO - High
+2021-05-06 18:22:01,139 - myLogger - INFO - Mean absolute error =0.0042
+2021-05-06 18:22:01,140 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:22:01,141 - myLogger - INFO - Explain variance score =0.9971
+2021-05-06 18:22:01,141 - myLogger - INFO - RMSE =0.0059
+2021-05-06 18:22:01,142 - myLogger - INFO - R2 score =0.9971
+2021-05-06 18:22:01,142 - myLogger - INFO - Low
+2021-05-06 18:22:01,143 - myLogger - INFO - Mean absolute error =0.0043
+2021-05-06 18:22:01,143 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:22:01,144 - myLogger - INFO - Explain variance score =0.9972
+2021-05-06 18:22:01,144 - myLogger - INFO - RMSE =0.0058
+2021-05-06 18:22:01,145 - myLogger - INFO - R2 score =0.9972
+2021-05-06 18:22:01,145 - myLogger - INFO - Close
+2021-05-06 18:22:01,146 - myLogger - INFO - Mean absolute error =0.0044
+2021-05-06 18:22:01,147 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:22:01,148 - myLogger - INFO - Explain variance score =0.997
+2021-05-06 18:22:01,148 - myLogger - INFO - RMSE =0.006
+2021-05-06 18:22:01,149 - myLogger - INFO - R2 score =0.997
+2021-05-06 18:22:01,149 - myLogger - INFO - R2 score =0.9971
+2021-05-06 18:22:01,150 - myLogger - INFO - End
+
+2021-05-06 18:22:11,723 - myLogger - INFO - KNN
+2021-05-06 18:22:11,724 - myLogger - INFO - Open
+2021-05-06 18:22:11,724 - myLogger - INFO - Mean absolute error =0.0049
+2021-05-06 18:22:11,724 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:22:11,724 - myLogger - INFO - Explain variance score =0.9975
+2021-05-06 18:22:11,725 - myLogger - INFO - RMSE =0.0068
+2021-05-06 18:22:11,725 - myLogger - INFO - R2 score =0.9975
+2021-05-06 18:22:11,725 - myLogger - INFO - High
+2021-05-06 18:22:11,725 - myLogger - INFO - Mean absolute error =0.005
+2021-05-06 18:22:11,725 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:22:11,726 - myLogger - INFO - Explain variance score =0.9974
+2021-05-06 18:22:11,726 - myLogger - INFO - RMSE =0.0069
+2021-05-06 18:22:11,727 - myLogger - INFO - R2 score =0.9974
+2021-05-06 18:22:11,727 - myLogger - INFO - Low
+2021-05-06 18:22:11,728 - myLogger - INFO - Mean absolute error =0.0046
+2021-05-06 18:22:11,728 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:22:11,729 - myLogger - INFO - Explain variance score =0.9977
+2021-05-06 18:22:11,730 - myLogger - INFO - RMSE =0.0064
+2021-05-06 18:22:11,731 - myLogger - INFO - R2 score =0.9977
+2021-05-06 18:22:11,731 - myLogger - INFO - Close
+2021-05-06 18:22:11,731 - myLogger - INFO - Mean absolute error =0.0051
+2021-05-06 18:22:11,732 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:22:11,732 - myLogger - INFO - Explain variance score =0.997
+2021-05-06 18:22:11,735 - myLogger - INFO - RMSE =0.0074
+2021-05-06 18:22:11,736 - myLogger - INFO - R2 score =0.997
+2021-05-06 18:22:11,737 - myLogger - INFO - R2 score =0.9974
+2021-05-06 18:22:11,737 - myLogger - INFO - End
+
+2021-05-06 18:22:19,610 - myLogger - INFO - KNN
+2021-05-06 18:22:19,610 - myLogger - INFO - Open
+2021-05-06 18:22:19,610 - myLogger - INFO - Mean absolute error =0.0047
+2021-05-06 18:22:19,611 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:22:19,612 - myLogger - INFO - Explain variance score =0.9971
+2021-05-06 18:22:19,612 - myLogger - INFO - RMSE =0.007
+2021-05-06 18:22:19,613 - myLogger - INFO - R2 score =0.9971
+2021-05-06 18:22:19,613 - myLogger - INFO - High
+2021-05-06 18:22:19,614 - myLogger - INFO - Mean absolute error =0.0058
+2021-05-06 18:22:19,615 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:22:19,615 - myLogger - INFO - Explain variance score =0.9961
+2021-05-06 18:22:19,616 - myLogger - INFO - RMSE =0.0082
+2021-05-06 18:22:19,617 - myLogger - INFO - R2 score =0.9961
+2021-05-06 18:22:19,617 - myLogger - INFO - Low
+2021-05-06 18:22:19,618 - myLogger - INFO - Mean absolute error =0.0058
+2021-05-06 18:22:19,618 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:22:19,619 - myLogger - INFO - Explain variance score =0.9958
+2021-05-06 18:22:19,619 - myLogger - INFO - RMSE =0.0085
+2021-05-06 18:22:19,620 - myLogger - INFO - R2 score =0.9958
+2021-05-06 18:22:19,620 - myLogger - INFO - Close
+2021-05-06 18:22:19,620 - myLogger - INFO - Mean absolute error =0.0069
+2021-05-06 18:22:19,621 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:22:19,621 - myLogger - INFO - Explain variance score =0.9946
+2021-05-06 18:22:19,622 - myLogger - INFO - RMSE =0.0097
+2021-05-06 18:22:19,623 - myLogger - INFO - R2 score =0.9946
+2021-05-06 18:22:19,623 - myLogger - INFO - R2 score =0.9959
+2021-05-06 18:22:19,624 - myLogger - INFO - End
+
+2021-05-06 18:22:28,485 - myLogger - INFO - KNN
+2021-05-06 18:22:28,485 - myLogger - INFO - Open
+2021-05-06 18:22:28,485 - myLogger - INFO - Mean absolute error =0.0012
+2021-05-06 18:22:28,485 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:22:28,486 - myLogger - INFO - Explain variance score =0.9997
+2021-05-06 18:22:28,486 - myLogger - INFO - RMSE =0.0021
+2021-05-06 18:22:28,486 - myLogger - INFO - R2 score =0.9997
+2021-05-06 18:22:28,486 - myLogger - INFO - High
+2021-05-06 18:22:28,486 - myLogger - INFO - Mean absolute error =0.0042
+2021-05-06 18:22:28,486 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:22:28,487 - myLogger - INFO - Explain variance score =0.9979
+2021-05-06 18:22:28,487 - myLogger - INFO - RMSE =0.0061
+2021-05-06 18:22:28,487 - myLogger - INFO - R2 score =0.9979
+2021-05-06 18:22:28,487 - myLogger - INFO - Low
+2021-05-06 18:22:28,487 - myLogger - INFO - Mean absolute error =0.004
+2021-05-06 18:22:28,487 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:22:28,488 - myLogger - INFO - Explain variance score =0.9982
+2021-05-06 18:22:28,488 - myLogger - INFO - RMSE =0.0056
+2021-05-06 18:22:28,488 - myLogger - INFO - R2 score =0.9982
+2021-05-06 18:22:28,488 - myLogger - INFO - Close
+2021-05-06 18:22:28,488 - myLogger - INFO - Mean absolute error =0.0058
+2021-05-06 18:22:28,488 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:22:28,488 - myLogger - INFO - Explain variance score =0.9964
+2021-05-06 18:22:28,489 - myLogger - INFO - RMSE =0.008
+2021-05-06 18:22:28,489 - myLogger - INFO - R2 score =0.9964
+2021-05-06 18:22:28,489 - myLogger - INFO - R2 score =0.9981
+2021-05-06 18:22:28,489 - myLogger - INFO - End
+
+2021-05-06 18:23:38,992 - myLogger - INFO - KNN
+2021-05-06 18:23:38,992 - myLogger - INFO - Open
+2021-05-06 18:23:38,992 - myLogger - INFO - Mean absolute error =0.0019
+2021-05-06 18:23:38,992 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:23:38,992 - myLogger - INFO - Explain variance score =0.9996
+2021-05-06 18:23:38,993 - myLogger - INFO - RMSE =0.0028
+2021-05-06 18:23:38,993 - myLogger - INFO - R2 score =0.9996
+2021-05-06 18:23:38,993 - myLogger - INFO - High
+2021-05-06 18:23:38,993 - myLogger - INFO - Mean absolute error =0.0044
+2021-05-06 18:23:38,993 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:23:38,993 - myLogger - INFO - Explain variance score =0.9978
+2021-05-06 18:23:38,994 - myLogger - INFO - RMSE =0.0063
+2021-05-06 18:23:38,994 - myLogger - INFO - R2 score =0.9978
+2021-05-06 18:23:38,994 - myLogger - INFO - Low
+2021-05-06 18:23:38,994 - myLogger - INFO - Mean absolute error =0.0042
+2021-05-06 18:23:38,994 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:23:38,994 - myLogger - INFO - Explain variance score =0.998
+2021-05-06 18:23:38,995 - myLogger - INFO - RMSE =0.0059
+2021-05-06 18:23:38,995 - myLogger - INFO - R2 score =0.998
+2021-05-06 18:23:38,995 - myLogger - INFO - Close
+2021-05-06 18:23:38,995 - myLogger - INFO - Mean absolute error =0.0059
+2021-05-06 18:23:38,995 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:23:38,995 - myLogger - INFO - Explain variance score =0.9962
+2021-05-06 18:23:38,995 - myLogger - INFO - RMSE =0.0082
+2021-05-06 18:23:38,996 - myLogger - INFO - R2 score =0.9961
+2021-05-06 18:23:38,996 - myLogger - INFO - R2 score =0.9979
+2021-05-06 18:23:38,996 - myLogger - INFO - End
+
+2021-05-06 18:23:47,976 - myLogger - INFO - KNN
+2021-05-06 18:23:47,977 - myLogger - INFO - Open
+2021-05-06 18:23:47,977 - myLogger - INFO - Mean absolute error =0.0012
+2021-05-06 18:23:47,977 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:23:47,977 - myLogger - INFO - Explain variance score =0.9998
+2021-05-06 18:23:47,977 - myLogger - INFO - RMSE =0.0019
+2021-05-06 18:23:47,978 - myLogger - INFO - R2 score =0.9998
+2021-05-06 18:23:47,978 - myLogger - INFO - High
+2021-05-06 18:23:47,978 - myLogger - INFO - Mean absolute error =0.0041
+2021-05-06 18:23:47,978 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:23:47,978 - myLogger - INFO - Explain variance score =0.9982
+2021-05-06 18:23:47,978 - myLogger - INFO - RMSE =0.0057
+2021-05-06 18:23:47,979 - myLogger - INFO - R2 score =0.9982
+2021-05-06 18:23:47,979 - myLogger - INFO - Low
+2021-05-06 18:23:47,979 - myLogger - INFO - Mean absolute error =0.0041
+2021-05-06 18:23:47,979 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:23:47,979 - myLogger - INFO - Explain variance score =0.998
+2021-05-06 18:23:47,979 - myLogger - INFO - RMSE =0.0059
+2021-05-06 18:23:47,980 - myLogger - INFO - R2 score =0.998
+2021-05-06 18:23:47,980 - myLogger - INFO - Close
+2021-05-06 18:23:47,980 - myLogger - INFO - Mean absolute error =0.0058
+2021-05-06 18:23:47,980 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:23:47,980 - myLogger - INFO - Explain variance score =0.9965
+2021-05-06 18:23:47,980 - myLogger - INFO - RMSE =0.0079
+2021-05-06 18:23:47,981 - myLogger - INFO - R2 score =0.9965
+2021-05-06 18:23:47,981 - myLogger - INFO - R2 score =0.9981
+2021-05-06 18:23:47,981 - myLogger - INFO - End
+
+2021-05-06 18:23:51,207 - myLogger - INFO - KNN
+2021-05-06 18:23:51,207 - myLogger - INFO - Open
+2021-05-06 18:23:51,208 - myLogger - INFO - Mean absolute error =0.0012
+2021-05-06 18:23:51,208 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:23:51,208 - myLogger - INFO - Explain variance score =0.9998
+2021-05-06 18:23:51,208 - myLogger - INFO - RMSE =0.0019
+2021-05-06 18:23:51,209 - myLogger - INFO - R2 score =0.9998
+2021-05-06 18:23:51,209 - myLogger - INFO - High
+2021-05-06 18:23:51,209 - myLogger - INFO - Mean absolute error =0.0041
+2021-05-06 18:23:51,209 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:23:51,209 - myLogger - INFO - Explain variance score =0.9981
+2021-05-06 18:23:51,209 - myLogger - INFO - RMSE =0.0058
+2021-05-06 18:23:51,210 - myLogger - INFO - R2 score =0.9981
+2021-05-06 18:23:51,210 - myLogger - INFO - Low
+2021-05-06 18:23:51,210 - myLogger - INFO - Mean absolute error =0.0041
+2021-05-06 18:23:51,210 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:23:51,210 - myLogger - INFO - Explain variance score =0.998
+2021-05-06 18:23:51,210 - myLogger - INFO - RMSE =0.0059
+2021-05-06 18:23:51,210 - myLogger - INFO - R2 score =0.998
+2021-05-06 18:23:51,210 - myLogger - INFO - Close
+2021-05-06 18:23:51,211 - myLogger - INFO - Mean absolute error =0.0058
+2021-05-06 18:23:51,211 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:23:51,211 - myLogger - INFO - Explain variance score =0.9964
+2021-05-06 18:23:51,211 - myLogger - INFO - RMSE =0.008
+2021-05-06 18:23:51,211 - myLogger - INFO - R2 score =0.9964
+2021-05-06 18:23:51,212 - myLogger - INFO - R2 score =0.9981
+2021-05-06 18:23:51,212 - myLogger - INFO - End
+
+2021-05-06 18:25:01,241 - myLogger - INFO - KNN
+2021-05-06 18:25:01,242 - myLogger - INFO - Open
+2021-05-06 18:25:01,242 - myLogger - INFO - Mean absolute error =0.0013
+2021-05-06 18:25:01,242 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:25:01,242 - myLogger - INFO - Explain variance score =0.9998
+2021-05-06 18:25:01,242 - myLogger - INFO - RMSE =0.002
+2021-05-06 18:25:01,243 - myLogger - INFO - R2 score =0.9998
+2021-05-06 18:25:01,243 - myLogger - INFO - High
+2021-05-06 18:25:01,243 - myLogger - INFO - Mean absolute error =0.0041
+2021-05-06 18:25:01,243 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:25:01,243 - myLogger - INFO - Explain variance score =0.998
+2021-05-06 18:25:01,243 - myLogger - INFO - RMSE =0.0059
+2021-05-06 18:25:01,244 - myLogger - INFO - R2 score =0.998
+2021-05-06 18:25:01,244 - myLogger - INFO - Low
+2021-05-06 18:25:01,244 - myLogger - INFO - Mean absolute error =0.0042
+2021-05-06 18:25:01,244 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:25:01,244 - myLogger - INFO - Explain variance score =0.998
+2021-05-06 18:25:01,244 - myLogger - INFO - RMSE =0.0059
+2021-05-06 18:25:01,244 - myLogger - INFO - R2 score =0.998
+2021-05-06 18:25:01,245 - myLogger - INFO - Close
+2021-05-06 18:25:01,245 - myLogger - INFO - Mean absolute error =0.0057
+2021-05-06 18:25:01,245 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:25:01,245 - myLogger - INFO - Explain variance score =0.9965
+2021-05-06 18:25:01,245 - myLogger - INFO - RMSE =0.0078
+2021-05-06 18:25:01,245 - myLogger - INFO - R2 score =0.9965
+2021-05-06 18:25:01,246 - myLogger - INFO - R2 score =0.9981
+2021-05-06 18:25:01,246 - myLogger - INFO - End
+
+2021-05-06 18:33:29,370 - myLogger - INFO - KNN
+2021-05-06 18:33:29,370 - myLogger - INFO - Open
+2021-05-06 18:33:29,371 - myLogger - INFO - Mean absolute error =0.0011
+2021-05-06 18:33:29,371 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:33:29,371 - myLogger - INFO - Explain variance score =0.9998
+2021-05-06 18:33:29,371 - myLogger - INFO - RMSE =0.0018
+2021-05-06 18:33:29,372 - myLogger - INFO - R2 score =0.9998
+2021-05-06 18:33:29,372 - myLogger - INFO - High
+2021-05-06 18:33:29,372 - myLogger - INFO - Mean absolute error =0.0042
+2021-05-06 18:33:29,372 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:33:29,372 - myLogger - INFO - Explain variance score =0.998
+2021-05-06 18:33:29,372 - myLogger - INFO - RMSE =0.006
+2021-05-06 18:33:29,372 - myLogger - INFO - R2 score =0.998
+2021-05-06 18:33:29,373 - myLogger - INFO - Low
+2021-05-06 18:33:29,373 - myLogger - INFO - Mean absolute error =0.0041
+2021-05-06 18:33:29,373 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:33:29,373 - myLogger - INFO - Explain variance score =0.998
+2021-05-06 18:33:29,373 - myLogger - INFO - RMSE =0.0059
+2021-05-06 18:33:29,373 - myLogger - INFO - R2 score =0.998
+2021-05-06 18:33:29,373 - myLogger - INFO - Close
+2021-05-06 18:33:29,374 - myLogger - INFO - Mean absolute error =0.0061
+2021-05-06 18:33:29,374 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:33:29,374 - myLogger - INFO - Explain variance score =0.9961
+2021-05-06 18:33:29,374 - myLogger - INFO - RMSE =0.0083
+2021-05-06 18:33:29,374 - myLogger - INFO - R2 score =0.9961
+2021-05-06 18:33:29,375 - myLogger - INFO - R2 score =0.998
+2021-05-06 18:33:29,375 - myLogger - INFO - End
+
+2021-05-06 18:35:01,490 - myLogger - INFO - KNN
+2021-05-06 18:35:01,491 - myLogger - INFO - Open
+2021-05-06 18:35:01,491 - myLogger - INFO - Mean absolute error =0.0012
+2021-05-06 18:35:01,491 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:35:01,491 - myLogger - INFO - Explain variance score =0.9998
+2021-05-06 18:35:01,491 - myLogger - INFO - RMSE =0.0018
+2021-05-06 18:35:01,492 - myLogger - INFO - R2 score =0.9998
+2021-05-06 18:35:01,492 - myLogger - INFO - High
+2021-05-06 18:35:01,492 - myLogger - INFO - Mean absolute error =0.0043
+2021-05-06 18:35:01,492 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:35:01,492 - myLogger - INFO - Explain variance score =0.998
+2021-05-06 18:35:01,492 - myLogger - INFO - RMSE =0.006
+2021-05-06 18:35:01,493 - myLogger - INFO - R2 score =0.998
+2021-05-06 18:35:01,493 - myLogger - INFO - Low
+2021-05-06 18:35:01,493 - myLogger - INFO - Mean absolute error =0.0043
+2021-05-06 18:35:01,493 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:35:01,493 - myLogger - INFO - Explain variance score =0.9979
+2021-05-06 18:35:01,493 - myLogger - INFO - RMSE =0.006
+2021-05-06 18:35:01,494 - myLogger - INFO - R2 score =0.9979
+2021-05-06 18:35:01,494 - myLogger - INFO - Close
+2021-05-06 18:35:01,494 - myLogger - INFO - Mean absolute error =0.006
+2021-05-06 18:35:01,494 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:35:01,494 - myLogger - INFO - Explain variance score =0.9961
+2021-05-06 18:35:01,494 - myLogger - INFO - RMSE =0.0083
+2021-05-06 18:35:01,495 - myLogger - INFO - R2 score =0.9961
+2021-05-06 18:35:01,495 - myLogger - INFO - R2 score =0.998
+2021-05-06 18:35:01,495 - myLogger - INFO - End
+
+2021-05-06 18:35:36,023 - myLogger - INFO - KNN
+2021-05-06 18:35:36,023 - myLogger - INFO - Open
+2021-05-06 18:35:36,023 - myLogger - INFO - Mean absolute error =0.0012
+2021-05-06 18:35:36,024 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:35:36,024 - myLogger - INFO - Explain variance score =0.9998
+2021-05-06 18:35:36,024 - myLogger - INFO - RMSE =0.0019
+2021-05-06 18:35:36,024 - myLogger - INFO - R2 score =0.9998
+2021-05-06 18:35:36,024 - myLogger - INFO - High
+2021-05-06 18:35:36,024 - myLogger - INFO - Mean absolute error =0.0043
+2021-05-06 18:35:36,025 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:35:36,025 - myLogger - INFO - Explain variance score =0.9979
+2021-05-06 18:35:36,025 - myLogger - INFO - RMSE =0.0062
+2021-05-06 18:35:36,025 - myLogger - INFO - R2 score =0.9979
+2021-05-06 18:35:36,025 - myLogger - INFO - Low
+2021-05-06 18:35:36,025 - myLogger - INFO - Mean absolute error =0.0042
+2021-05-06 18:35:36,026 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:35:36,026 - myLogger - INFO - Explain variance score =0.9981
+2021-05-06 18:35:36,026 - myLogger - INFO - RMSE =0.0057
+2021-05-06 18:35:36,026 - myLogger - INFO - R2 score =0.9981
+2021-05-06 18:35:36,026 - myLogger - INFO - Close
+2021-05-06 18:35:36,026 - myLogger - INFO - Mean absolute error =0.0059
+2021-05-06 18:35:36,027 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:35:36,027 - myLogger - INFO - Explain variance score =0.9962
+2021-05-06 18:35:36,027 - myLogger - INFO - RMSE =0.0082
+2021-05-06 18:35:36,028 - myLogger - INFO - R2 score =0.9962
+2021-05-06 18:35:36,028 - myLogger - INFO - R2 score =0.998
+2021-05-06 18:35:36,028 - myLogger - INFO - End
+
+2021-05-06 18:37:29,787 - myLogger - INFO - KNN
+2021-05-06 18:37:29,788 - myLogger - INFO - Open
+2021-05-06 18:37:29,789 - myLogger - INFO - Mean absolute error =0.0041
+2021-05-06 18:37:29,789 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:37:29,790 - myLogger - INFO - Explain variance score =0.9972
+2021-05-06 18:37:29,790 - myLogger - INFO - RMSE =0.0056
+2021-05-06 18:37:29,791 - myLogger - INFO - R2 score =0.9972
+2021-05-06 18:37:29,791 - myLogger - INFO - High
+2021-05-06 18:37:29,792 - myLogger - INFO - Mean absolute error =0.0044
+2021-05-06 18:37:29,792 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:37:29,793 - myLogger - INFO - Explain variance score =0.9968
+2021-05-06 18:37:29,794 - myLogger - INFO - RMSE =0.006
+2021-05-06 18:37:29,794 - myLogger - INFO - R2 score =0.9968
+2021-05-06 18:37:29,795 - myLogger - INFO - Low
+2021-05-06 18:37:29,795 - myLogger - INFO - Mean absolute error =0.0043
+2021-05-06 18:37:29,796 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:37:29,796 - myLogger - INFO - Explain variance score =0.9968
+2021-05-06 18:37:29,797 - myLogger - INFO - RMSE =0.0059
+2021-05-06 18:37:29,797 - myLogger - INFO - R2 score =0.9968
+2021-05-06 18:37:29,797 - myLogger - INFO - Close
+2021-05-06 18:37:29,798 - myLogger - INFO - Mean absolute error =0.0046
+2021-05-06 18:37:29,798 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:37:29,798 - myLogger - INFO - Explain variance score =0.9964
+2021-05-06 18:37:29,798 - myLogger - INFO - RMSE =0.0063
+2021-05-06 18:37:29,798 - myLogger - INFO - R2 score =0.9964
+2021-05-06 18:37:29,799 - myLogger - INFO - R2 score =0.9968
+2021-05-06 18:37:29,799 - myLogger - INFO - End
+
+2021-05-06 18:37:38,579 - myLogger - INFO - KNN
+2021-05-06 18:37:38,579 - myLogger - INFO - Open
+2021-05-06 18:37:38,580 - myLogger - INFO - Mean absolute error =0.0047
+2021-05-06 18:37:38,580 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:37:38,580 - myLogger - INFO - Explain variance score =0.9974
+2021-05-06 18:37:38,580 - myLogger - INFO - RMSE =0.0066
+2021-05-06 18:37:38,581 - myLogger - INFO - R2 score =0.9974
+2021-05-06 18:37:38,581 - myLogger - INFO - High
+2021-05-06 18:37:38,581 - myLogger - INFO - Mean absolute error =0.0059
+2021-05-06 18:37:38,581 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:37:38,581 - myLogger - INFO - Explain variance score =0.9958
+2021-05-06 18:37:38,581 - myLogger - INFO - RMSE =0.0085
+2021-05-06 18:37:38,582 - myLogger - INFO - R2 score =0.9958
+2021-05-06 18:37:38,582 - myLogger - INFO - Low
+2021-05-06 18:37:38,582 - myLogger - INFO - Mean absolute error =0.0059
+2021-05-06 18:37:38,582 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:37:38,582 - myLogger - INFO - Explain variance score =0.9954
+2021-05-06 18:37:38,582 - myLogger - INFO - RMSE =0.0087
+2021-05-06 18:37:38,582 - myLogger - INFO - R2 score =0.9954
+2021-05-06 18:37:38,583 - myLogger - INFO - Close
+2021-05-06 18:37:38,583 - myLogger - INFO - Mean absolute error =0.0071
+2021-05-06 18:37:38,583 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:37:38,583 - myLogger - INFO - Explain variance score =0.9938
+2021-05-06 18:37:38,583 - myLogger - INFO - RMSE =0.0102
+2021-05-06 18:37:38,583 - myLogger - INFO - R2 score =0.9938
+2021-05-06 18:37:38,584 - myLogger - INFO - R2 score =0.9956
+2021-05-06 18:37:38,584 - myLogger - INFO - End
+
+2021-05-06 18:37:48,527 - myLogger - INFO - KNN
+2021-05-06 18:37:48,527 - myLogger - INFO - Open
+2021-05-06 18:37:48,527 - myLogger - INFO - Mean absolute error =0.0032
+2021-05-06 18:37:48,528 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:37:48,528 - myLogger - INFO - Explain variance score =0.9926
+2021-05-06 18:37:48,528 - myLogger - INFO - RMSE =0.0041
+2021-05-06 18:37:48,528 - myLogger - INFO - R2 score =0.9922
+2021-05-06 18:37:48,528 - myLogger - INFO - High
+2021-05-06 18:37:48,529 - myLogger - INFO - Mean absolute error =0.0032
+2021-05-06 18:37:48,529 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:37:48,529 - myLogger - INFO - Explain variance score =0.9928
+2021-05-06 18:37:48,529 - myLogger - INFO - RMSE =0.0039
+2021-05-06 18:37:48,529 - myLogger - INFO - R2 score =0.9927
+2021-05-06 18:37:48,529 - myLogger - INFO - Low
+2021-05-06 18:37:48,530 - myLogger - INFO - Mean absolute error =0.0029
+2021-05-06 18:37:48,530 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:37:48,530 - myLogger - INFO - Explain variance score =0.9924
+2021-05-06 18:37:48,530 - myLogger - INFO - RMSE =0.0041
+2021-05-06 18:37:48,530 - myLogger - INFO - R2 score =0.9922
+2021-05-06 18:37:48,530 - myLogger - INFO - Close
+2021-05-06 18:37:48,530 - myLogger - INFO - Mean absolute error =0.0032
+2021-05-06 18:37:48,531 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:37:48,531 - myLogger - INFO - Explain variance score =0.992
+2021-05-06 18:37:48,531 - myLogger - INFO - RMSE =0.0041
+2021-05-06 18:37:48,531 - myLogger - INFO - R2 score =0.992
+2021-05-06 18:37:48,531 - myLogger - INFO - R2 score =0.9923
+2021-05-06 18:37:48,531 - myLogger - INFO - End
+
+2021-05-06 18:38:02,963 - myLogger - INFO - KNN
+2021-05-06 18:38:02,963 - myLogger - INFO - Open
+2021-05-06 18:38:02,964 - myLogger - INFO - Mean absolute error =0.0033
+2021-05-06 18:38:02,964 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:38:02,965 - myLogger - INFO - Explain variance score =0.9909
+2021-05-06 18:38:02,965 - myLogger - INFO - RMSE =0.0045
+2021-05-06 18:38:02,966 - myLogger - INFO - R2 score =0.9907
+2021-05-06 18:38:02,967 - myLogger - INFO - High
+2021-05-06 18:38:02,968 - myLogger - INFO - Mean absolute error =0.0035
+2021-05-06 18:38:02,969 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:38:02,969 - myLogger - INFO - Explain variance score =0.9894
+2021-05-06 18:38:02,970 - myLogger - INFO - RMSE =0.0048
+2021-05-06 18:38:02,970 - myLogger - INFO - R2 score =0.9894
+2021-05-06 18:38:02,970 - myLogger - INFO - Low
+2021-05-06 18:38:02,970 - myLogger - INFO - Mean absolute error =0.0035
+2021-05-06 18:38:02,970 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:38:02,970 - myLogger - INFO - Explain variance score =0.9901
+2021-05-06 18:38:02,971 - myLogger - INFO - RMSE =0.0047
+2021-05-06 18:38:02,971 - myLogger - INFO - R2 score =0.9898
+2021-05-06 18:38:02,972 - myLogger - INFO - Close
+2021-05-06 18:38:02,972 - myLogger - INFO - Mean absolute error =0.0036
+2021-05-06 18:38:02,973 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:38:02,974 - myLogger - INFO - Explain variance score =0.9875
+2021-05-06 18:38:02,974 - myLogger - INFO - RMSE =0.0052
+2021-05-06 18:38:02,975 - myLogger - INFO - R2 score =0.9873
+2021-05-06 18:38:02,975 - myLogger - INFO - R2 score =0.9893
+2021-05-06 18:38:02,976 - myLogger - INFO - End
+
+2021-05-06 18:38:10,707 - myLogger - INFO - KNN
+2021-05-06 18:38:10,708 - myLogger - INFO - Open
+2021-05-06 18:38:10,708 - myLogger - INFO - Mean absolute error =0.0137
+2021-05-06 18:38:10,709 - myLogger - INFO - Mean squared error =0.0003
+2021-05-06 18:38:10,709 - myLogger - INFO - Explain variance score =0.8852
+2021-05-06 18:38:10,710 - myLogger - INFO - RMSE =0.0168
+2021-05-06 18:38:10,710 - myLogger - INFO - R2 score =0.881
+2021-05-06 18:38:10,711 - myLogger - INFO - High
+2021-05-06 18:38:10,711 - myLogger - INFO - Mean absolute error =0.0131
+2021-05-06 18:38:10,711 - myLogger - INFO - Mean squared error =0.0003
+2021-05-06 18:38:10,712 - myLogger - INFO - Explain variance score =0.89
+2021-05-06 18:38:10,713 - myLogger - INFO - RMSE =0.0162
+2021-05-06 18:38:10,713 - myLogger - INFO - R2 score =0.8868
+2021-05-06 18:38:10,714 - myLogger - INFO - Low
+2021-05-06 18:38:10,714 - myLogger - INFO - Mean absolute error =0.0137
+2021-05-06 18:38:10,715 - myLogger - INFO - Mean squared error =0.0003
+2021-05-06 18:38:10,715 - myLogger - INFO - Explain variance score =0.8888
+2021-05-06 18:38:10,716 - myLogger - INFO - RMSE =0.0164
+2021-05-06 18:38:10,716 - myLogger - INFO - R2 score =0.8862
+2021-05-06 18:38:10,716 - myLogger - INFO - Close
+2021-05-06 18:38:10,717 - myLogger - INFO - Mean absolute error =0.0134
+2021-05-06 18:38:10,717 - myLogger - INFO - Mean squared error =0.0003
+2021-05-06 18:38:10,718 - myLogger - INFO - Explain variance score =0.8858
+2021-05-06 18:38:10,718 - myLogger - INFO - RMSE =0.0165
+2021-05-06 18:38:10,720 - myLogger - INFO - R2 score =0.8832
+2021-05-06 18:38:10,720 - myLogger - INFO - R2 score =0.8843
+2021-05-06 18:38:10,721 - myLogger - INFO - End
+
+2021-05-06 18:38:25,908 - myLogger - INFO - KNN
+2021-05-06 18:38:25,909 - myLogger - INFO - Open
+2021-05-06 18:38:25,909 - myLogger - INFO - Mean absolute error =0.043
+2021-05-06 18:38:25,910 - myLogger - INFO - Mean squared error =0.0021
+2021-05-06 18:38:25,911 - myLogger - INFO - Explain variance score =0.0063
+2021-05-06 18:38:25,912 - myLogger - INFO - RMSE =0.046
+2021-05-06 18:38:25,912 - myLogger - INFO - R2 score =0.0063
+2021-05-06 18:38:25,913 - myLogger - INFO - High
+2021-05-06 18:38:25,913 - myLogger - INFO - Mean absolute error =0.0429
+2021-05-06 18:38:25,914 - myLogger - INFO - Mean squared error =0.0021
+2021-05-06 18:38:25,914 - myLogger - INFO - Explain variance score =0.0063
+2021-05-06 18:38:25,915 - myLogger - INFO - RMSE =0.0459
+2021-05-06 18:38:25,915 - myLogger - INFO - R2 score =0.0062
+2021-05-06 18:38:25,916 - myLogger - INFO - Low
+2021-05-06 18:38:25,916 - myLogger - INFO - Mean absolute error =0.0432
+2021-05-06 18:38:25,917 - myLogger - INFO - Mean squared error =0.0022
+2021-05-06 18:38:25,917 - myLogger - INFO - Explain variance score =0.0062
+2021-05-06 18:38:25,918 - myLogger - INFO - RMSE =0.0464
+2021-05-06 18:38:25,918 - myLogger - INFO - R2 score =0.0062
+2021-05-06 18:38:25,918 - myLogger - INFO - Close
+2021-05-06 18:38:25,919 - myLogger - INFO - Mean absolute error =0.0434
+2021-05-06 18:38:25,920 - myLogger - INFO - Mean squared error =0.0022
+2021-05-06 18:38:25,921 - myLogger - INFO - Explain variance score =0.0062
+2021-05-06 18:38:25,921 - myLogger - INFO - RMSE =0.0465
+2021-05-06 18:38:25,922 - myLogger - INFO - R2 score =0.006
+2021-05-06 18:38:25,922 - myLogger - INFO - R2 score =0.0062
+2021-05-06 18:38:25,923 - myLogger - INFO - End
+
+2021-05-06 18:38:40,185 - myLogger - INFO - KNN
+2021-05-06 18:38:40,185 - myLogger - INFO - Open
+2021-05-06 18:38:40,186 - myLogger - INFO - Mean absolute error =0.0013
+2021-05-06 18:38:40,186 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:38:40,186 - myLogger - INFO - Explain variance score =0.9997
+2021-05-06 18:38:40,187 - myLogger - INFO - RMSE =0.002
+2021-05-06 18:38:40,187 - myLogger - INFO - R2 score =0.9997
+2021-05-06 18:38:40,187 - myLogger - INFO - High
+2021-05-06 18:38:40,187 - myLogger - INFO - Mean absolute error =0.0038
+2021-05-06 18:38:40,187 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:38:40,187 - myLogger - INFO - Explain variance score =0.9983
+2021-05-06 18:38:40,187 - myLogger - INFO - RMSE =0.0052
+2021-05-06 18:38:40,188 - myLogger - INFO - R2 score =0.9983
+2021-05-06 18:38:40,188 - myLogger - INFO - Low
+2021-05-06 18:38:40,188 - myLogger - INFO - Mean absolute error =0.0038
+2021-05-06 18:38:40,188 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:38:40,188 - myLogger - INFO - Explain variance score =0.9981
+2021-05-06 18:38:40,188 - myLogger - INFO - RMSE =0.0054
+2021-05-06 18:38:40,189 - myLogger - INFO - R2 score =0.9981
+2021-05-06 18:38:40,189 - myLogger - INFO - Close
+2021-05-06 18:38:40,189 - myLogger - INFO - Mean absolute error =0.0051
+2021-05-06 18:38:40,189 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:38:40,189 - myLogger - INFO - Explain variance score =0.9969
+2021-05-06 18:38:40,189 - myLogger - INFO - RMSE =0.007
+2021-05-06 18:38:40,190 - myLogger - INFO - R2 score =0.9969
+2021-05-06 18:38:40,190 - myLogger - INFO - R2 score =0.9983
+2021-05-06 18:38:40,190 - myLogger - INFO - End
+
+2021-05-06 18:38:47,004 - myLogger - INFO - KNN
+2021-05-06 18:38:47,004 - myLogger - INFO - Open
+2021-05-06 18:38:47,004 - myLogger - INFO - Mean absolute error =0.0023
+2021-05-06 18:38:47,004 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:38:47,004 - myLogger - INFO - Explain variance score =0.9994
+2021-05-06 18:38:47,005 - myLogger - INFO - RMSE =0.0034
+2021-05-06 18:38:47,005 - myLogger - INFO - R2 score =0.9994
+2021-05-06 18:38:47,005 - myLogger - INFO - High
+2021-05-06 18:38:47,005 - myLogger - INFO - Mean absolute error =0.0043
+2021-05-06 18:38:47,005 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:38:47,005 - myLogger - INFO - Explain variance score =0.9979
+2021-05-06 18:38:47,006 - myLogger - INFO - RMSE =0.0063
+2021-05-06 18:38:47,006 - myLogger - INFO - R2 score =0.9979
+2021-05-06 18:38:47,006 - myLogger - INFO - Low
+2021-05-06 18:38:47,006 - myLogger - INFO - Mean absolute error =0.0041
+2021-05-06 18:38:47,006 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:38:47,006 - myLogger - INFO - Explain variance score =0.9981
+2021-05-06 18:38:47,006 - myLogger - INFO - RMSE =0.0059
+2021-05-06 18:38:47,007 - myLogger - INFO - R2 score =0.9981
+2021-05-06 18:38:47,007 - myLogger - INFO - Close
+2021-05-06 18:38:47,007 - myLogger - INFO - Mean absolute error =0.0055
+2021-05-06 18:38:47,007 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:38:47,007 - myLogger - INFO - Explain variance score =0.9968
+2021-05-06 18:38:47,007 - myLogger - INFO - RMSE =0.0077
+2021-05-06 18:38:47,008 - myLogger - INFO - R2 score =0.9968
+2021-05-06 18:38:47,008 - myLogger - INFO - R2 score =0.998
+2021-05-06 18:38:47,008 - myLogger - INFO - End
+
+2021-05-06 18:38:54,103 - myLogger - INFO - KNN
+2021-05-06 18:38:54,103 - myLogger - INFO - Open
+2021-05-06 18:38:54,103 - myLogger - INFO - Mean absolute error =0.0019
+2021-05-06 18:38:54,103 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:38:54,104 - myLogger - INFO - Explain variance score =0.9995
+2021-05-06 18:38:54,104 - myLogger - INFO - RMSE =0.0028
+2021-05-06 18:38:54,104 - myLogger - INFO - R2 score =0.9995
+2021-05-06 18:38:54,104 - myLogger - INFO - High
+2021-05-06 18:38:54,104 - myLogger - INFO - Mean absolute error =0.0039
+2021-05-06 18:38:54,104 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:38:54,105 - myLogger - INFO - Explain variance score =0.9982
+2021-05-06 18:38:54,105 - myLogger - INFO - RMSE =0.0055
+2021-05-06 18:38:54,105 - myLogger - INFO - R2 score =0.9982
+2021-05-06 18:38:54,105 - myLogger - INFO - Low
+2021-05-06 18:38:54,105 - myLogger - INFO - Mean absolute error =0.0039
+2021-05-06 18:38:54,105 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:38:54,106 - myLogger - INFO - Explain variance score =0.9981
+2021-05-06 18:38:54,106 - myLogger - INFO - RMSE =0.0055
+2021-05-06 18:38:54,106 - myLogger - INFO - R2 score =0.9981
+2021-05-06 18:38:54,106 - myLogger - INFO - Close
+2021-05-06 18:38:54,106 - myLogger - INFO - Mean absolute error =0.0052
+2021-05-06 18:38:54,106 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:38:54,106 - myLogger - INFO - Explain variance score =0.9968
+2021-05-06 18:38:54,107 - myLogger - INFO - RMSE =0.0073
+2021-05-06 18:38:54,107 - myLogger - INFO - R2 score =0.9968
+2021-05-06 18:38:54,107 - myLogger - INFO - R2 score =0.9982
+2021-05-06 18:38:54,107 - myLogger - INFO - End
+
+2021-05-06 18:39:00,266 - myLogger - INFO - KNN
+2021-05-06 18:39:00,266 - myLogger - INFO - Open
+2021-05-06 18:39:00,266 - myLogger - INFO - Mean absolute error =0.0012
+2021-05-06 18:39:00,266 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:39:00,266 - myLogger - INFO - Explain variance score =0.9998
+2021-05-06 18:39:00,267 - myLogger - INFO - RMSE =0.0019
+2021-05-06 18:39:00,267 - myLogger - INFO - R2 score =0.9998
+2021-05-06 18:39:00,267 - myLogger - INFO - High
+2021-05-06 18:39:00,267 - myLogger - INFO - Mean absolute error =0.0046
+2021-05-06 18:39:00,267 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:39:00,267 - myLogger - INFO - Explain variance score =0.9976
+2021-05-06 18:39:00,267 - myLogger - INFO - RMSE =0.0067
+2021-05-06 18:39:00,268 - myLogger - INFO - R2 score =0.9975
+2021-05-06 18:39:00,268 - myLogger - INFO - Low
+2021-05-06 18:39:00,268 - myLogger - INFO - Mean absolute error =0.0045
+2021-05-06 18:39:00,268 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:39:00,268 - myLogger - INFO - Explain variance score =0.9978
+2021-05-06 18:39:00,268 - myLogger - INFO - RMSE =0.0062
+2021-05-06 18:39:00,269 - myLogger - INFO - R2 score =0.9978
+2021-05-06 18:39:00,269 - myLogger - INFO - Close
+2021-05-06 18:39:00,269 - myLogger - INFO - Mean absolute error =0.0066
+2021-05-06 18:39:00,269 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:39:00,269 - myLogger - INFO - Explain variance score =0.9956
+2021-05-06 18:39:00,269 - myLogger - INFO - RMSE =0.0089
+2021-05-06 18:39:00,270 - myLogger - INFO - R2 score =0.9956
+2021-05-06 18:39:00,270 - myLogger - INFO - R2 score =0.9977
+2021-05-06 18:39:00,270 - myLogger - INFO - End
+
+2021-05-06 18:39:06,057 - myLogger - INFO - KNN
+2021-05-06 18:39:06,057 - myLogger - INFO - Open
+2021-05-06 18:39:06,057 - myLogger - INFO - Mean absolute error =0.0012
+2021-05-06 18:39:06,057 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:39:06,058 - myLogger - INFO - Explain variance score =0.9998
+2021-05-06 18:39:06,058 - myLogger - INFO - RMSE =0.0018
+2021-05-06 18:39:06,058 - myLogger - INFO - R2 score =0.9998
+2021-05-06 18:39:06,058 - myLogger - INFO - High
+2021-05-06 18:39:06,058 - myLogger - INFO - Mean absolute error =0.004
+2021-05-06 18:39:06,058 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:39:06,059 - myLogger - INFO - Explain variance score =0.9982
+2021-05-06 18:39:06,059 - myLogger - INFO - RMSE =0.0056
+2021-05-06 18:39:06,059 - myLogger - INFO - R2 score =0.9982
+2021-05-06 18:39:06,059 - myLogger - INFO - Low
+2021-05-06 18:39:06,059 - myLogger - INFO - Mean absolute error =0.0041
+2021-05-06 18:39:06,059 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:39:06,060 - myLogger - INFO - Explain variance score =0.9981
+2021-05-06 18:39:06,060 - myLogger - INFO - RMSE =0.0057
+2021-05-06 18:39:06,060 - myLogger - INFO - R2 score =0.9981
+2021-05-06 18:39:06,060 - myLogger - INFO - Close
+2021-05-06 18:39:06,060 - myLogger - INFO - Mean absolute error =0.0057
+2021-05-06 18:39:06,060 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:39:06,061 - myLogger - INFO - Explain variance score =0.9965
+2021-05-06 18:39:06,061 - myLogger - INFO - RMSE =0.0078
+2021-05-06 18:39:06,061 - myLogger - INFO - R2 score =0.9964
+2021-05-06 18:39:06,061 - myLogger - INFO - R2 score =0.9981
+2021-05-06 18:39:06,061 - myLogger - INFO - End
+
+2021-05-06 18:46:00,879 - myLogger - INFO - MLP
+2021-05-06 18:46:00,879 - myLogger - INFO - Open
+2021-05-06 18:46:00,880 - myLogger - INFO - Mean absolute error =0.0043
+2021-05-06 18:46:00,880 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 18:46:00,880 - myLogger - INFO - Explain variance score =0.9982
+2021-05-06 18:46:00,881 - myLogger - INFO - RMSE =0.006
+2021-05-06 18:46:00,881 - myLogger - INFO - R2 score =0.9981
+2021-05-06 18:46:00,881 - myLogger - INFO - High
+2021-05-06 18:46:00,881 - myLogger - INFO - Mean absolute error =0.0058
+2021-05-06 18:46:00,881 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:46:00,881 - myLogger - INFO - Explain variance score =0.9967
+2021-05-06 18:46:00,882 - myLogger - INFO - RMSE =0.008
+2021-05-06 18:46:00,882 - myLogger - INFO - R2 score =0.9967
+2021-05-06 18:46:00,882 - myLogger - INFO - Low
+2021-05-06 18:46:00,882 - myLogger - INFO - Mean absolute error =0.006
+2021-05-06 18:46:00,882 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:46:00,882 - myLogger - INFO - Explain variance score =0.997
+2021-05-06 18:46:00,883 - myLogger - INFO - RMSE =0.0079
+2021-05-06 18:46:00,883 - myLogger - INFO - R2 score =0.9967
+2021-05-06 18:46:00,883 - myLogger - INFO - Close
+2021-05-06 18:46:00,883 - myLogger - INFO - Mean absolute error =0.0066
+2021-05-06 18:46:00,883 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 18:46:00,883 - myLogger - INFO - Explain variance score =0.9958
+2021-05-06 18:46:00,884 - myLogger - INFO - RMSE =0.009
+2021-05-06 18:46:00,884 - myLogger - INFO - R2 score =0.9958
+2021-05-06 18:46:00,884 - myLogger - INFO - R2 score =0.9968
+2021-05-06 18:46:00,884 - myLogger - INFO - End
+
+2021-05-06 19:06:35,829 - myLogger - INFO - KNN
+2021-05-06 19:06:35,829 - myLogger - INFO - Open
+2021-05-06 19:06:35,829 - myLogger - INFO - Mean absolute error =0.0012
+2021-05-06 19:06:35,829 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 19:06:35,829 - myLogger - INFO - Explain variance score =0.9998
+2021-05-06 19:06:35,830 - myLogger - INFO - RMSE =0.002
+2021-05-06 19:06:35,830 - myLogger - INFO - R2 score =0.9998
+2021-05-06 19:06:35,830 - myLogger - INFO - High
+2021-05-06 19:06:35,830 - myLogger - INFO - Mean absolute error =0.0039
+2021-05-06 19:06:35,830 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 19:06:35,830 - myLogger - INFO - Explain variance score =0.9983
+2021-05-06 19:06:35,831 - myLogger - INFO - RMSE =0.0055
+2021-05-06 19:06:35,831 - myLogger - INFO - R2 score =0.9983
+2021-05-06 19:06:35,831 - myLogger - INFO - Low
+2021-05-06 19:06:35,831 - myLogger - INFO - Mean absolute error =0.004
+2021-05-06 19:06:35,831 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 19:06:35,831 - myLogger - INFO - Explain variance score =0.998
+2021-05-06 19:06:35,832 - myLogger - INFO - RMSE =0.0059
+2021-05-06 19:06:35,832 - myLogger - INFO - R2 score =0.998
+2021-05-06 19:06:35,832 - myLogger - INFO - Close
+2021-05-06 19:06:35,832 - myLogger - INFO - Mean absolute error =0.0057
+2021-05-06 19:06:35,832 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 19:06:35,832 - myLogger - INFO - Explain variance score =0.9964
+2021-05-06 19:06:35,832 - myLogger - INFO - RMSE =0.0079
+2021-05-06 19:06:35,833 - myLogger - INFO - R2 score =0.9964
+2021-05-06 19:06:35,833 - myLogger - INFO - R2 score =0.9981
+2021-05-06 19:06:35,833 - myLogger - INFO - End
+
+2021-05-06 19:11:23,602 - myLogger - INFO - BASELINE
+2021-05-06 19:11:23,602 - myLogger - INFO - Open
+2021-05-06 19:11:23,602 - myLogger - INFO - Mean absolute error =0.0147
+2021-05-06 19:11:23,603 - myLogger - INFO - Mean squared error =0.0004
+2021-05-06 19:11:23,603 - myLogger - INFO - Explain variance score =0.9768
+2021-05-06 19:11:23,603 - myLogger - INFO - RMSE =0.0198
+2021-05-06 19:11:23,603 - myLogger - INFO - R2 score =0.9727
+2021-05-06 19:11:23,603 - myLogger - INFO - High
+2021-05-06 19:11:23,604 - myLogger - INFO - Mean absolute error =0.0152
+2021-05-06 19:11:23,604 - myLogger - INFO - Mean squared error =0.0004
+2021-05-06 19:11:23,604 - myLogger - INFO - Explain variance score =0.9763
+2021-05-06 19:11:23,604 - myLogger - INFO - RMSE =0.0202
+2021-05-06 19:11:23,605 - myLogger - INFO - R2 score =0.9721
+2021-05-06 19:11:23,605 - myLogger - INFO - Low
+2021-05-06 19:11:23,605 - myLogger - INFO - Mean absolute error =0.0161
+2021-05-06 19:11:23,605 - myLogger - INFO - Mean squared error =0.0004
+2021-05-06 19:11:23,605 - myLogger - INFO - Explain variance score =0.9777
+2021-05-06 19:11:23,605 - myLogger - INFO - RMSE =0.021
+2021-05-06 19:11:23,606 - myLogger - INFO - R2 score =0.9686
+2021-05-06 19:11:23,606 - myLogger - INFO - Close
+2021-05-06 19:11:23,606 - myLogger - INFO - Mean absolute error =0.017
+2021-05-06 19:11:23,606 - myLogger - INFO - Mean squared error =0.0005
+2021-05-06 19:11:23,606 - myLogger - INFO - Explain variance score =0.975
+2021-05-06 19:11:23,606 - myLogger - INFO - RMSE =0.0222
+2021-05-06 19:11:23,607 - myLogger - INFO - R2 score =0.9656
+2021-05-06 19:11:23,607 - myLogger - INFO - R2 score =0.9698
+2021-05-06 19:11:23,607 - myLogger - INFO - End
+
+2021-05-06 19:13:56,645 - myLogger - INFO - BASELINE
+2021-05-06 19:13:56,645 - myLogger - INFO - Open
+2021-05-06 19:13:56,646 - myLogger - INFO - Mean absolute error =0.0653
+2021-05-06 19:13:56,646 - myLogger - INFO - Mean squared error =0.007
+2021-05-06 19:13:56,646 - myLogger - INFO - Explain variance score =0.683
+2021-05-06 19:13:56,646 - myLogger - INFO - RMSE =0.0837
+2021-05-06 19:13:56,647 - myLogger - INFO - R2 score =0.5166
+2021-05-06 19:13:56,647 - myLogger - INFO - High
+2021-05-06 19:13:56,647 - myLogger - INFO - Mean absolute error =0.0576
+2021-05-06 19:13:56,647 - myLogger - INFO - Mean squared error =0.0054
+2021-05-06 19:13:56,647 - myLogger - INFO - Explain variance score =0.6768
+2021-05-06 19:13:56,647 - myLogger - INFO - RMSE =0.0733
+2021-05-06 19:13:56,648 - myLogger - INFO - R2 score =0.6355
+2021-05-06 19:13:56,648 - myLogger - INFO - Low
+2021-05-06 19:13:56,648 - myLogger - INFO - Mean absolute error =0.0541
+2021-05-06 19:13:56,648 - myLogger - INFO - Mean squared error =0.0048
+2021-05-06 19:13:56,648 - myLogger - INFO - Explain variance score =0.6658
+2021-05-06 19:13:56,648 - myLogger - INFO - RMSE =0.0692
+2021-05-06 19:13:56,649 - myLogger - INFO - R2 score =0.6651
+2021-05-06 19:13:56,649 - myLogger - INFO - Close
+2021-05-06 19:13:56,649 - myLogger - INFO - Mean absolute error =0.0648
+2021-05-06 19:13:56,649 - myLogger - INFO - Mean squared error =0.0069
+2021-05-06 19:13:56,649 - myLogger - INFO - Explain variance score =0.6365
+2021-05-06 19:13:56,649 - myLogger - INFO - RMSE =0.0829
+2021-05-06 19:13:56,650 - myLogger - INFO - R2 score =0.5263
+2021-05-06 19:13:56,650 - myLogger - INFO - R2 score =0.5859
+2021-05-06 19:13:56,650 - myLogger - INFO - End
+
+2021-05-06 19:15:46,766 - myLogger - INFO - BASELINE
+2021-05-06 19:15:46,766 - myLogger - INFO - Open
+2021-05-06 19:15:46,767 - myLogger - INFO - Mean absolute error =0.0686
+2021-05-06 19:15:46,767 - myLogger - INFO - Mean squared error =0.0066
+2021-05-06 19:15:46,767 - myLogger - INFO - Explain variance score =0.7148
+2021-05-06 19:15:46,767 - myLogger - INFO - RMSE =0.0811
+2021-05-06 19:15:46,768 - myLogger - INFO - R2 score =0.5459
+2021-05-06 19:15:46,768 - myLogger - INFO - High
+2021-05-06 19:15:46,768 - myLogger - INFO - Mean absolute error =0.0733
+2021-05-06 19:15:46,768 - myLogger - INFO - Mean squared error =0.0076
+2021-05-06 19:15:46,768 - myLogger - INFO - Explain variance score =0.6648
+2021-05-06 19:15:46,768 - myLogger - INFO - RMSE =0.0869
+2021-05-06 19:15:46,769 - myLogger - INFO - R2 score =0.4869
+2021-05-06 19:15:46,769 - myLogger - INFO - Low
+2021-05-06 19:15:46,769 - myLogger - INFO - Mean absolute error =0.0527
+2021-05-06 19:15:46,769 - myLogger - INFO - Mean squared error =0.0045
+2021-05-06 19:15:46,769 - myLogger - INFO - Explain variance score =0.6846
+2021-05-06 19:15:46,769 - myLogger - INFO - RMSE =0.0668
+2021-05-06 19:15:46,769 - myLogger - INFO - R2 score =0.6846
+2021-05-06 19:15:46,770 - myLogger - INFO - Close
+2021-05-06 19:15:46,770 - myLogger - INFO - Mean absolute error =0.0621
+2021-05-06 19:15:46,770 - myLogger - INFO - Mean squared error =0.0056
+2021-05-06 19:15:46,770 - myLogger - INFO - Explain variance score =0.7156
+2021-05-06 19:15:46,770 - myLogger - INFO - RMSE =0.0747
+2021-05-06 19:15:46,770 - myLogger - INFO - R2 score =0.6137
+2021-05-06 19:15:46,771 - myLogger - INFO - R2 score =0.5828
+2021-05-06 19:15:46,771 - myLogger - INFO - End
+
+2021-05-06 19:15:51,922 - myLogger - INFO - BASELINE
+2021-05-06 19:15:51,922 - myLogger - INFO - Open
+2021-05-06 19:15:51,922 - myLogger - INFO - Mean absolute error =0.0616
+2021-05-06 19:15:51,923 - myLogger - INFO - Mean squared error =0.0059
+2021-05-06 19:15:51,923 - myLogger - INFO - Explain variance score =0.6415
+2021-05-06 19:15:51,923 - myLogger - INFO - RMSE =0.0766
+2021-05-06 19:15:51,923 - myLogger - INFO - R2 score =0.5851
+2021-05-06 19:15:51,923 - myLogger - INFO - High
+2021-05-06 19:15:51,924 - myLogger - INFO - Mean absolute error =0.0643
+2021-05-06 19:15:51,924 - myLogger - INFO - Mean squared error =0.0068
+2021-05-06 19:15:51,924 - myLogger - INFO - Explain variance score =0.6538
+2021-05-06 19:15:51,924 - myLogger - INFO - RMSE =0.0824
+2021-05-06 19:15:51,924 - myLogger - INFO - R2 score =0.5271
+2021-05-06 19:15:51,924 - myLogger - INFO - Low
+2021-05-06 19:15:51,925 - myLogger - INFO - Mean absolute error =0.0689
+2021-05-06 19:15:51,925 - myLogger - INFO - Mean squared error =0.0067
+2021-05-06 19:15:51,925 - myLogger - INFO - Explain variance score =0.6619
+2021-05-06 19:15:51,925 - myLogger - INFO - RMSE =0.0819
+2021-05-06 19:15:51,925 - myLogger - INFO - R2 score =0.5147
+2021-05-06 19:15:51,925 - myLogger - INFO - Close
+2021-05-06 19:15:51,926 - myLogger - INFO - Mean absolute error =0.0605
+2021-05-06 19:15:51,926 - myLogger - INFO - Mean squared error =0.0062
+2021-05-06 19:15:51,926 - myLogger - INFO - Explain variance score =0.6852
+2021-05-06 19:15:51,926 - myLogger - INFO - RMSE =0.0785
+2021-05-06 19:15:51,926 - myLogger - INFO - R2 score =0.5628
+2021-05-06 19:15:51,927 - myLogger - INFO - R2 score =0.5474
+2021-05-06 19:15:51,927 - myLogger - INFO - End
+
+2021-05-06 19:16:05,204 - myLogger - INFO - BASELINE
+2021-05-06 19:16:05,204 - myLogger - INFO - Open
+2021-05-06 19:16:05,205 - myLogger - INFO - Mean absolute error =0.0719
+2021-05-06 19:16:05,205 - myLogger - INFO - Mean squared error =0.0072
+2021-05-06 19:16:05,205 - myLogger - INFO - Explain variance score =0.6976
+2021-05-06 19:16:05,205 - myLogger - INFO - RMSE =0.0848
+2021-05-06 19:16:05,206 - myLogger - INFO - R2 score =0.4978
+2021-05-06 19:16:05,206 - myLogger - INFO - High
+2021-05-06 19:16:05,206 - myLogger - INFO - Mean absolute error =0.0706
+2021-05-06 19:16:05,206 - myLogger - INFO - Mean squared error =0.0082
+2021-05-06 19:16:05,206 - myLogger - INFO - Explain variance score =0.6482
+2021-05-06 19:16:05,206 - myLogger - INFO - RMSE =0.0907
+2021-05-06 19:16:05,207 - myLogger - INFO - R2 score =0.4345
+2021-05-06 19:16:05,207 - myLogger - INFO - Low
+2021-05-06 19:16:05,207 - myLogger - INFO - Mean absolute error =0.0525
+2021-05-06 19:16:05,207 - myLogger - INFO - Mean squared error =0.0044
+2021-05-06 19:16:05,207 - myLogger - INFO - Explain variance score =0.7023
+2021-05-06 19:16:05,207 - myLogger - INFO - RMSE =0.0663
+2021-05-06 19:16:05,208 - myLogger - INFO - R2 score =0.6869
+2021-05-06 19:16:05,208 - myLogger - INFO - Close
+2021-05-06 19:16:05,208 - myLogger - INFO - Mean absolute error =0.0754
+2021-05-06 19:16:05,208 - myLogger - INFO - Mean squared error =0.0093
+2021-05-06 19:16:05,208 - myLogger - INFO - Explain variance score =0.6387
+2021-05-06 19:16:05,208 - myLogger - INFO - RMSE =0.0966
+2021-05-06 19:16:05,208 - myLogger - INFO - R2 score =0.3457
+2021-05-06 19:16:05,209 - myLogger - INFO - R2 score =0.4912
+2021-05-06 19:16:05,209 - myLogger - INFO - End
+
+2021-05-06 19:16:56,844 - myLogger - INFO - BASELINE
+2021-05-06 19:16:56,844 - myLogger - INFO - Open
+2021-05-06 19:16:56,845 - myLogger - INFO - Mean absolute error =0.0392
+2021-05-06 19:16:56,845 - myLogger - INFO - Mean squared error =0.0024
+2021-05-06 19:16:56,845 - myLogger - INFO - Explain variance score =0.8323
+2021-05-06 19:16:56,846 - myLogger - INFO - RMSE =0.0491
+2021-05-06 19:16:56,846 - myLogger - INFO - R2 score =0.8317
+2021-05-06 19:16:56,846 - myLogger - INFO - High
+2021-05-06 19:16:56,846 - myLogger - INFO - Mean absolute error =0.0372
+2021-05-06 19:16:56,846 - myLogger - INFO - Mean squared error =0.0022
+2021-05-06 19:16:56,847 - myLogger - INFO - Explain variance score =0.8602
+2021-05-06 19:16:56,847 - myLogger - INFO - RMSE =0.0464
+2021-05-06 19:16:56,847 - myLogger - INFO - R2 score =0.8519
+2021-05-06 19:16:56,847 - myLogger - INFO - Low
+2021-05-06 19:16:56,847 - myLogger - INFO - Mean absolute error =0.0469
+2021-05-06 19:16:56,847 - myLogger - INFO - Mean squared error =0.0035
+2021-05-06 19:16:56,848 - myLogger - INFO - Explain variance score =0.7547
+2021-05-06 19:16:56,848 - myLogger - INFO - RMSE =0.0592
+2021-05-06 19:16:56,848 - myLogger - INFO - R2 score =0.7509
+2021-05-06 19:16:56,848 - myLogger - INFO - Close
+2021-05-06 19:16:56,848 - myLogger - INFO - Mean absolute error =0.0437
+2021-05-06 19:16:56,849 - myLogger - INFO - Mean squared error =0.003
+2021-05-06 19:16:56,849 - myLogger - INFO - Explain variance score =0.7945
+2021-05-06 19:16:56,849 - myLogger - INFO - RMSE =0.0548
+2021-05-06 19:16:56,849 - myLogger - INFO - R2 score =0.7896
+2021-05-06 19:16:56,849 - myLogger - INFO - R2 score =0.806
+2021-05-06 19:16:56,849 - myLogger - INFO - End
+
+2021-05-06 19:17:46,598 - myLogger - INFO - BASELINE
+2021-05-06 19:17:46,598 - myLogger - INFO - Open
+2021-05-06 19:17:46,598 - myLogger - INFO - Mean absolute error =0.0152
+2021-05-06 19:17:46,599 - myLogger - INFO - Mean squared error =0.0004
+2021-05-06 19:17:46,599 - myLogger - INFO - Explain variance score =0.9816
+2021-05-06 19:17:46,599 - myLogger - INFO - RMSE =0.0196
+2021-05-06 19:17:46,599 - myLogger - INFO - R2 score =0.9729
+2021-05-06 19:17:46,599 - myLogger - INFO - High
+2021-05-06 19:17:46,600 - myLogger - INFO - Mean absolute error =0.0156
+2021-05-06 19:17:46,600 - myLogger - INFO - Mean squared error =0.0004
+2021-05-06 19:17:46,600 - myLogger - INFO - Explain variance score =0.9768
+2021-05-06 19:17:46,600 - myLogger - INFO - RMSE =0.0204
+2021-05-06 19:17:46,600 - myLogger - INFO - R2 score =0.9711
+2021-05-06 19:17:46,600 - myLogger - INFO - Low
+2021-05-06 19:17:46,601 - myLogger - INFO - Mean absolute error =0.0117
+2021-05-06 19:17:46,601 - myLogger - INFO - Mean squared error =0.0002
+2021-05-06 19:17:46,601 - myLogger - INFO - Explain variance score =0.9824
+2021-05-06 19:17:46,601 - myLogger - INFO - RMSE =0.0157
+2021-05-06 19:17:46,601 - myLogger - INFO - R2 score =0.9823
+2021-05-06 19:17:46,601 - myLogger - INFO - Close
+2021-05-06 19:17:46,602 - myLogger - INFO - Mean absolute error =0.0139
+2021-05-06 19:17:46,602 - myLogger - INFO - Mean squared error =0.0003
+2021-05-06 19:17:46,602 - myLogger - INFO - Explain variance score =0.9783
+2021-05-06 19:17:46,602 - myLogger - INFO - RMSE =0.0184
+2021-05-06 19:17:46,602 - myLogger - INFO - R2 score =0.9761
+2021-05-06 19:17:46,603 - myLogger - INFO - R2 score =0.9756
+2021-05-06 19:17:46,603 - myLogger - INFO - End
+
+2021-05-06 19:35:39,350 - myLogger - INFO - KNN
+2021-05-06 19:35:39,351 - myLogger - INFO - Open
+2021-05-06 19:35:39,351 - myLogger - INFO - Mean absolute error =0.0053
+2021-05-06 19:35:39,351 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 19:35:39,352 - myLogger - INFO - Explain variance score =0.9957
+2021-05-06 19:35:39,352 - myLogger - INFO - RMSE =0.0079
+2021-05-06 19:35:39,352 - myLogger - INFO - R2 score =0.9956
+2021-05-06 19:35:39,352 - myLogger - INFO - High
+2021-05-06 19:35:39,352 - myLogger - INFO - Mean absolute error =0.005
+2021-05-06 19:35:39,353 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 19:35:39,353 - myLogger - INFO - Explain variance score =0.9962
+2021-05-06 19:35:39,353 - myLogger - INFO - RMSE =0.0074
+2021-05-06 19:35:39,354 - myLogger - INFO - R2 score =0.9962
+2021-05-06 19:35:39,354 - myLogger - INFO - Low
+2021-05-06 19:35:39,354 - myLogger - INFO - Mean absolute error =0.0051
+2021-05-06 19:35:39,354 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 19:35:39,354 - myLogger - INFO - Explain variance score =0.9962
+2021-05-06 19:35:39,355 - myLogger - INFO - RMSE =0.0072
+2021-05-06 19:35:39,355 - myLogger - INFO - R2 score =0.9962
+2021-05-06 19:35:39,355 - myLogger - INFO - Close
+2021-05-06 19:35:39,355 - myLogger - INFO - Mean absolute error =0.0054
+2021-05-06 19:35:39,355 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 19:35:39,356 - myLogger - INFO - Explain variance score =0.996
+2021-05-06 19:35:39,356 - myLogger - INFO - RMSE =0.0075
+2021-05-06 19:35:39,356 - myLogger - INFO - R2 score =0.996
+2021-05-06 19:35:39,356 - myLogger - INFO - R2 score =0.996
+2021-05-06 19:35:39,356 - myLogger - INFO - End
+
+2021-05-06 19:42:23,197 - myLogger - INFO - KNN
+2021-05-06 19:42:23,211 - myLogger - INFO - Open
+2021-05-06 19:42:23,211 - myLogger - INFO - Mean absolute error =0.0055
+2021-05-06 19:42:23,212 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 19:42:23,212 - myLogger - INFO - Explain variance score =0.9953
+2021-05-06 19:42:23,212 - myLogger - INFO - RMSE =0.008
+2021-05-06 19:42:23,213 - myLogger - INFO - R2 score =0.9953
+2021-05-06 19:42:23,213 - myLogger - INFO - High
+2021-05-06 19:42:23,213 - myLogger - INFO - Mean absolute error =0.0056
+2021-05-06 19:42:23,214 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 19:42:23,214 - myLogger - INFO - Explain variance score =0.9948
+2021-05-06 19:42:23,214 - myLogger - INFO - RMSE =0.0085
+2021-05-06 19:42:23,215 - myLogger - INFO - R2 score =0.9948
+2021-05-06 19:42:23,215 - myLogger - INFO - Low
+2021-05-06 19:42:23,215 - myLogger - INFO - Mean absolute error =0.0051
+2021-05-06 19:42:23,216 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 19:42:23,217 - myLogger - INFO - Explain variance score =0.996
+2021-05-06 19:42:23,218 - myLogger - INFO - RMSE =0.0073
+2021-05-06 19:42:23,218 - myLogger - INFO - R2 score =0.996
+2021-05-06 19:42:23,219 - myLogger - INFO - Close
+2021-05-06 19:42:23,219 - myLogger - INFO - Mean absolute error =0.0055
+2021-05-06 19:42:23,219 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 19:42:23,220 - myLogger - INFO - Explain variance score =0.9953
+2021-05-06 19:42:23,221 - myLogger - INFO - RMSE =0.0081
+2021-05-06 19:42:23,221 - myLogger - INFO - R2 score =0.9953
+2021-05-06 19:42:23,222 - myLogger - INFO - R2 score =0.9954
+2021-05-06 19:42:23,222 - myLogger - INFO - End
+
+2021-05-06 20:30:12,350 - myLogger - INFO - KNN
+2021-05-06 20:30:12,350 - myLogger - INFO - Open
+2021-05-06 20:30:12,351 - myLogger - INFO - Mean absolute error =0.0012
+2021-05-06 20:30:12,351 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 20:30:12,351 - myLogger - INFO - Explain variance score =0.9998
+2021-05-06 20:30:12,351 - myLogger - INFO - RMSE =0.0019
+2021-05-06 20:30:12,352 - myLogger - INFO - R2 score =0.9998
+2021-05-06 20:30:12,352 - myLogger - INFO - High
+2021-05-06 20:30:12,352 - myLogger - INFO - Mean absolute error =0.004
+2021-05-06 20:30:12,352 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 20:30:12,352 - myLogger - INFO - Explain variance score =0.9982
+2021-05-06 20:30:12,352 - myLogger - INFO - RMSE =0.0055
+2021-05-06 20:30:12,353 - myLogger - INFO - R2 score =0.9982
+2021-05-06 20:30:12,353 - myLogger - INFO - Low
+2021-05-06 20:30:12,353 - myLogger - INFO - Mean absolute error =0.0039
+2021-05-06 20:30:12,353 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 20:30:12,353 - myLogger - INFO - Explain variance score =0.9982
+2021-05-06 20:30:12,353 - myLogger - INFO - RMSE =0.0055
+2021-05-06 20:30:12,354 - myLogger - INFO - R2 score =0.9982
+2021-05-06 20:30:12,354 - myLogger - INFO - Close
+2021-05-06 20:30:12,354 - myLogger - INFO - Mean absolute error =0.0054
+2021-05-06 20:30:12,354 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 20:30:12,354 - myLogger - INFO - Explain variance score =0.9968
+2021-05-06 20:30:12,354 - myLogger - INFO - RMSE =0.0073
+2021-05-06 20:30:12,354 - myLogger - INFO - R2 score =0.9968
+2021-05-06 20:30:12,355 - myLogger - INFO - R2 score =0.9982
+2021-05-06 20:30:12,355 - myLogger - INFO - End
+
+2021-05-06 20:30:41,517 - myLogger - INFO - KNN
+2021-05-06 20:30:41,517 - myLogger - INFO - Open
+2021-05-06 20:30:41,518 - myLogger - INFO - Mean absolute error =0.0012
+2021-05-06 20:30:41,518 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 20:30:41,518 - myLogger - INFO - Explain variance score =0.9998
+2021-05-06 20:30:41,518 - myLogger - INFO - RMSE =0.0019
+2021-05-06 20:30:41,519 - myLogger - INFO - R2 score =0.9998
+2021-05-06 20:30:41,519 - myLogger - INFO - High
+2021-05-06 20:30:41,519 - myLogger - INFO - Mean absolute error =0.004
+2021-05-06 20:30:41,519 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 20:30:41,519 - myLogger - INFO - Explain variance score =0.9982
+2021-05-06 20:30:41,519 - myLogger - INFO - RMSE =0.0057
+2021-05-06 20:30:41,520 - myLogger - INFO - R2 score =0.9982
+2021-05-06 20:30:41,520 - myLogger - INFO - Low
+2021-05-06 20:30:41,520 - myLogger - INFO - Mean absolute error =0.0039
+2021-05-06 20:30:41,520 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 20:30:41,520 - myLogger - INFO - Explain variance score =0.9983
+2021-05-06 20:30:41,520 - myLogger - INFO - RMSE =0.0054
+2021-05-06 20:30:41,520 - myLogger - INFO - R2 score =0.9983
+2021-05-06 20:30:41,521 - myLogger - INFO - Close
+2021-05-06 20:30:41,521 - myLogger - INFO - Mean absolute error =0.0054
+2021-05-06 20:30:41,521 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 20:30:41,521 - myLogger - INFO - Explain variance score =0.9969
+2021-05-06 20:30:41,521 - myLogger - INFO - RMSE =0.0074
+2021-05-06 20:30:41,521 - myLogger - INFO - R2 score =0.9969
+2021-05-06 20:30:41,522 - myLogger - INFO - R2 score =0.9983
+2021-05-06 20:30:41,522 - myLogger - INFO - End
+
+2021-05-06 22:37:01,872 - myLogger - INFO - KNN
+2021-05-06 22:37:01,873 - myLogger - INFO - Open
+2021-05-06 22:37:01,873 - myLogger - INFO - Mean absolute error =0.0014
+2021-05-06 22:37:01,873 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 22:37:01,873 - myLogger - INFO - Explain variance score =0.9997
+2021-05-06 22:37:01,873 - myLogger - INFO - RMSE =0.0021
+2021-05-06 22:37:01,874 - myLogger - INFO - R2 score =0.9997
+2021-05-06 22:37:01,874 - myLogger - INFO - High
+2021-05-06 22:37:01,874 - myLogger - INFO - Mean absolute error =0.0052
+2021-05-06 22:37:01,874 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 22:37:01,874 - myLogger - INFO - Explain variance score =0.9969
+2021-05-06 22:37:01,874 - myLogger - INFO - RMSE =0.0073
+2021-05-06 22:37:01,875 - myLogger - INFO - R2 score =0.9969
+2021-05-06 22:37:01,875 - myLogger - INFO - Low
+2021-05-06 22:37:01,875 - myLogger - INFO - Mean absolute error =0.0047
+2021-05-06 22:37:01,875 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 22:37:01,877 - myLogger - INFO - Explain variance score =0.9973
+2021-05-06 22:37:01,877 - myLogger - INFO - RMSE =0.0068
+2021-05-06 22:37:01,877 - myLogger - INFO - R2 score =0.9973
+2021-05-06 22:37:01,877 - myLogger - INFO - Close
+2021-05-06 22:37:01,878 - myLogger - INFO - Mean absolute error =0.0072
+2021-05-06 22:37:01,878 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 22:37:01,878 - myLogger - INFO - Explain variance score =0.9946
+2021-05-06 22:37:01,878 - myLogger - INFO - RMSE =0.0095
+2021-05-06 22:37:01,878 - myLogger - INFO - R2 score =0.9946
+2021-05-06 22:37:01,879 - myLogger - INFO - R2 score =0.9971
+2021-05-06 22:37:01,879 - myLogger - INFO - End
+
+2021-05-06 22:37:06,284 - myLogger - INFO - KNN
+2021-05-06 22:37:06,284 - myLogger - INFO - Open
+2021-05-06 22:37:06,284 - myLogger - INFO - Mean absolute error =0.0014
+2021-05-06 22:37:06,285 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 22:37:06,285 - myLogger - INFO - Explain variance score =0.9997
+2021-05-06 22:37:06,285 - myLogger - INFO - RMSE =0.0022
+2021-05-06 22:37:06,285 - myLogger - INFO - R2 score =0.9997
+2021-05-06 22:37:06,285 - myLogger - INFO - High
+2021-05-06 22:37:06,285 - myLogger - INFO - Mean absolute error =0.0047
+2021-05-06 22:37:06,286 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 22:37:06,286 - myLogger - INFO - Explain variance score =0.9975
+2021-05-06 22:37:06,286 - myLogger - INFO - RMSE =0.0066
+2021-05-06 22:37:06,286 - myLogger - INFO - R2 score =0.9975
+2021-05-06 22:37:06,286 - myLogger - INFO - Low
+2021-05-06 22:37:06,286 - myLogger - INFO - Mean absolute error =0.0048
+2021-05-06 22:37:06,287 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 22:37:06,287 - myLogger - INFO - Explain variance score =0.9974
+2021-05-06 22:37:06,287 - myLogger - INFO - RMSE =0.0068
+2021-05-06 22:37:06,287 - myLogger - INFO - R2 score =0.9973
+2021-05-06 22:37:06,287 - myLogger - INFO - Close
+2021-05-06 22:37:06,287 - myLogger - INFO - Mean absolute error =0.0068
+2021-05-06 22:37:06,287 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 22:37:06,288 - myLogger - INFO - Explain variance score =0.9952
+2021-05-06 22:37:06,288 - myLogger - INFO - RMSE =0.0092
+2021-05-06 22:37:06,288 - myLogger - INFO - R2 score =0.9952
+2021-05-06 22:37:06,288 - myLogger - INFO - R2 score =0.9974
+2021-05-06 22:37:06,288 - myLogger - INFO - End
+
+2021-05-06 22:39:13,561 - myLogger - INFO - KNN
+2021-05-06 22:39:13,561 - myLogger - INFO - Open
+2021-05-06 22:39:13,562 - myLogger - INFO - Mean absolute error =0.0014
+2021-05-06 22:39:13,562 - myLogger - INFO - Mean squared error =0.0
+2021-05-06 22:39:13,562 - myLogger - INFO - Explain variance score =0.9997228589
+2021-05-06 22:39:13,562 - myLogger - INFO - RMSE =0.0022
+2021-05-06 22:39:13,563 - myLogger - INFO - R2 score =0.9997
+2021-05-06 22:39:13,563 - myLogger - INFO - High
+2021-05-06 22:39:13,563 - myLogger - INFO - Mean absolute error =0.005
+2021-05-06 22:39:13,563 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 22:39:13,563 - myLogger - INFO - Explain variance score =0.9971371495
+2021-05-06 22:39:13,563 - myLogger - INFO - RMSE =0.0072
+2021-05-06 22:39:13,564 - myLogger - INFO - R2 score =0.9971
+2021-05-06 22:39:13,564 - myLogger - INFO - Low
+2021-05-06 22:39:13,564 - myLogger - INFO - Mean absolute error =0.0052
+2021-05-06 22:39:13,564 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 22:39:13,564 - myLogger - INFO - Explain variance score =0.9968835786
+2021-05-06 22:39:13,564 - myLogger - INFO - RMSE =0.0074
+2021-05-06 22:39:13,564 - myLogger - INFO - R2 score =0.9969
+2021-05-06 22:39:13,564 - myLogger - INFO - Close
+2021-05-06 22:39:13,565 - myLogger - INFO - Mean absolute error =0.0071
+2021-05-06 22:39:13,565 - myLogger - INFO - Mean squared error =0.0001
+2021-05-06 22:39:13,565 - myLogger - INFO - Explain variance score =0.9947932887
+2021-05-06 22:39:13,565 - myLogger - INFO - RMSE =0.0097
+2021-05-06 22:39:13,565 - myLogger - INFO - R2 score =0.9948
+2021-05-06 22:39:13,566 - myLogger - INFO - R2 score =0.9971
+2021-05-06 22:39:13,566 - myLogger - INFO - End
+
+2021-05-06 22:39:46,479 - myLogger - INFO - KNN
+2021-05-06 22:39:46,479 - myLogger - INFO - Open
+2021-05-06 22:39:46,479 - myLogger - INFO - Mean absolute error =0.0014
+2021-05-06 22:39:46,479 - myLogger - INFO - Mean squared error =4.417e-06
+2021-05-06 22:39:46,480 - myLogger - INFO - Explain variance score =0.9997
+2021-05-06 22:39:46,480 - myLogger - INFO - RMSE =0.0021
+2021-05-06 22:39:46,480 - myLogger - INFO - R2 score =0.9997
+2021-05-06 22:39:46,480 - myLogger - INFO - High
+2021-05-06 22:39:46,480 - myLogger - INFO - Mean absolute error =0.0048
+2021-05-06 22:39:46,480 - myLogger - INFO - Mean squared error =4.8913e-05
+2021-05-06 22:39:46,481 - myLogger - INFO - Explain variance score =0.9971
+2021-05-06 22:39:46,481 - myLogger - INFO - RMSE =0.007
+2021-05-06 22:39:46,481 - myLogger - INFO - R2 score =0.9971
+2021-05-06 22:39:46,481 - myLogger - INFO - Low
+2021-05-06 22:39:46,481 - myLogger - INFO - Mean absolute error =0.0048
+2021-05-06 22:39:46,481 - myLogger - INFO - Mean squared error =5.0074e-05
+2021-05-06 22:39:46,482 - myLogger - INFO - Explain variance score =0.997
+2021-05-06 22:39:46,482 - myLogger - INFO - RMSE =0.0071
+2021-05-06 22:39:46,482 - myLogger - INFO - R2 score =0.997
+2021-05-06 22:39:46,482 - myLogger - INFO - Close
+2021-05-06 22:39:46,482 - myLogger - INFO - Mean absolute error =0.0068
+2021-05-06 22:39:46,482 - myLogger - INFO - Mean squared error =8.7874e-05
+2021-05-06 22:39:46,482 - myLogger - INFO - Explain variance score =0.9948
+2021-05-06 22:39:46,483 - myLogger - INFO - RMSE =0.0094
+2021-05-06 22:39:46,483 - myLogger - INFO - R2 score =0.9948
+2021-05-06 22:39:46,483 - myLogger - INFO - R2 score =0.9972
+2021-05-06 22:39:46,483 - myLogger - INFO - End
+
+2021-05-06 22:40:26,881 - myLogger - INFO - KNN
+2021-05-06 22:40:26,881 - myLogger - INFO - Open
+2021-05-06 22:40:26,881 - myLogger - INFO - Mean absolute error =0.0013
+2021-05-06 22:40:26,881 - myLogger - INFO - Mean squared error =4.065e-06
+2021-05-06 22:40:26,882 - myLogger - INFO - Explain variance score =0.9998
+2021-05-06 22:40:26,882 - myLogger - INFO - RMSE =0.002
+2021-05-06 22:40:26,882 - myLogger - INFO - R2 score =0.9998
+2021-05-06 22:40:26,882 - myLogger - INFO - High
+2021-05-06 22:40:26,882 - myLogger - INFO - Mean absolute error =0.0038
+2021-05-06 22:40:26,882 - myLogger - INFO - Mean squared error =2.803e-05
+2021-05-06 22:40:26,883 - myLogger - INFO - Explain variance score =0.9984
+2021-05-06 22:40:26,883 - myLogger - INFO - RMSE =0.0053
+2021-05-06 22:40:26,883 - myLogger - INFO - R2 score =0.9984
+2021-05-06 22:40:26,883 - myLogger - INFO - Low
+2021-05-06 22:40:26,883 - myLogger - INFO - Mean absolute error =0.0039
+2021-05-06 22:40:26,883 - myLogger - INFO - Mean squared error =2.8255e-05
+2021-05-06 22:40:26,883 - myLogger - INFO - Explain variance score =0.9983
+2021-05-06 22:40:26,884 - myLogger - INFO - RMSE =0.0053
+2021-05-06 22:40:26,884 - myLogger - INFO - R2 score =0.9983
+2021-05-06 22:40:26,884 - myLogger - INFO - Close
+2021-05-06 22:40:26,884 - myLogger - INFO - Mean absolute error =0.0053
+2021-05-06 22:40:26,884 - myLogger - INFO - Mean squared error =5.2606e-05
+2021-05-06 22:40:26,884 - myLogger - INFO - Explain variance score =0.9969
+2021-05-06 22:40:26,885 - myLogger - INFO - RMSE =0.0073
+2021-05-06 22:40:26,885 - myLogger - INFO - R2 score =0.9969
+2021-05-06 22:40:26,885 - myLogger - INFO - R2 score =0.9983
+2021-05-06 22:40:26,885 - myLogger - INFO - End
+
+2021-05-06 22:41:06,085 - myLogger - INFO - KNN
+2021-05-06 22:41:06,085 - myLogger - INFO - Open
+2021-05-06 22:41:06,085 - myLogger - INFO - Mean absolute error =0.0029
+2021-05-06 22:41:06,085 - myLogger - INFO - Mean squared error =1.8678e-05
+2021-05-06 22:41:06,086 - myLogger - INFO - Explain variance score =0.9989
+2021-05-06 22:41:06,086 - myLogger - INFO - RMSE =0.0043
+2021-05-06 22:41:06,086 - myLogger - INFO - R2 score =0.9989
+2021-05-06 22:41:06,086 - myLogger - INFO - High
+2021-05-06 22:41:06,086 - myLogger - INFO - Mean absolute error =0.0045
+2021-05-06 22:41:06,086 - myLogger - INFO - Mean squared error =3.8649e-05
+2021-05-06 22:41:06,087 - myLogger - INFO - Explain variance score =0.9977
+2021-05-06 22:41:06,087 - myLogger - INFO - RMSE =0.0062
+2021-05-06 22:41:06,087 - myLogger - INFO - R2 score =0.9977
+2021-05-06 22:41:06,087 - myLogger - INFO - Low
+2021-05-06 22:41:06,087 - myLogger - INFO - Mean absolute error =0.0046
+2021-05-06 22:41:06,087 - myLogger - INFO - Mean squared error =4.4264e-05
+2021-05-06 22:41:06,088 - myLogger - INFO - Explain variance score =0.9972
+2021-05-06 22:41:06,088 - myLogger - INFO - RMSE =0.0067
+2021-05-06 22:41:06,088 - myLogger - INFO - R2 score =0.9972
+2021-05-06 22:41:06,088 - myLogger - INFO - Close
+2021-05-06 22:41:06,088 - myLogger - INFO - Mean absolute error =0.0057
+2021-05-06 22:41:06,088 - myLogger - INFO - Mean squared error =6.3702e-05
+2021-05-06 22:41:06,089 - myLogger - INFO - Explain variance score =0.9961
+2021-05-06 22:41:06,089 - myLogger - INFO - RMSE =0.008
+2021-05-06 22:41:06,089 - myLogger - INFO - R2 score =0.9961
+2021-05-06 22:41:06,089 - myLogger - INFO - R2 score =0.9975
+2021-05-06 22:41:06,089 - myLogger - INFO - End
+
+2021-05-06 22:42:01,451 - myLogger - INFO - KNN
+2021-05-06 22:42:01,452 - myLogger - INFO - Open
+2021-05-06 22:42:01,452 - myLogger - INFO - Mean absolute error =0.0108
+2021-05-06 22:42:01,452 - myLogger - INFO - Mean squared error =0.00043268
+2021-05-06 22:42:01,452 - myLogger - INFO - Explain variance score =0.9757
+2021-05-06 22:42:01,453 - myLogger - INFO - RMSE =0.0208
+2021-05-06 22:42:01,453 - myLogger - INFO - R2 score =0.9749
+2021-05-06 22:42:01,453 - myLogger - INFO - High
+2021-05-06 22:42:01,453 - myLogger - INFO - Mean absolute error =0.0118
+2021-05-06 22:42:01,453 - myLogger - INFO - Mean squared error =0.000454895
+2021-05-06 22:42:01,454 - myLogger - INFO - Explain variance score =0.9749
+2021-05-06 22:42:01,454 - myLogger - INFO - RMSE =0.0213
+2021-05-06 22:42:01,454 - myLogger - INFO - R2 score =0.974
+2021-05-06 22:42:01,454 - myLogger - INFO - Low
+2021-05-06 22:42:01,454 - myLogger - INFO - Mean absolute error =0.0117
+2021-05-06 22:42:01,454 - myLogger - INFO - Mean squared error =0.000455417
+2021-05-06 22:42:01,455 - myLogger - INFO - Explain variance score =0.9742
+2021-05-06 22:42:01,455 - myLogger - INFO - RMSE =0.0213
+2021-05-06 22:42:01,455 - myLogger - INFO - R2 score =0.9733
+2021-05-06 22:42:01,455 - myLogger - INFO - Close
+2021-05-06 22:42:01,455 - myLogger - INFO - Mean absolute error =0.0125
+2021-05-06 22:42:01,455 - myLogger - INFO - Mean squared error =0.000477165
+2021-05-06 22:42:01,456 - myLogger - INFO - Explain variance score =0.9734
+2021-05-06 22:42:01,456 - myLogger - INFO - RMSE =0.0218
+2021-05-06 22:42:01,456 - myLogger - INFO - R2 score =0.9724
+2021-05-06 22:42:01,456 - myLogger - INFO - R2 score =0.9736
+2021-05-06 22:42:01,456 - myLogger - INFO - End
+
+2021-05-06 22:42:36,302 - myLogger - INFO - KNN
+2021-05-06 22:42:36,302 - myLogger - INFO - Open
+2021-05-06 22:42:36,302 - myLogger - INFO - Mean absolute error =0.0221
+2021-05-06 22:42:36,302 - myLogger - INFO - Mean squared error =0.001432022
+2021-05-06 22:42:36,302 - myLogger - INFO - Explain variance score =0.9245
+2021-05-06 22:42:36,303 - myLogger - INFO - RMSE =0.0378
+2021-05-06 22:42:36,303 - myLogger - INFO - R2 score =0.9201
+2021-05-06 22:42:36,303 - myLogger - INFO - High
+2021-05-06 22:42:36,303 - myLogger - INFO - Mean absolute error =0.0225
+2021-05-06 22:42:36,303 - myLogger - INFO - Mean squared error =0.001458847
+2021-05-06 22:42:36,303 - myLogger - INFO - Explain variance score =0.9238
+2021-05-06 22:42:36,304 - myLogger - INFO - RMSE =0.0382
+2021-05-06 22:42:36,304 - myLogger - INFO - R2 score =0.9194
+2021-05-06 22:42:36,304 - myLogger - INFO - Low
+2021-05-06 22:42:36,304 - myLogger - INFO - Mean absolute error =0.0223
+2021-05-06 22:42:36,304 - myLogger - INFO - Mean squared error =0.001410115
+2021-05-06 22:42:36,304 - myLogger - INFO - Explain variance score =0.9242
+2021-05-06 22:42:36,305 - myLogger - INFO - RMSE =0.0376
+2021-05-06 22:42:36,305 - myLogger - INFO - R2 score =0.9198
+2021-05-06 22:42:36,305 - myLogger - INFO - Close
+2021-05-06 22:42:36,305 - myLogger - INFO - Mean absolute error =0.0227
+2021-05-06 22:42:36,305 - myLogger - INFO - Mean squared error =0.001438112
+2021-05-06 22:42:36,305 - myLogger - INFO - Explain variance score =0.9238
+2021-05-06 22:42:36,305 - myLogger - INFO - RMSE =0.0379
+2021-05-06 22:42:36,306 - myLogger - INFO - R2 score =0.9193
+2021-05-06 22:42:36,306 - myLogger - INFO - R2 score =0.9196
+2021-05-06 22:42:36,306 - myLogger - INFO - End
+
+2021-05-06 22:44:32,441 - myLogger - INFO - KNN
+2021-05-06 22:44:32,442 - myLogger - INFO - Open
+2021-05-06 22:44:32,443 - myLogger - INFO - Mean absolute error =0.0053
+2021-05-06 22:44:32,443 - myLogger - INFO - Mean squared error =5.2176e-05
+2021-05-06 22:44:32,444 - myLogger - INFO - Explain variance score =0.9969
+2021-05-06 22:44:32,444 - myLogger - INFO - RMSE =0.0072
+2021-05-06 22:44:32,445 - myLogger - INFO - R2 score =0.9969
+2021-05-06 22:44:32,445 - myLogger - INFO - High
+2021-05-06 22:44:32,446 - myLogger - INFO - Mean absolute error =0.0066
+2021-05-06 22:44:32,446 - myLogger - INFO - Mean squared error =7.7452e-05
+2021-05-06 22:44:32,447 - myLogger - INFO - Explain variance score =0.9955
+2021-05-06 22:44:32,448 - myLogger - INFO - RMSE =0.0088
+2021-05-06 22:44:32,448 - myLogger - INFO - R2 score =0.9955
+2021-05-06 22:44:32,449 - myLogger - INFO - Low
+2021-05-06 22:44:32,449 - myLogger - INFO - Mean absolute error =0.0067
+2021-05-06 22:44:32,450 - myLogger - INFO - Mean squared error =8.8142e-05
+2021-05-06 22:44:32,450 - myLogger - INFO - Explain variance score =0.9947
+2021-05-06 22:44:32,451 - myLogger - INFO - RMSE =0.0094
+2021-05-06 22:44:32,452 - myLogger - INFO - R2 score =0.9947
+2021-05-06 22:44:32,452 - myLogger - INFO - Close
+2021-05-06 22:44:32,453 - myLogger - INFO - Mean absolute error =0.0078
+2021-05-06 22:44:32,453 - myLogger - INFO - Mean squared error =0.000114351
+2021-05-06 22:44:32,454 - myLogger - INFO - Explain variance score =0.9932
+2021-05-06 22:44:32,454 - myLogger - INFO - RMSE =0.0107
+2021-05-06 22:44:32,455 - myLogger - INFO - R2 score =0.9932
+2021-05-06 22:44:32,456 - myLogger - INFO - R2 score =0.9951
+2021-05-06 22:44:32,457 - myLogger - INFO - End
+
+2021-05-06 22:45:15,963 - myLogger - INFO - KNN
+2021-05-06 22:45:15,964 - myLogger - INFO - Open
+2021-05-06 22:45:15,964 - myLogger - INFO - Mean absolute error =0.0048
+2021-05-06 22:45:15,965 - myLogger - INFO - Mean squared error =5.0716e-05
+2021-05-06 22:45:15,965 - myLogger - INFO - Explain variance score =0.9972
+2021-05-06 22:45:15,966 - myLogger - INFO - RMSE =0.0071
+2021-05-06 22:45:15,966 - myLogger - INFO - R2 score =0.9972
+2021-05-06 22:45:15,967 - myLogger - INFO - High
+2021-05-06 22:45:15,967 - myLogger - INFO - Mean absolute error =0.006
+2021-05-06 22:45:15,968 - myLogger - INFO - Mean squared error =7.6912e-05
+2021-05-06 22:45:15,968 - myLogger - INFO - Explain variance score =0.9957
+2021-05-06 22:45:15,969 - myLogger - INFO - RMSE =0.0088
+2021-05-06 22:45:15,970 - myLogger - INFO - R2 score =0.9957
+2021-05-06 22:45:15,970 - myLogger - INFO - Low
+2021-05-06 22:45:15,970 - myLogger - INFO - Mean absolute error =0.0059
+2021-05-06 22:45:15,971 - myLogger - INFO - Mean squared error =7.2326e-05
+2021-05-06 22:45:15,971 - myLogger - INFO - Explain variance score =0.9959
+2021-05-06 22:45:15,972 - myLogger - INFO - RMSE =0.0085
+2021-05-06 22:45:15,972 - myLogger - INFO - R2 score =0.9959
+2021-05-06 22:45:15,973 - myLogger - INFO - Close
+2021-05-06 22:45:15,973 - myLogger - INFO - Mean absolute error =0.0069
+2021-05-06 22:45:15,974 - myLogger - INFO - Mean squared error =9.3172e-05
+2021-05-06 22:45:15,974 - myLogger - INFO - Explain variance score =0.9948
+2021-05-06 22:45:15,975 - myLogger - INFO - RMSE =0.0097
+2021-05-06 22:45:15,975 - myLogger - INFO - R2 score =0.9947
+2021-05-06 22:45:15,976 - myLogger - INFO - R2 score =0.9959
+2021-05-06 22:45:15,976 - myLogger - INFO - End
+
+2021-05-06 22:45:43,048 - myLogger - INFO - KNN
+2021-05-06 22:45:43,048 - myLogger - INFO - Open
+2021-05-06 22:45:43,049 - myLogger - INFO - Mean absolute error =0.0074
+2021-05-06 22:45:43,049 - myLogger - INFO - Mean squared error =0.000113147
+2021-05-06 22:45:43,049 - myLogger - INFO - Explain variance score =0.9936
+2021-05-06 22:45:43,049 - myLogger - INFO - RMSE =0.0106
+2021-05-06 22:45:43,049 - myLogger - INFO - R2 score =0.9935
+2021-05-06 22:45:43,050 - myLogger - INFO - High
+2021-05-06 22:45:43,050 - myLogger - INFO - Mean absolute error =0.0081
+2021-05-06 22:45:43,050 - myLogger - INFO - Mean squared error =0.000125058
+2021-05-06 22:45:43,050 - myLogger - INFO - Explain variance score =0.993
+2021-05-06 22:45:43,050 - myLogger - INFO - RMSE =0.0112
+2021-05-06 22:45:43,050 - myLogger - INFO - R2 score =0.9929
+2021-05-06 22:45:43,051 - myLogger - INFO - Low
+2021-05-06 22:45:43,051 - myLogger - INFO - Mean absolute error =0.0085
+2021-05-06 22:45:43,051 - myLogger - INFO - Mean squared error =0.000146191
+2021-05-06 22:45:43,051 - myLogger - INFO - Explain variance score =0.9915
+2021-05-06 22:45:43,051 - myLogger - INFO - RMSE =0.0121
+2021-05-06 22:45:43,052 - myLogger - INFO - R2 score =0.9915
+2021-05-06 22:45:43,052 - myLogger - INFO - Close
+2021-05-06 22:45:43,052 - myLogger - INFO - Mean absolute error =0.0091
+2021-05-06 22:45:43,052 - myLogger - INFO - Mean squared error =0.000155722
+2021-05-06 22:45:43,052 - myLogger - INFO - Explain variance score =0.9911
+2021-05-06 22:45:43,052 - myLogger - INFO - RMSE =0.0125
+2021-05-06 22:45:43,053 - myLogger - INFO - R2 score =0.9911
+2021-05-06 22:45:43,053 - myLogger - INFO - R2 score =0.9923
+2021-05-06 22:45:43,053 - myLogger - INFO - End
+
+2021-05-06 22:46:06,906 - myLogger - INFO - KNN
+2021-05-06 22:46:06,906 - myLogger - INFO - Open
+2021-05-06 22:46:06,907 - myLogger - INFO - Mean absolute error =0.0131
+2021-05-06 22:46:06,907 - myLogger - INFO - Mean squared error =0.000420908
+2021-05-06 22:46:06,907 - myLogger - INFO - Explain variance score =0.9745
+2021-05-06 22:46:06,907 - myLogger - INFO - RMSE =0.0205
+2021-05-06 22:46:06,908 - myLogger - INFO - R2 score =0.9743
+2021-05-06 22:46:06,908 - myLogger - INFO - High
+2021-05-06 22:46:06,908 - myLogger - INFO - Mean absolute error =0.0136
+2021-05-06 22:46:06,908 - myLogger - INFO - Mean squared error =0.000431147
+2021-05-06 22:46:06,908 - myLogger - INFO - Explain variance score =0.9742
+2021-05-06 22:46:06,908 - myLogger - INFO - RMSE =0.0208
+2021-05-06 22:46:06,909 - myLogger - INFO - R2 score =0.9739
+2021-05-06 22:46:06,909 - myLogger - INFO - Low
+2021-05-06 22:46:06,909 - myLogger - INFO - Mean absolute error =0.0137
+2021-05-06 22:46:06,909 - myLogger - INFO - Mean squared error =0.000458174
+2021-05-06 22:46:06,909 - myLogger - INFO - Explain variance score =0.972
+2021-05-06 22:46:06,909 - myLogger - INFO - RMSE =0.0214
+2021-05-06 22:46:06,910 - myLogger - INFO - R2 score =0.9718
+2021-05-06 22:46:06,910 - myLogger - INFO - Close
+2021-05-06 22:46:06,910 - myLogger - INFO - Mean absolute error =0.0141
+2021-05-06 22:46:06,910 - myLogger - INFO - Mean squared error =0.000468731
+2021-05-06 22:46:06,910 - myLogger - INFO - Explain variance score =0.9718
+2021-05-06 22:46:06,910 - myLogger - INFO - RMSE =0.0217
+2021-05-06 22:46:06,911 - myLogger - INFO - R2 score =0.9714
+2021-05-06 22:46:06,911 - myLogger - INFO - R2 score =0.9729
+2021-05-06 22:46:06,911 - myLogger - INFO - End
+
+2021-05-06 22:46:38,179 - myLogger - INFO - KNN
+2021-05-06 22:46:38,180 - myLogger - INFO - Open
+2021-05-06 22:46:38,180 - myLogger - INFO - Mean absolute error =0.0245
+2021-05-06 22:46:38,180 - myLogger - INFO - Mean squared error =0.001595575
+2021-05-06 22:46:38,180 - myLogger - INFO - Explain variance score =0.9149
+2021-05-06 22:46:38,181 - myLogger - INFO - RMSE =0.0399
+2021-05-06 22:46:38,181 - myLogger - INFO - R2 score =0.9109
+2021-05-06 22:46:38,181 - myLogger - INFO - High
+2021-05-06 22:46:38,181 - myLogger - INFO - Mean absolute error =0.0247
+2021-05-06 22:46:38,181 - myLogger - INFO - Mean squared error =0.001619908
+2021-05-06 22:46:38,181 - myLogger - INFO - Explain variance score =0.9145
+2021-05-06 22:46:38,182 - myLogger - INFO - RMSE =0.0402
+2021-05-06 22:46:38,182 - myLogger - INFO - R2 score =0.9105
+2021-05-06 22:46:38,182 - myLogger - INFO - Low
+2021-05-06 22:46:38,182 - myLogger - INFO - Mean absolute error =0.025
+2021-05-06 22:46:38,182 - myLogger - INFO - Mean squared error =0.001609997
+2021-05-06 22:46:38,182 - myLogger - INFO - Explain variance score =0.9128
+2021-05-06 22:46:38,183 - myLogger - INFO - RMSE =0.0401
+2021-05-06 22:46:38,183 - myLogger - INFO - R2 score =0.9088
+2021-05-06 22:46:38,183 - myLogger - INFO - Close
+2021-05-06 22:46:38,183 - myLogger - INFO - Mean absolute error =0.0251
+2021-05-06 22:46:38,183 - myLogger - INFO - Mean squared error =0.001624392
+2021-05-06 22:46:38,183 - myLogger - INFO - Explain variance score =0.9128
+2021-05-06 22:46:38,183 - myLogger - INFO - RMSE =0.0403
+2021-05-06 22:46:38,184 - myLogger - INFO - R2 score =0.909
+2021-05-06 22:46:38,184 - myLogger - INFO - R2 score =0.9098
+2021-05-06 22:46:38,184 - myLogger - INFO - End
+
+2021-05-06 22:48:09,766 - myLogger - INFO - KNN
+2021-05-06 22:48:09,766 - myLogger - INFO - Open
+2021-05-06 22:48:09,767 - myLogger - INFO - Mean absolute error =0.0052
+2021-05-06 22:48:09,767 - myLogger - INFO - Mean squared error =5.4421e-05
+2021-05-06 22:48:09,767 - myLogger - INFO - Explain variance score =0.9969
+2021-05-06 22:48:09,767 - myLogger - INFO - RMSE =0.0074
+2021-05-06 22:48:09,767 - myLogger - INFO - R2 score =0.9969
+2021-05-06 22:48:09,767 - myLogger - INFO - High
+2021-05-06 22:48:09,768 - myLogger - INFO - Mean absolute error =0.0052
+2021-05-06 22:48:09,768 - myLogger - INFO - Mean squared error =5.8961e-05
+2021-05-06 22:48:09,768 - myLogger - INFO - Explain variance score =0.9967
+2021-05-06 22:48:09,768 - myLogger - INFO - RMSE =0.0077
+2021-05-06 22:48:09,768 - myLogger - INFO - R2 score =0.9967
+2021-05-06 22:48:09,768 - myLogger - INFO - Low
+2021-05-06 22:48:09,769 - myLogger - INFO - Mean absolute error =0.0051
+2021-05-06 22:48:09,769 - myLogger - INFO - Mean squared error =5.1715e-05
+2021-05-06 22:48:09,769 - myLogger - INFO - Explain variance score =0.997
+2021-05-06 22:48:09,769 - myLogger - INFO - RMSE =0.0072
+2021-05-06 22:48:09,769 - myLogger - INFO - R2 score =0.997
+2021-05-06 22:48:09,770 - myLogger - INFO - Close
+2021-05-06 22:48:09,770 - myLogger - INFO - Mean absolute error =0.0058
+2021-05-06 22:48:09,770 - myLogger - INFO - Mean squared error =6.954e-05
+2021-05-06 22:48:09,770 - myLogger - INFO - Explain variance score =0.9961
+2021-05-06 22:48:09,770 - myLogger - INFO - RMSE =0.0083
+2021-05-06 22:48:09,771 - myLogger - INFO - R2 score =0.9961
+2021-05-06 22:48:09,771 - myLogger - INFO - R2 score =0.9967
+2021-05-06 22:48:09,771 - myLogger - INFO - End
+
+2021-05-06 22:48:48,409 - myLogger - INFO - KNN
+2021-05-06 22:48:48,409 - myLogger - INFO - Open
+2021-05-06 22:48:48,409 - myLogger - INFO - Mean absolute error =0.0071
+2021-05-06 22:48:48,409 - myLogger - INFO - Mean squared error =9.721e-05
+2021-05-06 22:48:48,410 - myLogger - INFO - Explain variance score =0.9947
+2021-05-06 22:48:48,410 - myLogger - INFO - RMSE =0.0099
+2021-05-06 22:48:48,411 - myLogger - INFO - R2 score =0.9947
+2021-05-06 22:48:48,411 - myLogger - INFO - High
+2021-05-06 22:48:48,411 - myLogger - INFO - Mean absolute error =0.0073
+2021-05-06 22:48:48,411 - myLogger - INFO - Mean squared error =0.000103391
+2021-05-06 22:48:48,411 - myLogger - INFO - Explain variance score =0.9944
+2021-05-06 22:48:48,412 - myLogger - INFO - RMSE =0.0102
+2021-05-06 22:48:48,412 - myLogger - INFO - R2 score =0.9944
+2021-05-06 22:48:48,412 - myLogger - INFO - Low
+2021-05-06 22:48:48,412 - myLogger - INFO - Mean absolute error =0.0072
+2021-05-06 22:48:48,413 - myLogger - INFO - Mean squared error =0.000100232
+2021-05-06 22:48:48,413 - myLogger - INFO - Explain variance score =0.9945
+2021-05-06 22:48:48,413 - myLogger - INFO - RMSE =0.01
+2021-05-06 22:48:48,413 - myLogger - INFO - R2 score =0.9945
+2021-05-06 22:48:48,413 - myLogger - INFO - Close
+2021-05-06 22:48:48,414 - myLogger - INFO - Mean absolute error =0.0074
+2021-05-06 22:48:48,414 - myLogger - INFO - Mean squared error =0.000108361
+2021-05-06 22:48:48,414 - myLogger - INFO - Explain variance score =0.9941
+2021-05-06 22:48:48,414 - myLogger - INFO - RMSE =0.0104
+2021-05-06 22:48:48,415 - myLogger - INFO - R2 score =0.9941
+2021-05-06 22:48:48,415 - myLogger - INFO - R2 score =0.9944
+2021-05-06 22:48:48,415 - myLogger - INFO - End
+
+2021-05-06 22:49:17,249 - myLogger - INFO - KNN
+2021-05-06 22:49:17,250 - myLogger - INFO - Open
+2021-05-06 22:49:17,250 - myLogger - INFO - Mean absolute error =0.0181
+2021-05-06 22:49:17,250 - myLogger - INFO - Mean squared error =0.000607648
+2021-05-06 22:49:17,250 - myLogger - INFO - Explain variance score =0.9659
+2021-05-06 22:49:17,251 - myLogger - INFO - RMSE =0.0247
+2021-05-06 22:49:17,251 - myLogger - INFO - R2 score =0.9659
+2021-05-06 22:49:17,251 - myLogger - INFO - High
+2021-05-06 22:49:17,251 - myLogger - INFO - Mean absolute error =0.0182
+2021-05-06 22:49:17,251 - myLogger - INFO - Mean squared error =0.000602598
+2021-05-06 22:49:17,251 - myLogger - INFO - Explain variance score =0.9666
+2021-05-06 22:49:17,252 - myLogger - INFO - RMSE =0.0245
+2021-05-06 22:49:17,252 - myLogger - INFO - R2 score =0.9666
+2021-05-06 22:49:17,252 - myLogger - INFO - Low
+2021-05-06 22:49:17,252 - myLogger - INFO - Mean absolute error =0.0183
+2021-05-06 22:49:17,252 - myLogger - INFO - Mean squared error =0.000618779
+2021-05-06 22:49:17,252 - myLogger - INFO - Explain variance score =0.9646
+2021-05-06 22:49:17,252 - myLogger - INFO - RMSE =0.0249
+2021-05-06 22:49:17,253 - myLogger - INFO - R2 score =0.9646
+2021-05-06 22:49:17,253 - myLogger - INFO - Close
+2021-05-06 22:49:17,253 - myLogger - INFO - Mean absolute error =0.0184
+2021-05-06 22:49:17,253 - myLogger - INFO - Mean squared error =0.000609512
+2021-05-06 22:49:17,253 - myLogger - INFO - Explain variance score =0.9656
+2021-05-06 22:49:17,253 - myLogger - INFO - RMSE =0.0247
+2021-05-06 22:49:17,254 - myLogger - INFO - R2 score =0.9656
+2021-05-06 22:49:17,254 - myLogger - INFO - R2 score =0.9656
+2021-05-06 22:49:17,254 - myLogger - INFO - End
+
+2021-05-06 22:49:44,656 - myLogger - INFO - KNN
+2021-05-06 22:49:44,656 - myLogger - INFO - Open
+2021-05-06 22:49:44,656 - myLogger - INFO - Mean absolute error =0.0258
+2021-05-06 22:49:44,656 - myLogger - INFO - Mean squared error =0.001281355
+2021-05-06 22:49:44,657 - myLogger - INFO - Explain variance score =0.9252
+2021-05-06 22:49:44,657 - myLogger - INFO - RMSE =0.0358
+2021-05-06 22:49:44,657 - myLogger - INFO - R2 score =0.9248
+2021-05-06 22:49:44,657 - myLogger - INFO - High
+2021-05-06 22:49:44,657 - myLogger - INFO - Mean absolute error =0.0257
+2021-05-06 22:49:44,657 - myLogger - INFO - Mean squared error =0.001272358
+2021-05-06 22:49:44,658 - myLogger - INFO - Explain variance score =0.927
+2021-05-06 22:49:44,658 - myLogger - INFO - RMSE =0.0357
+2021-05-06 22:49:44,658 - myLogger - INFO - R2 score =0.9263
+2021-05-06 22:49:44,658 - myLogger - INFO - Low
+2021-05-06 22:49:44,658 - myLogger - INFO - Mean absolute error =0.0263
+2021-05-06 22:49:44,658 - myLogger - INFO - Mean squared error =0.001323309
+2021-05-06 22:49:44,658 - myLogger - INFO - Explain variance score =0.9218
+2021-05-06 22:49:44,659 - myLogger - INFO - RMSE =0.0364
+2021-05-06 22:49:44,659 - myLogger - INFO - R2 score =0.9214
+2021-05-06 22:49:44,659 - myLogger - INFO - Close
+2021-05-06 22:49:44,659 - myLogger - INFO - Mean absolute error =0.0263
+2021-05-06 22:49:44,659 - myLogger - INFO - Mean squared error =0.001321153
+2021-05-06 22:49:44,659 - myLogger - INFO - Explain variance score =0.9233
+2021-05-06 22:49:44,660 - myLogger - INFO - RMSE =0.0363
+2021-05-06 22:49:44,660 - myLogger - INFO - R2 score =0.9227
+2021-05-06 22:49:44,660 - myLogger - INFO - R2 score =0.9238
+2021-05-06 22:49:44,660 - myLogger - INFO - End
+
+2021-05-06 22:50:09,596 - myLogger - INFO - KNN
+2021-05-06 22:50:09,596 - myLogger - INFO - Open
+2021-05-06 22:50:09,596 - myLogger - INFO - Mean absolute error =0.036
+2021-05-06 22:50:09,597 - myLogger - INFO - Mean squared error =0.002506829
+2021-05-06 22:50:09,597 - myLogger - INFO - Explain variance score =0.8612
+2021-05-06 22:50:09,597 - myLogger - INFO - RMSE =0.0501
+2021-05-06 22:50:09,597 - myLogger - INFO - R2 score =0.859
+2021-05-06 22:50:09,597 - myLogger - INFO - High
+2021-05-06 22:50:09,598 - myLogger - INFO - Mean absolute error =0.0358
+2021-05-06 22:50:09,598 - myLogger - INFO - Mean squared error =0.002493078
+2021-05-06 22:50:09,598 - myLogger - INFO - Explain variance score =0.8636
+2021-05-06 22:50:09,598 - myLogger - INFO - RMSE =0.0499
+2021-05-06 22:50:09,599 - myLogger - INFO - R2 score =0.8612
+2021-05-06 22:50:09,599 - myLogger - INFO - Low
+2021-05-06 22:50:09,599 - myLogger - INFO - Mean absolute error =0.0361
+2021-05-06 22:50:09,599 - myLogger - INFO - Mean squared error =0.002514435
+2021-05-06 22:50:09,600 - myLogger - INFO - Explain variance score =0.8582
+2021-05-06 22:50:09,600 - myLogger - INFO - RMSE =0.0501
+2021-05-06 22:50:09,600 - myLogger - INFO - R2 score =0.8562
+2021-05-06 22:50:09,600 - myLogger - INFO - Close
+2021-05-06 22:50:09,600 - myLogger - INFO - Mean absolute error =0.0361
+2021-05-06 22:50:09,600 - myLogger - INFO - Mean squared error =0.002511456
+2021-05-06 22:50:09,601 - myLogger - INFO - Explain variance score =0.8602
+2021-05-06 22:50:09,601 - myLogger - INFO - RMSE =0.0501
+2021-05-06 22:50:09,601 - myLogger - INFO - R2 score =0.858
+2021-05-06 22:50:09,601 - myLogger - INFO - R2 score =0.8586
+2021-05-06 22:50:09,601 - myLogger - INFO - End
+
+2021-05-06 22:51:00,961 - myLogger - INFO - KNN
+2021-05-06 22:51:00,961 - myLogger - INFO - Open
+2021-05-06 22:51:00,961 - myLogger - INFO - Mean absolute error =0.005
+2021-05-06 22:51:00,961 - myLogger - INFO - Mean squared error =5.012e-05
+2021-05-06 22:51:00,962 - myLogger - INFO - Explain variance score =0.9965
+2021-05-06 22:51:00,962 - myLogger - INFO - RMSE =0.0071
+2021-05-06 22:51:00,962 - myLogger - INFO - R2 score =0.9965
+2021-05-06 22:51:00,962 - myLogger - INFO - High
+2021-05-06 22:51:00,962 - myLogger - INFO - Mean absolute error =0.0053
+2021-05-06 22:51:00,963 - myLogger - INFO - Mean squared error =5.5488e-05
+2021-05-06 22:51:00,963 - myLogger - INFO - Explain variance score =0.9962
+2021-05-06 22:51:00,963 - myLogger - INFO - RMSE =0.0074
+2021-05-06 22:51:00,964 - myLogger - INFO - R2 score =0.9962
+2021-05-06 22:51:00,964 - myLogger - INFO - Low
+2021-05-06 22:51:00,964 - myLogger - INFO - Mean absolute error =0.0047
+2021-05-06 22:51:00,964 - myLogger - INFO - Mean squared error =4.4924e-05
+2021-05-06 22:51:00,964 - myLogger - INFO - Explain variance score =0.9968
+2021-05-06 22:51:00,965 - myLogger - INFO - RMSE =0.0067
+2021-05-06 22:51:00,965 - myLogger - INFO - R2 score =0.9968
+2021-05-06 22:51:00,965 - myLogger - INFO - Close
+2021-05-06 22:51:00,965 - myLogger - INFO - Mean absolute error =0.0057
+2021-05-06 22:51:00,965 - myLogger - INFO - Mean squared error =6.685e-05
+2021-05-06 22:51:00,965 - myLogger - INFO - Explain variance score =0.9954
+2021-05-06 22:51:00,966 - myLogger - INFO - RMSE =0.0082
+2021-05-06 22:51:00,966 - myLogger - INFO - R2 score =0.9954
+2021-05-06 22:51:00,966 - myLogger - INFO - R2 score =0.9962
+2021-05-06 22:51:00,966 - myLogger - INFO - End
+
+2021-05-06 22:51:30,546 - myLogger - INFO - KNN
+2021-05-06 22:51:30,547 - myLogger - INFO - Open
+2021-05-06 22:51:30,547 - myLogger - INFO - Mean absolute error =0.0065
+2021-05-06 22:51:30,547 - myLogger - INFO - Mean squared error =7.6412e-05
+2021-05-06 22:51:30,548 - myLogger - INFO - Explain variance score =0.9946
+2021-05-06 22:51:30,548 - myLogger - INFO - RMSE =0.0087
+2021-05-06 22:51:30,548 - myLogger - INFO - R2 score =0.9946
+2021-05-06 22:51:30,548 - myLogger - INFO - High
+2021-05-06 22:51:30,549 - myLogger - INFO - Mean absolute error =0.0066
+2021-05-06 22:51:30,549 - myLogger - INFO - Mean squared error =8.2795e-05
+2021-05-06 22:51:30,549 - myLogger - INFO - Explain variance score =0.9943
+2021-05-06 22:51:30,550 - myLogger - INFO - RMSE =0.0091
+2021-05-06 22:51:30,550 - myLogger - INFO - R2 score =0.9943
+2021-05-06 22:51:30,550 - myLogger - INFO - Low
+2021-05-06 22:51:30,550 - myLogger - INFO - Mean absolute error =0.0062
+2021-05-06 22:51:30,551 - myLogger - INFO - Mean squared error =6.9933e-05
+2021-05-06 22:51:30,552 - myLogger - INFO - Explain variance score =0.995
+2021-05-06 22:51:30,552 - myLogger - INFO - RMSE =0.0084
+2021-05-06 22:51:30,553 - myLogger - INFO - R2 score =0.995
+2021-05-06 22:51:30,553 - myLogger - INFO - Close
+2021-05-06 22:51:30,553 - myLogger - INFO - Mean absolute error =0.0067
+2021-05-06 22:51:30,554 - myLogger - INFO - Mean squared error =8.018e-05
+2021-05-06 22:51:30,555 - myLogger - INFO - Explain variance score =0.9943
+2021-05-06 22:51:30,555 - myLogger - INFO - RMSE =0.009
+2021-05-06 22:51:30,556 - myLogger - INFO - R2 score =0.9943
+2021-05-06 22:51:30,556 - myLogger - INFO - R2 score =0.9946
+2021-05-06 22:51:30,557 - myLogger - INFO - End
+
+2021-05-06 22:52:00,028 - myLogger - INFO - KNN
+2021-05-06 22:52:00,028 - myLogger - INFO - Open
+2021-05-06 22:52:00,028 - myLogger - INFO - Mean absolute error =0.0208
+2021-05-06 22:52:00,029 - myLogger - INFO - Mean squared error =0.000841677
+2021-05-06 22:52:00,030 - myLogger - INFO - Explain variance score =0.9422
+2021-05-06 22:52:00,030 - myLogger - INFO - RMSE =0.029
+2021-05-06 22:52:00,031 - myLogger - INFO - R2 score =0.9413
+2021-05-06 22:52:00,032 - myLogger - INFO - High
+2021-05-06 22:52:00,032 - myLogger - INFO - Mean absolute error =0.0212
+2021-05-06 22:52:00,032 - myLogger - INFO - Mean squared error =0.000858501
+2021-05-06 22:52:00,033 - myLogger - INFO - Explain variance score =0.9419
+2021-05-06 22:52:00,033 - myLogger - INFO - RMSE =0.0293
+2021-05-06 22:52:00,034 - myLogger - INFO - R2 score =0.941
+2021-05-06 22:52:00,034 - myLogger - INFO - Low
+2021-05-06 22:52:00,035 - myLogger - INFO - Mean absolute error =0.0206
+2021-05-06 22:52:00,035 - myLogger - INFO - Mean squared error =0.000831773
+2021-05-06 22:52:00,036 - myLogger - INFO - Explain variance score =0.9415
+2021-05-06 22:52:00,036 - myLogger - INFO - RMSE =0.0288
+2021-05-06 22:52:00,037 - myLogger - INFO - R2 score =0.9408
+2021-05-06 22:52:00,037 - myLogger - INFO - Close
+2021-05-06 22:52:00,038 - myLogger - INFO - Mean absolute error =0.0211
+2021-05-06 22:52:00,038 - myLogger - INFO - Mean squared error =0.000859115
+2021-05-06 22:52:00,039 - myLogger - INFO - Explain variance score =0.9406
+2021-05-06 22:52:00,039 - myLogger - INFO - RMSE =0.0293
+2021-05-06 22:52:00,040 - myLogger - INFO - R2 score =0.9399
+2021-05-06 22:52:00,040 - myLogger - INFO - R2 score =0.9408
+2021-05-06 22:52:00,040 - myLogger - INFO - End
+
+2021-05-06 22:52:38,092 - myLogger - INFO - KNN
+2021-05-06 22:52:38,092 - myLogger - INFO - Open
+2021-05-06 22:52:38,092 - myLogger - INFO - Mean absolute error =0.037
+2021-05-06 22:52:38,093 - myLogger - INFO - Mean squared error =0.002457279
+2021-05-06 22:52:38,093 - myLogger - INFO - Explain variance score =0.8249
+2021-05-06 22:52:38,093 - myLogger - INFO - RMSE =0.0496
+2021-05-06 22:52:38,093 - myLogger - INFO - R2 score =0.8224
+2021-05-06 22:52:38,093 - myLogger - INFO - High
+2021-05-06 22:52:38,093 - myLogger - INFO - Mean absolute error =0.0372
+2021-05-06 22:52:38,094 - myLogger - INFO - Mean squared error =0.002489818
+2021-05-06 22:52:38,094 - myLogger - INFO - Explain variance score =0.8259
+2021-05-06 22:52:38,094 - myLogger - INFO - RMSE =0.0499
+2021-05-06 22:52:38,094 - myLogger - INFO - R2 score =0.8231
+2021-05-06 22:52:38,094 - myLogger - INFO - Low
+2021-05-06 22:52:38,095 - myLogger - INFO - Mean absolute error =0.0371
+2021-05-06 22:52:38,095 - myLogger - INFO - Mean squared error =0.002463925
+2021-05-06 22:52:38,095 - myLogger - INFO - Explain variance score =0.8207
+2021-05-06 22:52:38,095 - myLogger - INFO - RMSE =0.0496
+2021-05-06 22:52:38,095 - myLogger - INFO - R2 score =0.8185
+2021-05-06 22:52:38,095 - myLogger - INFO - Close
+2021-05-06 22:52:38,096 - myLogger - INFO - Mean absolute error =0.0374
+2021-05-06 22:52:38,096 - myLogger - INFO - Mean squared error =0.00248579
+2021-05-06 22:52:38,096 - myLogger - INFO - Explain variance score =0.8225
+2021-05-06 22:52:38,096 - myLogger - INFO - RMSE =0.0499
+2021-05-06 22:52:38,096 - myLogger - INFO - R2 score =0.82
+2021-05-06 22:52:38,097 - myLogger - INFO - R2 score =0.821
+2021-05-06 22:52:38,097 - myLogger - INFO - End
+
+2021-05-06 22:53:00,789 - myLogger - INFO - KNN
+2021-05-06 22:53:00,789 - myLogger - INFO - Open
+2021-05-06 22:53:00,789 - myLogger - INFO - Mean absolute error =0.0488
+2021-05-06 22:53:00,790 - myLogger - INFO - Mean squared error =0.004066129
+2021-05-06 22:53:00,790 - myLogger - INFO - Explain variance score =0.7086
+2021-05-06 22:53:00,790 - myLogger - INFO - RMSE =0.0638
+2021-05-06 22:53:00,790 - myLogger - INFO - R2 score =0.7081
+2021-05-06 22:53:00,790 - myLogger - INFO - High
+2021-05-06 22:53:00,790 - myLogger - INFO - Mean absolute error =0.0486
+2021-05-06 22:53:00,791 - myLogger - INFO - Mean squared error =0.004032442
+2021-05-06 22:53:00,791 - myLogger - INFO - Explain variance score =0.7148
+2021-05-06 22:53:00,791 - myLogger - INFO - RMSE =0.0635
+2021-05-06 22:53:00,791 - myLogger - INFO - R2 score =0.7142
+2021-05-06 22:53:00,791 - myLogger - INFO - Low
+2021-05-06 22:53:00,791 - myLogger - INFO - Mean absolute error =0.0485
+2021-05-06 22:53:00,792 - myLogger - INFO - Mean squared error =0.004040475
+2021-05-06 22:53:00,792 - myLogger - INFO - Explain variance score =0.7051
+2021-05-06 22:53:00,792 - myLogger - INFO - RMSE =0.0636
+2021-05-06 22:53:00,792 - myLogger - INFO - R2 score =0.7047
+2021-05-06 22:53:00,792 - myLogger - INFO - Close
+2021-05-06 22:53:00,792 - myLogger - INFO - Mean absolute error =0.0487
+2021-05-06 22:53:00,793 - myLogger - INFO - Mean squared error =0.004039095
+2021-05-06 22:53:00,793 - myLogger - INFO - Explain variance score =0.7103
+2021-05-06 22:53:00,793 - myLogger - INFO - RMSE =0.0636
+2021-05-06 22:53:00,793 - myLogger - INFO - R2 score =0.7098
+2021-05-06 22:53:00,794 - myLogger - INFO - R2 score =0.7092
+2021-05-06 22:53:00,794 - myLogger - INFO - End
+
+2021-05-06 22:53:48,087 - myLogger - INFO - KNN
+2021-05-06 22:53:48,088 - myLogger - INFO - Open
+2021-05-06 22:53:48,088 - myLogger - INFO - Mean absolute error =0.0046
+2021-05-06 22:53:48,088 - myLogger - INFO - Mean squared error =4.2085e-05
+2021-05-06 22:53:48,089 - myLogger - INFO - Explain variance score =0.9964
+2021-05-06 22:53:48,090 - myLogger - INFO - RMSE =0.0065
+2021-05-06 22:53:48,091 - myLogger - INFO - R2 score =0.9964
+2021-05-06 22:53:48,091 - myLogger - INFO - High
+2021-05-06 22:53:48,092 - myLogger - INFO - Mean absolute error =0.0045
+2021-05-06 22:53:48,093 - myLogger - INFO - Mean squared error =3.8261e-05
+2021-05-06 22:53:48,093 - myLogger - INFO - Explain variance score =0.9968
+2021-05-06 22:53:48,093 - myLogger - INFO - RMSE =0.0062
+2021-05-06 22:53:48,093 - myLogger - INFO - R2 score =0.9968
+2021-05-06 22:53:48,093 - myLogger - INFO - Low
+2021-05-06 22:53:48,094 - myLogger - INFO - Mean absolute error =0.0045
+2021-05-06 22:53:48,094 - myLogger - INFO - Mean squared error =4.2187e-05
+2021-05-06 22:53:48,094 - myLogger - INFO - Explain variance score =0.9963
+2021-05-06 22:53:48,094 - myLogger - INFO - RMSE =0.0065
+2021-05-06 22:53:48,095 - myLogger - INFO - R2 score =0.9963
+2021-05-06 22:53:48,095 - myLogger - INFO - Close
+2021-05-06 22:53:48,095 - myLogger - INFO - Mean absolute error =0.0047
+2021-05-06 22:53:48,095 - myLogger - INFO - Mean squared error =4.4935e-05
+2021-05-06 22:53:48,095 - myLogger - INFO - Explain variance score =0.9961
+2021-05-06 22:53:48,096 - myLogger - INFO - RMSE =0.0067
+2021-05-06 22:53:48,096 - myLogger - INFO - R2 score =0.9961
+2021-05-06 22:53:48,096 - myLogger - INFO - R2 score =0.9964
+2021-05-06 22:53:48,096 - myLogger - INFO - End
+
+2021-05-06 22:54:27,414 - myLogger - INFO - KNN
+2021-05-06 22:54:27,414 - myLogger - INFO - Open
+2021-05-06 22:54:27,415 - myLogger - INFO - Mean absolute error =0.0061
+2021-05-06 22:54:27,415 - myLogger - INFO - Mean squared error =6.5669e-05
+2021-05-06 22:54:27,416 - myLogger - INFO - Explain variance score =0.9946
+2021-05-06 22:54:27,416 - myLogger - INFO - RMSE =0.0081
+2021-05-06 22:54:27,417 - myLogger - INFO - R2 score =0.9946
+2021-05-06 22:54:27,417 - myLogger - INFO - High
+2021-05-06 22:54:27,417 - myLogger - INFO - Mean absolute error =0.006
+2021-05-06 22:54:27,418 - myLogger - INFO - Mean squared error =6.243e-05
+2021-05-06 22:54:27,418 - myLogger - INFO - Explain variance score =0.9949
+2021-05-06 22:54:27,419 - myLogger - INFO - RMSE =0.0079
+2021-05-06 22:54:27,419 - myLogger - INFO - R2 score =0.9949
+2021-05-06 22:54:27,420 - myLogger - INFO - Low
+2021-05-06 22:54:27,420 - myLogger - INFO - Mean absolute error =0.0058
+2021-05-06 22:54:27,421 - myLogger - INFO - Mean squared error =6.037e-05
+2021-05-06 22:54:27,421 - myLogger - INFO - Explain variance score =0.995
+2021-05-06 22:54:27,422 - myLogger - INFO - RMSE =0.0078
+2021-05-06 22:54:27,422 - myLogger - INFO - R2 score =0.995
+2021-05-06 22:54:27,422 - myLogger - INFO - Close
+2021-05-06 22:54:27,423 - myLogger - INFO - Mean absolute error =0.0059
+2021-05-06 22:54:27,423 - myLogger - INFO - Mean squared error =6.0158e-05
+2021-05-06 22:54:27,423 - myLogger - INFO - Explain variance score =0.9951
+2021-05-06 22:54:27,424 - myLogger - INFO - RMSE =0.0078
+2021-05-06 22:54:27,424 - myLogger - INFO - R2 score =0.995
+2021-05-06 22:54:27,425 - myLogger - INFO - R2 score =0.9949
+2021-05-06 22:54:27,425 - myLogger - INFO - End
+
+2021-05-06 22:54:55,155 - myLogger - INFO - KNN
+2021-05-06 22:54:55,155 - myLogger - INFO - Open
+2021-05-06 22:54:55,155 - myLogger - INFO - Mean absolute error =0.0172
+2021-05-06 22:54:55,155 - myLogger - INFO - Mean squared error =0.000525331
+2021-05-06 22:54:55,156 - myLogger - INFO - Explain variance score =0.9553
+2021-05-06 22:54:55,156 - myLogger - INFO - RMSE =0.0229
+2021-05-06 22:54:55,156 - myLogger - INFO - R2 score =0.9552
+2021-05-06 22:54:55,156 - myLogger - INFO - High
+2021-05-06 22:54:55,156 - myLogger - INFO - Mean absolute error =0.0171
+2021-05-06 22:54:55,156 - myLogger - INFO - Mean squared error =0.000521332
+2021-05-06 22:54:55,157 - myLogger - INFO - Explain variance score =0.9562
+2021-05-06 22:54:55,157 - myLogger - INFO - RMSE =0.0228
+2021-05-06 22:54:55,157 - myLogger - INFO - R2 score =0.956
+2021-05-06 22:54:55,157 - myLogger - INFO - Low
+2021-05-06 22:54:55,157 - myLogger - INFO - Mean absolute error =0.017
+2021-05-06 22:54:55,158 - myLogger - INFO - Mean squared error =0.000512475
+2021-05-06 22:54:55,158 - myLogger - INFO - Explain variance score =0.9556
+2021-05-06 22:54:55,158 - myLogger - INFO - RMSE =0.0226
+2021-05-06 22:54:55,158 - myLogger - INFO - R2 score =0.9555
+2021-05-06 22:54:55,158 - myLogger - INFO - Close
+2021-05-06 22:54:55,158 - myLogger - INFO - Mean absolute error =0.0169
+2021-05-06 22:54:55,159 - myLogger - INFO - Mean squared error =0.000507904
+2021-05-06 22:54:55,159 - myLogger - INFO - Explain variance score =0.9564
+2021-05-06 22:54:55,159 - myLogger - INFO - RMSE =0.0225
+2021-05-06 22:54:55,159 - myLogger - INFO - R2 score =0.9563
+2021-05-06 22:54:55,160 - myLogger - INFO - R2 score =0.9557
+2021-05-06 22:54:55,160 - myLogger - INFO - End
+
+2021-05-06 22:55:22,380 - myLogger - INFO - KNN
+2021-05-06 22:55:22,380 - myLogger - INFO - Open
+2021-05-06 22:55:22,380 - myLogger - INFO - Mean absolute error =0.0421
+2021-05-06 22:55:22,382 - myLogger - INFO - Mean squared error =0.002917114
+2021-05-06 22:55:22,382 - myLogger - INFO - Explain variance score =0.7684
+2021-05-06 22:55:22,383 - myLogger - INFO - RMSE =0.054
+2021-05-06 22:55:22,383 - myLogger - INFO - R2 score =0.7556
+2021-05-06 22:55:22,384 - myLogger - INFO - High
+2021-05-06 22:55:22,384 - myLogger - INFO - Mean absolute error =0.0423
+2021-05-06 22:55:22,385 - myLogger - INFO - Mean squared error =0.002932106
+2021-05-06 22:55:22,385 - myLogger - INFO - Explain variance score =0.7699
+2021-05-06 22:55:22,385 - myLogger - INFO - RMSE =0.0541
+2021-05-06 22:55:22,385 - myLogger - INFO - R2 score =0.7579
+2021-05-06 22:55:22,385 - myLogger - INFO - Low
+2021-05-06 22:55:22,386 - myLogger - INFO - Mean absolute error =0.0421
+2021-05-06 22:55:22,386 - myLogger - INFO - Mean squared error =0.002929579
+2021-05-06 22:55:22,386 - myLogger - INFO - Explain variance score =0.7651
+2021-05-06 22:55:22,387 - myLogger - INFO - RMSE =0.0541
+2021-05-06 22:55:22,387 - myLogger - INFO - R2 score =0.7509
+2021-05-06 22:55:22,388 - myLogger - INFO - Close
+2021-05-06 22:55:22,388 - myLogger - INFO - Mean absolute error =0.0422
+2021-05-06 22:55:22,389 - myLogger - INFO - Mean squared error =0.002932201
+2021-05-06 22:55:22,390 - myLogger - INFO - Explain variance score =0.7676
+2021-05-06 22:55:22,390 - myLogger - INFO - RMSE =0.0541
+2021-05-06 22:55:22,391 - myLogger - INFO - R2 score =0.7541
+2021-05-06 22:55:22,391 - myLogger - INFO - R2 score =0.7546
+2021-05-06 22:55:22,392 - myLogger - INFO - End
+
+2021-05-06 22:55:47,970 - myLogger - INFO - KNN
+2021-05-06 22:55:47,970 - myLogger - INFO - Open
+2021-05-06 22:55:47,971 - myLogger - INFO - Mean absolute error =0.0534
+2021-05-06 22:55:47,971 - myLogger - INFO - Mean squared error =0.004369909
+2021-05-06 22:55:47,971 - myLogger - INFO - Explain variance score =0.6366
+2021-05-06 22:55:47,971 - myLogger - INFO - RMSE =0.0661
+2021-05-06 22:55:47,972 - myLogger - INFO - R2 score =0.6365
+2021-05-06 22:55:47,972 - myLogger - INFO - High
+2021-05-06 22:55:47,972 - myLogger - INFO - Mean absolute error =0.0533
+2021-05-06 22:55:47,972 - myLogger - INFO - Mean squared error =0.004328986
+2021-05-06 22:55:47,972 - myLogger - INFO - Explain variance score =0.6432
+2021-05-06 22:55:47,972 - myLogger - INFO - RMSE =0.0658
+2021-05-06 22:55:47,973 - myLogger - INFO - R2 score =0.6432
+2021-05-06 22:55:47,973 - myLogger - INFO - Low
+2021-05-06 22:55:47,973 - myLogger - INFO - Mean absolute error =0.0534
+2021-05-06 22:55:47,973 - myLogger - INFO - Mean squared error =0.004373495
+2021-05-06 22:55:47,973 - myLogger - INFO - Explain variance score =0.632
+2021-05-06 22:55:47,973 - myLogger - INFO - RMSE =0.0661
+2021-05-06 22:55:47,974 - myLogger - INFO - R2 score =0.6319
+2021-05-06 22:55:47,974 - myLogger - INFO - Close
+2021-05-06 22:55:47,974 - myLogger - INFO - Mean absolute error =0.0534
+2021-05-06 22:55:47,974 - myLogger - INFO - Mean squared error =0.004351393
+2021-05-06 22:55:47,974 - myLogger - INFO - Explain variance score =0.6369
+2021-05-06 22:55:47,974 - myLogger - INFO - RMSE =0.066
+2021-05-06 22:55:47,975 - myLogger - INFO - R2 score =0.6369
+2021-05-06 22:55:47,975 - myLogger - INFO - R2 score =0.6371
+2021-05-06 22:55:47,975 - myLogger - INFO - End
+
+2021-05-06 23:06:03,947 - myLogger - INFO - BASELINE
+2021-05-06 23:06:03,947 - myLogger - INFO - Open
+2021-05-06 23:06:03,947 - myLogger - INFO - Mean absolute error =0.0095
+2021-05-06 23:06:03,947 - myLogger - INFO - Mean squared error =0.000165833
+2021-05-06 23:06:03,948 - myLogger - INFO - Explain variance score =0.9903
+2021-05-06 23:06:03,948 - myLogger - INFO - RMSE =0.0129
+2021-05-06 23:06:03,948 - myLogger - INFO - R2 score =0.9883
+2021-05-06 23:06:03,948 - myLogger - INFO - High
+2021-05-06 23:06:03,948 - myLogger - INFO - Mean absolute error =0.011
+2021-05-06 23:06:03,948 - myLogger - INFO - Mean squared error =0.000200909
+2021-05-06 23:06:03,949 - myLogger - INFO - Explain variance score =0.9899
+2021-05-06 23:06:03,949 - myLogger - INFO - RMSE =0.0142
+2021-05-06 23:06:03,949 - myLogger - INFO - R2 score =0.986
+2021-05-06 23:06:03,949 - myLogger - INFO - Low
+2021-05-06 23:06:03,949 - myLogger - INFO - Mean absolute error =0.0108
+2021-05-06 23:06:03,949 - myLogger - INFO - Mean squared error =0.000209699
+2021-05-06 23:06:03,950 - myLogger - INFO - Explain variance score =0.9894
+2021-05-06 23:06:03,950 - myLogger - INFO - RMSE =0.0145
+2021-05-06 23:06:03,950 - myLogger - INFO - R2 score =0.9849
+2021-05-06 23:06:03,950 - myLogger - INFO - Close
+2021-05-06 23:06:03,950 - myLogger - INFO - Mean absolute error =0.0113
+2021-05-06 23:06:03,950 - myLogger - INFO - Mean squared error =0.000220667
+2021-05-06 23:06:03,951 - myLogger - INFO - Explain variance score =0.9885
+2021-05-06 23:06:03,951 - myLogger - INFO - RMSE =0.0149
+2021-05-06 23:06:03,951 - myLogger - INFO - R2 score =0.9843
+2021-05-06 23:06:03,951 - myLogger - INFO - R2 score =0.9859
+2021-05-06 23:06:03,951 - myLogger - INFO - End
+
+2021-05-06 23:08:14,233 - myLogger - INFO - BASELINE
+2021-05-06 23:08:14,233 - myLogger - INFO - Open
+2021-05-06 23:08:14,233 - myLogger - INFO - Mean absolute error =0.0068
+2021-05-06 23:08:14,233 - myLogger - INFO - Mean squared error =8.7168e-05
+2021-05-06 23:08:14,234 - myLogger - INFO - Explain variance score =0.9939
+2021-05-06 23:08:14,234 - myLogger - INFO - RMSE =0.0093
+2021-05-06 23:08:14,234 - myLogger - INFO - R2 score =0.9938
+2021-05-06 23:08:14,234 - myLogger - INFO - High
+2021-05-06 23:08:14,234 - myLogger - INFO - Mean absolute error =0.0078
+2021-05-06 23:08:14,234 - myLogger - INFO - Mean squared error =0.000112086
+2021-05-06 23:08:14,235 - myLogger - INFO - Explain variance score =0.9924
+2021-05-06 23:08:14,235 - myLogger - INFO - RMSE =0.0106
+2021-05-06 23:08:14,235 - myLogger - INFO - R2 score =0.9921
+2021-05-06 23:08:14,235 - myLogger - INFO - Low
+2021-05-06 23:08:14,235 - myLogger - INFO - Mean absolute error =0.0076
+2021-05-06 23:08:14,235 - myLogger - INFO - Mean squared error =0.000114785
+2021-05-06 23:08:14,235 - myLogger - INFO - Explain variance score =0.992
+2021-05-06 23:08:14,236 - myLogger - INFO - RMSE =0.0107
+2021-05-06 23:08:14,236 - myLogger - INFO - R2 score =0.9917
+2021-05-06 23:08:14,236 - myLogger - INFO - Close
+2021-05-06 23:08:14,236 - myLogger - INFO - Mean absolute error =0.0085
+2021-05-06 23:08:14,236 - myLogger - INFO - Mean squared error =0.000136274
+2021-05-06 23:08:14,236 - myLogger - INFO - Explain variance score =0.9906
+2021-05-06 23:08:14,237 - myLogger - INFO - RMSE =0.0117
+2021-05-06 23:08:14,237 - myLogger - INFO - R2 score =0.9903
+2021-05-06 23:08:14,237 - myLogger - INFO - R2 score =0.992
+2021-05-06 23:08:14,237 - myLogger - INFO - End
+
+2021-05-06 23:30:12,468 - myLogger - INFO - CNN
+2021-05-06 23:30:12,484 - myLogger - INFO - Open
+2021-05-06 23:30:12,484 - myLogger - INFO - Mean absolute error =0.0078
+2021-05-06 23:30:12,484 - myLogger - INFO - Mean squared error =0.000112734
+2021-05-06 23:30:12,485 - myLogger - INFO - Explain variance score =0.9942
+2021-05-06 23:30:12,485 - myLogger - INFO - RMSE =0.0106
+2021-05-06 23:30:12,485 - myLogger - INFO - R2 score =0.9925
+2021-05-06 23:30:12,485 - myLogger - INFO - High
+2021-05-06 23:30:12,485 - myLogger - INFO - Mean absolute error =0.0082
+2021-05-06 23:30:12,485 - myLogger - INFO - Mean squared error =0.000124109
+2021-05-06 23:30:12,486 - myLogger - INFO - Explain variance score =0.9931
+2021-05-06 23:30:12,486 - myLogger - INFO - RMSE =0.0111
+2021-05-06 23:30:12,486 - myLogger - INFO - R2 score =0.9918
+2021-05-06 23:30:12,486 - myLogger - INFO - Low
+2021-05-06 23:30:12,486 - myLogger - INFO - Mean absolute error =0.0092
+2021-05-06 23:30:12,486 - myLogger - INFO - Mean squared error =0.000157064
+2021-05-06 23:30:12,487 - myLogger - INFO - Explain variance score =0.9918
+2021-05-06 23:30:12,487 - myLogger - INFO - RMSE =0.0125
+2021-05-06 23:30:12,487 - myLogger - INFO - R2 score =0.9893
+2021-05-06 23:30:12,487 - myLogger - INFO - Close
+2021-05-06 23:30:12,487 - myLogger - INFO - Mean absolute error =0.0098
+2021-05-06 23:30:12,487 - myLogger - INFO - Mean squared error =0.000173117
+2021-05-06 23:30:12,488 - myLogger - INFO - Explain variance score =0.991
+2021-05-06 23:30:12,488 - myLogger - INFO - RMSE =0.0132
+2021-05-06 23:30:12,488 - myLogger - INFO - R2 score =0.9884
+2021-05-06 23:30:12,488 - myLogger - INFO - R2 score =0.9905
+2021-05-06 23:30:12,488 - myLogger - INFO - End
+

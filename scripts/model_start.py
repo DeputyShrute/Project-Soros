@@ -181,7 +181,7 @@ class Models:
             self.logger.info("Mean absolute error =%s", round(
                 sm.mean_absolute_error(y_test[:, i], yhat[:, i]), 4))
             self.logger.info("Mean squared error =%s", round(
-                sm.mean_squared_error(y_test[:, i], yhat[:, i], squared=True), 4))
+                sm.mean_squared_error(y_test[:, i], yhat[:, i], squared=True), 9))
             self.logger.info("Explain variance score =%s", round(
                 sm.explained_variance_score(y_test[:, i], yhat[:, i]), 4))
             self.logger.info("RMSE =%s", round(
@@ -254,5 +254,5 @@ class Models:
 
 if __name__ == "__main__":
     clear_session()
-    Open = Models('EURUSD', 500, 'BASELIne', 2)
+    Open = Models('EURUSD', 500, 'CNN', 2)
     Open.data()

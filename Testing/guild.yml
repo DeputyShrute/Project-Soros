@@ -9,10 +9,10 @@
           # description: timeframe size
           # default: 20
           # choices: [20,50,100,250,500,1000]
-        filters:
-          description: Number of filters
-          default: 2
-          choices: [1,50,100,250,500,1000]
+        # filters:
+        #   description: Number of filters
+        #   default: 2
+        #   choices: [1,50,100,250,500,1000]
         # kernel_size:
         #   description: Number of Kernels
         #   default: 2
@@ -33,9 +33,9 @@
         #   description: number of epochs
         #   default: 1000
         #   choices: [100,250,500,1000]
-        # k:
-        #   description: k
-        #   default: 1000
+        k:
+          description: k
+          default: 1000
       output-scalars:
         - Mean_absolute_error: 'Mean absolute error = (\value)'
         - Mean_squared_error: 'Mean squared error = (\value)'
