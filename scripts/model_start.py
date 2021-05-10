@@ -254,5 +254,5 @@ class Models:
 
 if __name__ == "__main__":
     clear_session()
-    Open = Models('EURUSD', 500, 'CNN', 2)
+    Open = Models('EURUSD', 1, 'KNN', 2)
     Open.data()

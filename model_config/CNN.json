@@ -1,9 +1,9 @@
 {
-    "filters":500,
-    "kernel_size": 2,
+    "filters":4,
+    "kernel_size": 3,
     "activation_conv1d": "relu",
     "activation_dense": "relu",
     "pool_size": 2,
-    "Dense_layer_1": 50, 
-    "epochs": 1000
+    "Dense_layer_1": 10, 
+    "epochs": 5
 }

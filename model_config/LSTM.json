@@ -1,0 +1,5 @@
+{
+	"neuron_val": 500,
+	"activate": "relu",
+	"epochs": 200
+}

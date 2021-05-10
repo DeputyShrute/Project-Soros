@@ -23,6 +23,7 @@ from keras.layers import Input
 from keras.models import Model
 from keras.models import save_model, load_model
 import tensorflow as tf
+import pickle
 config = tf.compat.v1.ConfigProto()
 config.gpu_options.allow_growth = True
 session = tf.compat.v1.Session(config=config)
@@ -328,9 +329,13 @@ class KNN:
         return X_train, X_val, y_train, X_test
 
     def KNN_train_model(self, X_train, X_val, y_train, y_val, X_test, y_test, raw_seq):
-        k = 1000
+        k = 10
         classifier = KNeighborsRegressor(n_neighbors=k)
         classifier.fit(X_train, y_train)
+
+        knnSave = open('saved_models/KNN_file', 'wb')
+        pickle.dump(classifier, knnSave)
+
         y_pred = classifier.predict(X_test)
 
         close = X_test[:, -1]
@@ -365,17 +370,22 @@ class LSTMs:
 
         features = X_train.shape[2]
 
+        with open('model_config/LSTM.json', 'r') as params:
+            json_param = params.read()
+
+        obj = json.loads(json_param)
+
         model = Sequential()
-        model.add(LSTM(50, activation='relu',
+        model.add(LSTM(obj['neuron_val'], activation='relu',
                        return_sequences=True, input_shape=(self.timestep, features)))
-        model.add(LSTM(50, activation='relu'))
+        model.add(LSTM(obj['neuron_val'], activation='relu'))
         model.add(Dense(4))
         model.compile(optimizer='adam',
                       loss='mse', metrics=['mean_squared_error'])
         model.summary()
 
         history = model.fit(
-            X_train, y_train, validation_data=(X_val, y_val), epochs=5, verbose=2)
+            X_train, y_train, validation_data=(X_val, y_val), epochs=obj['epochs'], verbose=2)
 
         # Saved the model as JSON and .h5
         model_json = model.to_json()
@@ -403,6 +413,7 @@ class LSTMs:
         return yhat
 
     def LSTM_analyse(self, y_test, yhat, final_cols):
+        print(len(final_cols))
         correct_dir = []
         for i in range(len(final_cols)):
             for j in range(len(final_cols[i][self.timestep-1])):
@@ -425,27 +436,26 @@ class LSTMs:
 
         correct_dir = []
         for i in range(len(final_cols)):
-            for j in range(len(final_cols[i][self.timestep-1])):
-                if y_test[i][0] < final_cols[i][self.timestep-1][0]:
-                    if yhat[i][0] < final_cols[i][self.timestep-1][0]:
-                        correct_dir.append(1)
-                    else:
-                        correct_dir.append(0)
-                elif y_test[i][0] > final_cols[i][self.timestep-1][0]:
-                    if yhat[i][0] > final_cols[i][self.timestep-1][0]:
-                        correct_dir.append(1)
-                    else:
-                        correct_dir.append(0)
-                elif y_test[i][3] < final_cols[i][self.timestep-1][3]:
-                    if yhat[i][3] < final_cols[i][self.timestep-1][3]:
-                        correct_dir.append(1)
-                    else:
-                        correct_dir.append(0)
-                elif y_test[i][3] > final_cols[i][self.timestep-1][3]:
-                    if yhat[i][3] > final_cols[i][self.timestep-1][3]:
-                        correct_dir.append(1)
-                    else:
-                        correct_dir.append(0)
+            if y_test[i][0] < final_cols[i][self.timestep-1][0]:
+                if yhat[i][0] < final_cols[i][self.timestep-1][0]:
+                    correct_dir.append(1)
+                else:
+                    correct_dir.append(0)
+            elif y_test[i][0] > final_cols[i][self.timestep-1][0]:
+                if yhat[i][0] > final_cols[i][self.timestep-1][0]:
+                    correct_dir.append(1)
+                else:
+                    correct_dir.append(0)
+            elif y_test[i][3] < final_cols[i][self.timestep-1][3]:
+                if yhat[i][3] < final_cols[i][self.timestep-1][3]:
+                    correct_dir.append(1)
+                else:
+                    correct_dir.append(0)
+            elif y_test[i][3] > final_cols[i][self.timestep-1][3]:
+                if yhat[i][3] > final_cols[i][self.timestep-1][3]:
+                    correct_dir.append(1)
+                else:
+                    correct_dir.append(0)
 
         correct = sum(correct_dir)
         total = correct / (size(correct_dir))

@@ -5,6 +5,7 @@ import glob
 from simple_term_menu import TerminalMenu
 from scripts.create_data import make_chart
 from scripts.data_scraper import get_data
+from scripts.part_launch import launch
 
 
 class menu:
@@ -34,8 +35,9 @@ class menu:
             # Candlestick Analysis
             elif select == 2:
                 menu.select_pair()
+            elif select == 3:
             # Price Prediction
-
+                launch.predictions('EURUSD')
             # Exit
             elif select == 4:
                 print("Exiting program")

@@ -1,10 +1,16 @@
+import pickle
+from numpy.core.numeric import NaN
 from numpy.core.shape_base import hstack
-from matplotlib.pyplot import xlim
+import matplotlib.pyplot as plt
 from numpy import array, newaxis
+import pandas as pd
 from models import CNN
 from tensorflow.python.keras.saving.model_config import model_from_json
 from model_start import Models
+from sklearn.neighbors import KNeighborsRegressor
 from PIL import Image
+import numpy as np
+import mplfinance as mpf
 import os
 import csv
 
@@ -30,13 +36,13 @@ class launch:
     def predictions(X):
 
         # Loads saved model so retraining isn't needed
-        json_file = open('saved_models/CNN.json', 'r')
-        loaded_model_json = json_file.read()
-        json_file.close()
-        model = model_from_json(loaded_model_json)
-        model.load_weights('saved_models/CNN.h5')
+        # json_file = open('saved_models/MLP.json', 'r')
+        # loaded_model_json = json_file.read()
+        # json_file.close()
+        # model = model_from_json(loaded_model_json)
+        # model.load_weights('saved_models/MLP.h5')
 
-        X = 'EURUSD'
+        X = 'test_data'
 
         # Creates arrays to be used to specify each column
         open_col, high_col, low_col, clos_col, raw_seq = [], [], [], [], array([
@@ -74,16 +80,67 @@ class launch:
 
         raw_seq = hstack((open_col, high_col, low_col, clos_col))
 
-        # raw_seq.reshape(1, 4, 4472)
-        # test = raw_seq[newaxis,:,:]
-        # print(test)
-        # print(test.shape)
+        tfn = int(input('Val: '))
+        val = int(input('val2: '))
+        tf=val
+        #tfn = 0
 
-        test = raw_seq.reshape(1,raw_seq.shape[0], raw_seq.shape[1])
+        loaded_model = pickle.load(open('saved_models/KNN_file', 'rb'))
 
-        print(test.shape)
+        res = [] 
+        print(raw_seq[0])
+        #res.append([1.1212,1.12218,1.12106,1.12188])
+        #res.append([0.0, 0.0, 0.0, 0.0])
+        for i in raw_seq:
+            i = [i]
+            result = loaded_model.predict(i)
+            result=result.flatten()
+            result=result.tolist()
+            res.append(result)
+        print(res[1])
+        print('\n')
+        no = [NaN, NaN, NaN, NaN]
+        res.insert(0,no)
+        result = pd.DataFrame(res)
+        
+        print(result)
 
-        yhat = model.predict(test, verbose=2)
+        file_loc = 'scripts/Finance_Data/Raw_Data/' + X + '.csv'
+        data = pd.read_csv(
+            file_loc, parse_dates=False, usecols=['Date'])
+        data = data.values.tolist()
+
+        data = np.array(data)
+        data = data.flatten()
+
+        raw_seq = pd.DataFrame(raw_seq)
+        raw_seq['Date'] = data
+        raw_seq.index = pd.DatetimeIndex(raw_seq['Date'])
+        raw_seq.columns = ['Open', 'High', 'Low', 'Close', 'Volume']
+        raw_seq['Volume'] = 0
+        print(raw_seq)
+
+        # data = np.delete(data, 0)
+        data = np.append(data,'2021-05-10')
+        
+        result['Date'] = data
+
+        result.index = pd.DatetimeIndex(result['Date'])
+        result.columns = ['Open', 'High', 'Low', 'Close', 'Volume']
+        result['Volume'] = 0
+
+        print(result)
+
+
+        #print(len(result))
+        s = mpf.make_mpf_style(base_mpl_style='seaborn',rc={'axes.grid':False})
+        fig = mpf.figure(style=s,figsize=(7.5,5.75))
+        ax1 = fig.subplot()
+        ax2 = ax1.twinx()
+        mpf.plot(result[tfn:tf], ax=ax1, type='candle')
+        mpf.plot(raw_seq[tfn:tf], ax=ax2, type='candle', style='yahoo')
+        plt.show()
+
 
 if __name__ == "__main__":
     run = launch()
