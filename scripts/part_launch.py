@@ -42,7 +42,7 @@ class launch:
         # model = model_from_json(loaded_model_json)
         # model.load_weights('saved_models/MLP.h5')
 
-        X = 'test_data'
+        X = 'EURUSD'
 
         # Creates arrays to be used to specify each column
         open_col, high_col, low_col, clos_col, raw_seq = [], [], [], [], array([
@@ -88,7 +88,6 @@ class launch:
         loaded_model = pickle.load(open('saved_models/KNN_file', 'rb'))
 
         res = [] 
-        print(raw_seq[0])
         #res.append([1.1212,1.12218,1.12106,1.12188])
         #res.append([0.0, 0.0, 0.0, 0.0])
         for i in raw_seq:
@@ -97,14 +96,14 @@ class launch:
             result=result.flatten()
             result=result.tolist()
             res.append(result)
-        print(res[1])
+
+        print(raw_seq[tf])
+        print(res[tf+1])
         print('\n')
         no = [NaN, NaN, NaN, NaN]
         res.insert(0,no)
         result = pd.DataFrame(res)
         
-        print(result)
-
         file_loc = 'scripts/Finance_Data/Raw_Data/' + X + '.csv'
         data = pd.read_csv(
             file_loc, parse_dates=False, usecols=['Date'])
@@ -122,15 +121,12 @@ class launch:
 
         # data = np.delete(data, 0)
         data = np.append(data,'2021-05-10')
-        
         result['Date'] = data
-
         result.index = pd.DatetimeIndex(result['Date'])
         result.columns = ['Open', 'High', 'Low', 'Close', 'Volume']
         result['Volume'] = 0
 
         print(result)
-
 
         #print(len(result))
         s = mpf.make_mpf_style(base_mpl_style='seaborn',rc={'axes.grid':False})

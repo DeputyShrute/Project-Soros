@@ -380,7 +380,7 @@ class LSTMs:
                        return_sequences=True, input_shape=(self.timestep, features)))
         model.add(LSTM(obj['neuron_val'], activation='relu'))
         model.add(Dense(4))
-        model.compile(optimizer='adam',
+        model.compile(optimizer='RMSprop',
                       loss='mse', metrics=['mean_squared_error'])
         model.summary()
 
