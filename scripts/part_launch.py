@@ -4,9 +4,9 @@ from numpy.core.shape_base import hstack
 import matplotlib.pyplot as plt
 from numpy import array, newaxis
 import pandas as pd
-from models import CNN
+#from script.models import CNN
 from tensorflow.python.keras.saving.model_config import model_from_json
-from model_start import Models
+from scripts.model_start import Models
 from sklearn.neighbors import KNeighborsRegressor
 from PIL import Image
 import numpy as np

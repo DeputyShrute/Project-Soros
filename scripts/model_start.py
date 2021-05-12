@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import sklearn.metrics as sm
 from numpy import array
 from keras.backend import clear_session
-from models import CNN, MLP, KNN, LSTMs, BaseLine
+from scripts.models import CNN, MLP, KNN, LSTMs, BaseLine
 import csv
 import os
 import time

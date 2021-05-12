@@ -7,14 +7,14 @@ Create CUDA-stream - 0
 Enter Image Path:  Detection layer: 82 - type = 28 
  Detection layer: 94 - type = 28 
  Detection layer: 106 - type = 28 
-/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Chart_Snapshot/TEST/operation/test_data_1test.jpg: Predicted in 119.333000 milli-seconds.
+/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Chart_Snapshot/TEST/operation/test_data_1test.jpg: Predicted in 113.345000 milli-seconds.
 sell: 95%	(left_x:  216   top_y:   98   width:   21   height:   62)
 sell: 52%	(left_x:  437   top_y:  179   width:   37   height:   80)
 buy: 92%	(left_x:  601   top_y:  383   width:   40   height:   70)
 Enter Image Path:  Detection layer: 82 - type = 28 
  Detection layer: 94 - type = 28 
  Detection layer: 106 - type = 28 
-/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Chart_Snapshot/TEST/operation/test_data_2test.jpg: Predicted in 24.258000 milli-seconds.
+/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Chart_Snapshot/TEST/operation/test_data_2test.jpg: Predicted in 24.690000 milli-seconds.
 sell: 66%	(left_x:  256   top_y:   81   width:   13   height:   69)
 sell: 58%	(left_x:  426   top_y:  227   width:   29   height:   70)
 buy: 73%	(left_x:  487   top_y:  326   width:   34   height:   79)
@@ -22,7 +22,7 @@ sell: 100%	(left_x:  577   top_y:  296   width:   20   height:   62)
 Enter Image Path:  Detection layer: 82 - type = 28 
  Detection layer: 94 - type = 28 
  Detection layer: 106 - type = 28 
-/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Chart_Snapshot/TEST/operation/test_data_3test.jpg: Predicted in 23.465000 milli-seconds.
+/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Chart_Snapshot/TEST/operation/test_data_3test.jpg: Predicted in 23.732000 milli-seconds.
 sell: 91%	(left_x:  207   top_y:  313   width:   42   height:   87)
 buy: 95%	(left_x:  261   top_y:  400   width:   19   height:   55)
 buy: 98%	(left_x:  399   top_y:  325   width:   44   height:   78)
@@ -31,7 +31,7 @@ buy: 91%	(left_x:  644   top_y:  158   width:   32   height:   90)
 Enter Image Path:  Detection layer: 82 - type = 28 
  Detection layer: 94 - type = 28 
  Detection layer: 106 - type = 28 
-/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Chart_Snapshot/TEST/operation/test_data_4test.jpg: Predicted in 24.492000 milli-seconds.
+/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Chart_Snapshot/TEST/operation/test_data_4test.jpg: Predicted in 22.965000 milli-seconds.
 sell: 99%	(left_x:  496   top_y:  110   width:   19   height:   76)
 buy: 63%	(left_x:  525   top_y:  165   width:   10   height:   54)
 sell: 81%	(left_x:  549   top_y:  111   width:   22   height:   69)
@@ -40,14 +40,14 @@ sell: 99%	(left_x:  657   top_y:   86   width:   24   height:   68)
 Enter Image Path:  Detection layer: 82 - type = 28 
  Detection layer: 94 - type = 28 
  Detection layer: 106 - type = 28 
-/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Chart_Snapshot/TEST/operation/test_data_5test.jpg: Predicted in 24.577000 milli-seconds.
+/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Chart_Snapshot/TEST/operation/test_data_5test.jpg: Predicted in 23.661000 milli-seconds.
 buy: 85%	(left_x:  328   top_y:  240   width:   24   height:   87)
 buy: 82%	(left_x:  481   top_y:  360   width:   34   height:  104)
 sell: 98%	(left_x:  614   top_y:  240   width:   34   height:  105)
 Enter Image Path:  Detection layer: 82 - type = 28 
  Detection layer: 94 - type = 28 
  Detection layer: 106 - type = 28 
-/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Chart_Snapshot/TEST/operation/test_data_6test.jpg: Predicted in 24.629000 milli-seconds.
+/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Chart_Snapshot/TEST/operation/test_data_6test.jpg: Predicted in 23.177000 milli-seconds.
 buy: 61%	(left_x:  272   top_y:  340   width:   45   height:  111)
 buy: 36%	(left_x:  319   top_y:  326   width:   12   height:  138)
 buy: 56%	(left_x:  482   top_y:  246   width:   22   height:   78)
@@ -55,14 +55,14 @@ buy: 80%	(left_x:  549   top_y:  140   width:   15   height:  113)
 Enter Image Path:  Detection layer: 82 - type = 28 
  Detection layer: 94 - type = 28 
  Detection layer: 106 - type = 28 
-/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Chart_Snapshot/TEST/operation/test_data_7test.jpg: Predicted in 24.310000 milli-seconds.
+/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Chart_Snapshot/TEST/operation/test_data_7test.jpg: Predicted in 23.001000 milli-seconds.
 sell: 63%	(left_x:  298   top_y:  120   width:   20   height:   96)
 sell: 85%	(left_x:  349   top_y:   85   width:   23   height:   93)
 buy: 99%	(left_x:  607   top_y:  350   width:   23   height:  112)
 Enter Image Path:  Detection layer: 82 - type = 28 
  Detection layer: 94 - type = 28 
  Detection layer: 106 - type = 28 
-/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Chart_Snapshot/TEST/operation/test_data_8test.jpg: Predicted in 25.077000 milli-seconds.
+/home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Chart_Snapshot/TEST/operation/test_data_8test.jpg: Predicted in 23.782000 milli-seconds.
 buy: 90%	(left_x:  206   top_y:  169   width:   22   height:   71)
 sell: 93%	(left_x:  451   top_y:  255   width:   25   height:   69)
 sell: 55%	(left_x:  492   top_y:  290   width:   25   height:   75)
