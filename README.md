@@ -45,10 +45,8 @@ The software can then be started using by running:
 python3 run.py
 ```
 This is in the root of the Project-Soros Folder.
-<<<<<<< HEAD
 
 On the menu two options will appear:
 - `Update all data` pulls fresh data from Yahoo
 - `Full Analysis` runs both the object detection and price prediction
-=======
->>>>>>> efe3477d0f801da32d14360f4aa6426ae148da02
+
