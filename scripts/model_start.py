@@ -1,6 +1,6 @@
 #!/usr/bin/env python -W ignore::DeprecationWarning
 import logging
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
 from numpy.core.shape_base import hstack
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
@@ -115,6 +115,16 @@ class Models:
         # Splits the data into test and val (data, windows, size of val)
         X_train, X_val, y_train, y_val = train_test_split(
             X_train, y_train, test_size=0.2)
+        
+        scaler = MinMaxScaler()
+        X_train = scaler.fit_transform(X_train.reshape(-1, X_train.shape[-1])).reshape(X_train.shape)
+        X_test = scaler.transform(X_test.reshape(-1, X_test.shape[-1])).reshape(X_test.shape)
+
+        X_val = scaler.fit_transform(X_val.reshape(-1, X_val.shape[-1])).reshape(X_val.shape)
+        y_val = scaler.transform(y_val.reshape(-1, y_val.shape[-1])).reshape(y_val.shape)
+
+        y_train = scaler.fit_transform(y_train.reshape(-1, y_train.shape[-1])).reshape(y_train.shape)
+        y_test = scaler.transform(y_test.reshape(-1, y_test.shape[-1])).reshape(y_test.shape)
 
         Models.check_model(self, X_train, X_val, y_train,
                            y_val, X_test, y_test, raw_seq)
@@ -254,5 +264,5 @@ class Models:
 
 if __name__ == "__main__":
     clear_session()
-    Open = Models('EURUSD', 1, 'KNN', 2)
+    Open = Models('EURUSD', 100, 'LSTM', 2)
     Open.data()
