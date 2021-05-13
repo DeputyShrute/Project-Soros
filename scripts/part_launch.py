@@ -19,13 +19,15 @@ class launch:
 
     def darknet(X):
         try:
-            os.chdir('/darknet/data')
+
+            os.chdir('../../..')
+            os.chdir('darknet/data')
             file = open('test.txt', 'w+')
             file.write(
                 '/scripts/Finance_Data/Chart_Snapshot/{name}_test.jpg'.format(name=X))
             file.close
-            os.chdir("/darknet")
-            os.system("./darknet detector test data/obj.data cfg/yolo-obj.cfg backup/yolo-obj_final.weights -dont_show -ext_output < data/test.txt > data/result.txt")
+            os.chdir("../")
+            os.system("./darknet detector test data/obj.data cfg/yolo-obj.cfg backup/yolo-obj_last.weights -dont_show -ext_output < data/test.txt > data/result.txt")
             predictions = Image.open('predictions.jpg')
             predictions.show()
             os.wait()
@@ -34,7 +36,7 @@ class launch:
             print('exception')
             return
 
-    def predictions(X, currency, option):
+    def predictions(X ):
 
         # Loads saved model so retraining isn't needed
         # json_file = open('saved_models/MLP.json', 'r')
@@ -81,10 +83,6 @@ class launch:
 
         raw_seq = hstack((open_col, high_col, low_col, clos_col))
 
-        tfn = int(input('Val: '))
-        val = int(input('val2: '))
-        tf=val
-        #tfn = 0
 
         directo = os.path.dirname(__file__)
         path1 = os.path.join(directo, '../saved_models/KNN_file')
@@ -100,11 +98,14 @@ class launch:
             result=result.tolist()
             res.append(result)
 
-        print(raw_seq[tf])
-        print(res[tf+1])
+        print(raw_seq[-1])
+        print(res[-1])
+
+        reslen = len(res)
+        rawlen = len(raw_seq)
+
         print('\n')
-        if option == 3:
-            return
+
         no = [NaN, NaN, NaN, NaN]
         res.insert(0,no)
         result = pd.DataFrame(res)
@@ -140,8 +141,8 @@ class launch:
         fig = mpf.figure(style=s,figsize=(7.5,5.75))
         ax1 = fig.subplot()
         ax2 = ax1.twinx()
-        mpf.plot(result[tfn:tf], ax=ax1, type='candle')
-        mpf.plot(raw_seq[tfn:tf], ax=ax2, type='candle', style='yahoo')
+        mpf.plot(result[reslen-50:reslen], ax=ax1, type='candle')
+        mpf.plot(raw_seq[rawlen-50:rawlen], ax=ax2, type='candle', style='yahoo')
         plt.show()
 
 
