@@ -1,6 +1,8 @@
 # Project-Soros
  
- A dissertation project looking to use machine learning and Japanese candlestick data to predict trends in forex markets 
+ A dissertation project looking to use machine learning and Japanese candlestick data to predict trends in forex markets.
+
+ Ryan Easter EAS16635772
 
  This project is made up of two section:
 

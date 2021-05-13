@@ -37,15 +37,16 @@ class menu:
             elif select == 2:
                 menu.select_pair(2)
             elif select == 3:
-            # Price Prediction
+                # Price Prediction
                 menu.select_pair(3)
             # Exit
             elif select == 4:
                 print("Exiting program")
                 try:
-                    dir = 'scripts/Finance_Data/Chart_Snapshot'
-                    for pic in os.listdir(dir):
-                        os.remove(os.path.join(dir, pic))
+                    directo = os.path.dirname(__file__)
+                    path1 = os.path.join(directo, 'Finance_Data/Chart_Snapshot')
+                    for pic in os.listdir(path1):
+                        os.remove(os.path.join(path1, pic))
                     os.system('cls')
                     os.system('clear')
                     exit()

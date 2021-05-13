@@ -19,12 +19,12 @@ class launch:
 
     def darknet(X):
         try:
-            os.chdir('/home/ryan/Documents/Python/Project-Soros/darknet/data')
+            os.chdir('/darknet/data')
             file = open('test.txt', 'w+')
             file.write(
-                '//home/ryan/Documents/Python/Project-Soros/scripts/Finance_Data/Chart_Snapshot/{name}_test.jpg'.format(name=X))
+                '/scripts/Finance_Data/Chart_Snapshot/{name}_test.jpg'.format(name=X))
             file.close
-            os.chdir("/home/ryan/Documents/Python/Project-Soros/darknet")
+            os.chdir("/darknet")
             os.system("./darknet detector test data/obj.data cfg/yolo-obj.cfg backup/yolo-obj_final.weights -dont_show -ext_output < data/test.txt > data/result.txt")
             predictions = Image.open('predictions.jpg')
             predictions.show()
@@ -47,7 +47,9 @@ class launch:
         open_col, high_col, low_col, clos_col, raw_seq = [], [], [], [], array([
         ])
         # Read input from CSV
-        with open('scripts/Finance_Data/Raw_Data/' + X, 'r') as csv_file:
+        directo = os.path.dirname(__file__)
+        path1 = os.path.join(directo, 'Finance_Data/Raw_Data/')
+        with open(path1 + X, 'r') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             next(csv_reader)
             # Assignes each column within CSV to appropriate Array
@@ -84,7 +86,9 @@ class launch:
         tf=val
         #tfn = 0
 
-        loaded_model = pickle.load(open('saved_models/KNN_file', 'rb'))
+        directo = os.path.dirname(__file__)
+        path1 = os.path.join(directo, '../saved_models/KNN_file')
+        loaded_model = pickle.load(open(path1, 'rb'))
 
         res = [] 
         #res.append([1.1212,1.12218,1.12106,1.12188])
@@ -103,7 +107,9 @@ class launch:
         res.insert(0,no)
         result = pd.DataFrame(res)
         
-        file_loc = 'scripts/Finance_Data/Raw_Data/' + X + '.csv'
+        directo = os.path.dirname(__file__)
+        path1 = os.path.join(directo, 'Finance_Data/Raw_Data/')
+        file_loc = path1 + X
         data = pd.read_csv(
             file_loc, parse_dates=False, usecols=['Date'])
         data = data.values.tolist()
