@@ -13,8 +13,10 @@ class menu:
 
     def main_menu():
         main_menu_title = "Main Menu\n"
+        # menu_items = ["Update All Data",
+        #               "Full Analysis", "Candlestick Analysis", "Price Prediction", "Exit"]
         menu_items = ["Update All Data",
-                      "Full Analysis", "Candlestick Analysis", "Price Prediction", "Exit"]
+                       "Full Analysis", "Exit"]
         main_menu_cursor = ">"
         main_menu_exit = False
 
@@ -33,14 +35,14 @@ class menu:
             # Full Analysis
             elif select == 1:
                 menu.select_pair(1)
-            # Candlestick Analysis
-            elif select == 2:
-                menu.select_pair(2)
-            elif select == 3:
-                # Price Prediction
-                menu.select_pair(3)
+            # # Candlestick Analysis
+            # elif select == 2:
+            #     menu.select_pair(2)
+            # elif select == 3:
+            #     # Price Prediction
+            #     menu.select_pair(3)
             # Exit
-            elif select == 4:
+            elif select == 2:
                 print("Exiting program")
                 try:
                     directo = os.path.dirname(__file__)
@@ -74,7 +76,7 @@ class menu:
             select = currency_menu.show()
             if select < (len(currency_pairs) - 1):
                 if option == 3:
-                    launch.predictions(select, currency_pairs)
+                    launch.predictions(select, currency_pairs, option)
                 make_chart.load(select, currency_pairs)
             else:
                 menu.main_menu()

@@ -34,7 +34,7 @@ class launch:
             print('exception')
             return
 
-    def predictions(X, currency):
+    def predictions(X, currency, option):
 
         # Loads saved model so retraining isn't needed
         # json_file = open('saved_models/MLP.json', 'r')
@@ -42,7 +42,7 @@ class launch:
         # json_file.close()
         # model = model_from_json(loaded_model_json)
         # model.load_weights('saved_models/MLP.h5')
-        X = currency[X]
+        #X = currency[X]
         # Creates arrays to be used to specify each column
         open_col, high_col, low_col, clos_col, raw_seq = [], [], [], [], array([
         ])
@@ -103,6 +103,8 @@ class launch:
         print(raw_seq[tf])
         print(res[tf+1])
         print('\n')
+        if option == 3:
+            return
         no = [NaN, NaN, NaN, NaN]
         res.insert(0,no)
         result = pd.DataFrame(res)
