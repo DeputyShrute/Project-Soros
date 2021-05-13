@@ -36,8 +36,7 @@ This is basic setup for the object detector. If a GPU has been utilised in the `
 
 ## Price Prediction
 
-All of the required scripts are within the repo
-Before they can be run, the `requiremnets.txt` needs to be installed:
+All of the required scripts are within the repo and before they can be run, the `requirements.txt` needs to be installed:
 ```python  
 pip install -r requirements.txt
 ```
@@ -46,3 +45,7 @@ The software can then be started using by running:
 python3 run.py
 ```
 This is in the root of the Project-Soros Folder.
+
+On the menu two options will appear:
+- `Update all data` pulls fresh data from Yahoo
+- `Full Analysis` runs both the object detection and price prediction
