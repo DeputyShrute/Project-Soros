@@ -1,7 +1,6 @@
  #!/usr/bin/env python -W ignore::DeprecationWarning
 import pandas as pd
 from pandas import Series, DataFrame
-from scripts.candlestick import create_candlestick, candle_identifier
 
 
 def data_validation(x):

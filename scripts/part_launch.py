@@ -1,3 +1,4 @@
+from locale import currency
 import pickle
 from numpy.core.numeric import NaN
 from numpy.core.shape_base import hstack
@@ -33,7 +34,7 @@ class launch:
             print('exception')
             return
 
-    def predictions(X):
+    def predictions(X, currency):
 
         # Loads saved model so retraining isn't needed
         # json_file = open('saved_models/MLP.json', 'r')
@@ -41,14 +42,12 @@ class launch:
         # json_file.close()
         # model = model_from_json(loaded_model_json)
         # model.load_weights('saved_models/MLP.h5')
-
-        X = 'EURUSD'
-
+        X = currency[X]
         # Creates arrays to be used to specify each column
         open_col, high_col, low_col, clos_col, raw_seq = [], [], [], [], array([
         ])
         # Read input from CSV
-        with open('scripts/Finance_Data/Raw_Data/' + X + '.csv', 'r') as csv_file:
+        with open('scripts/Finance_Data/Raw_Data/' + X, 'r') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             next(csv_reader)
             # Assignes each column within CSV to appropriate Array

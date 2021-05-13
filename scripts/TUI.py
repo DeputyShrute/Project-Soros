@@ -1,4 +1,5 @@
 #!/usr/bin/env python -W ignore::DeprecationWarning
+from locale import currency
 import os
 from PIL import Image
 import glob
@@ -31,13 +32,13 @@ class menu:
                 get_data.get_url()
             # Full Analysis
             elif select == 1:
-                menu.select_pair()
+                menu.select_pair(1)
             # Candlestick Analysis
             elif select == 2:
-                menu.select_pair()
+                menu.select_pair(2)
             elif select == 3:
             # Price Prediction
-                launch.predictions('EURUSD')
+                menu.select_pair(3)
             # Exit
             elif select == 4:
                 print("Exiting program")
@@ -53,7 +54,7 @@ class menu:
                     os.system('clear')
                     exit()
 
-    def select_pair():
+    def select_pair(option):
         select_pair_title = "Select Pair\n"
 
         os.chdir('scripts/Finance_Data/Raw_Data/')
@@ -71,6 +72,8 @@ class menu:
         while not select_pair_exit:
             select = currency_menu.show()
             if select < (len(currency_pairs) - 1):
+                if option == 3:
+                    launch.predictions(select, currency_pairs)
                 make_chart.load(select, currency_pairs)
             else:
                 menu.main_menu()
