@@ -104,9 +104,6 @@ class Models:
         # Stacks arrays side by side in one array
         raw_seq = hstack((open_col, high_col, low_col, clos_col))
 
-        # scaler = StandardScaler()
-        # scaler.fit(raw_seq)#
-        # scaler.transform(raw_seq)
 
         # Splits the data into test and train (data, windows, size of test)
         X_train, X_test, y_train, y_test = Models.split_data(
@@ -116,6 +113,8 @@ class Models:
         X_train, X_val, y_train, y_val = train_test_split(
             X_train, y_train, test_size=0.2)
         
+        # Rescales the data for better results
+
         scaler = MinMaxScaler()
         X_train = scaler.fit_transform(X_train.reshape(-1, X_train.shape[-1])).reshape(X_train.shape)
         X_test = scaler.transform(X_test.reshape(-1, X_test.shape[-1])).reshape(X_test.shape)
@@ -185,6 +184,7 @@ class Models:
         #     json_param = params.read()
         # obj = json.loads(json_param)
 
+        # Logs the data output
         self.logger.info(model_type)
         for i in range(0, 4):
             self.logger.info(columns[i])

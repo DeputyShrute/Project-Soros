@@ -15,7 +15,7 @@ warnings.warn = warn
 
 
 class make_chart:
-
+    # Loads the csv file
     def load(select, currency_pairs):
         X = currency_pairs[select]
         # Loads the CSV data
@@ -29,7 +29,7 @@ class make_chart:
         csv_rows = data.shape[0]
         data.index.name = 'Date'
         make_chart.create(data, csv_rows, X)
-
+    # Creates csv file into candlestick plots
     def create(data, csv_rows, X):
         n = csv_rows - 30
         directo = os.path.dirname(__file__)
@@ -40,7 +40,7 @@ class make_chart:
 
 
 class make_chart_test:
-
+## Used for experimenting
     def load_data(currency_pairs):
 
         # Loads the CSV data

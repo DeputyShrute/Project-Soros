@@ -37,6 +37,8 @@ class launch:
             return
 
     def predictions(X ):
+        # Makes the prediciton based on the most recent data
+        # Creates a plot comparing the predicted and actual prices
 
         # Loads saved model so retraining isn't needed
         # json_file = open('saved_models/MLP.json', 'r')
