@@ -23,7 +23,8 @@ This project requires an Ubuntu OS for easiest installation.
 
 - Clone the darknet repo into the top level of the Project-Soros repo
 - Run the make command in the darknet folder (List of configurable parameters: https://github.com/AlexeyAB/darknet#how-to-compile-on-linux-using-make)
-- Copy the weights file from the darknet_requirements folder to the backup folder inside darknet (create folder if not already exists)
+- Download the weights file from this url: https://github.com/DeputyShrute/Project-Soros/raw/Regression/darknet%20requirements/yolo-obj_last.weights
+- Copy the downloaded weights file to the `backup` folder inside the `darknet` folder
 - Copy the `yolo-obj.cfg` from the `darknet_requirements` folder to the cfg folder inside `darknet`
 - Copy the `obj.data`, `obj.names` and `test.txt` from the `darknet_requirements` folder to the data folder inside` darknet`
 - Copy the `test_img` folder into the `darknet` folder
